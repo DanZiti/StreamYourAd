@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/****************************************
+Global
+****************************************/
+
+/*
+	For all elements throughout the site, each content block is
+	contained within a "center" container @ 1200px width (auto height).
+	
+	Within the centering containers, allow for 120px padding on both
+	the right-hand side and the left-hand side... I'm avoiding use
+	of the actual "padding" CSS property in favor of margins, due to
+	unpredictability and other issues at the mobile/responsive level.
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+    font-family: 'SourceSansProSemibold';
+    src: url('../fonts/sourcesanspro-semibold-webfont.eot');
+    src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'),
+         url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	min-width: 1024px;
+	background: #b0b0b0; /* TEMPORARY */
+}
+
+.center {
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+
+h1 {
+	
+}
+
+h2 {
+	
+}
+
+h3 {
+	
+}
+
+p {
+	
+}
+
+ul {
+	
+}
+
+li {
+	
+}
+
+article {
+	
+}
+
+.context {
+	
+}
+
+/****************************************
+Header
+****************************************/
+
+header {
+	background: #fff;
+	height: 80px;
+	width: 100%;
+	min-width: 1000px;
+	box-shadow: 0 0 3px 0 #000;
+	position: fixed;
+	top: 0;
+	transition: opacity 0.25s;
+}
+
+header.scrolling {
+	opacity: 0.75;
+}
+
+header.scrolling.over {
+	opacity: 1;
+}
+
+header .logo {
+	margin: 16px 0 0;
+	cursor: pointer;
+}
+
+header nav {
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
+
+header nav ul {
+	list-style: none;
+	font-family: 'SourceSansProSemibold', sans-serif;
+}
+
+header nav ul li {
+	display: inline-block;
+	/* font-family: TBD; */
+	font-size: 16px;
+	color: #f39200;
+	cursor: pointer;
+	padding: 5px 0;
+	transition: 0.25s color;
+}
+
+header nav ul li:not(:first-child) {
+	margin-left: 44px;
+}
+
+header nav ul li.over,
+header nav ul li.SELECTED {
+	color: #025086;
+}
+
+/****************************************
+About
+****************************************/
+
+#about-content {
+	
+}
+
+/****************************************
+Services
+****************************************/
+
+#services-content {
+	
+}
+
+#services-content h1.hide {
+	visibility: hidden;
+	text-indent: -9999px;
+	height: 0;
+}
+
+/****************************************
+Contact
+****************************************/
+
+#contact-content {
+	
+}
+
+/****************************************
+Footer
+****************************************/
+
+
+
+/****************************************
+Responsive Layouts
+****************************************/
+
