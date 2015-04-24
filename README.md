@@ -1,2 +1,3 @@
 # StreamYourAd
-Promotion in Motion
+
+Source code behind the StreamYourAd site...  Live link to be posted relatively soon.
