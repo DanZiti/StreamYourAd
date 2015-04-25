@@ -6,7 +6,7 @@
 		interaction: ("createTouch" in document) ? "touchend" : "click", // Basic interaction optimized for desktops and touchscreens
 		
 		navigate: function(_location) {
-			$("html, body").animate({
+			$("body").animate({
 				scrollTop: _location + "px"
 			}, 500);
 			return this;

@@ -19,13 +19,16 @@
 	$(".logo").on(sya.interaction, function() {
 		sya
 			.deselect("header nav li")
-			.select("header nav > ul li:first-child");
+			.select("header nav > ul li:first-of-type");
+	});
+	
+	$("#splash-down-arrow").on(sya.interaction, function() {
+		sya
+			.deselect("header nav li")
+			.select("header nav > ul li:nth-of-type(2)");
 	});
 	
 	/* TO-DO: CONTROL SELECTED NAV ITEM BASED ON LOCATION/SCROLLING */
-	
-	/* TO-DO: PARALLAX */
-	
 	
 	// Create hover/active states throughout the site
 	//

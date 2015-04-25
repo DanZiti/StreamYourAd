@@ -1,8 +1,14 @@
 
 	<article id="about-content">
+		
+		<div class="parallax">
+			<img src="img/parallax-phone-bg.jpg" alt="Parallax Phone Background">
+			<div class="center">
+				<h1>Digital Branding<br>Social Solutions<br>Brand Promotions</h1>
+			</div>
+		</div>
+		
 		<div class="center">
-			
-			<h1>Digital Branding<br>Social Solutions<br>Brand Promotions</h1>
 			<section class="context">
 				<h2>HOW IT WORKS</h2>
 				
@@ -27,6 +33,6 @@
 					<li>Measure and create your own custom event.</li>
 				</ul>
 			</section>
-		
 		</div>
+		
 	</article>

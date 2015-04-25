@@ -4,7 +4,7 @@
 	//
 	$(window).on("load resize", function() {
 		var newHeight = $(window).height();
-		$("#slider").height(newHeight);
+		$("#slider").height(newHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
 	});
 	
 	// Fading picture slider stuff
