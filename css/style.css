@@ -106,8 +106,8 @@ header nav ul {
 }
 
 header nav ul li {
-	display: inline-block;
-	/* font-family: TBD; */
+	position: relative;
+	display: inline-block; /* font-family: TBD; */
 	font-size: 16px;
 	color: #f39200;
 	cursor: pointer;
@@ -122,6 +122,21 @@ header nav ul li:not(:first-child) {
 header nav ul li.over,
 header nav ul li.SELECTED {
 	color: #025086;
+}
+
+header nav ul li > span {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	background: #025086;
+	width: 0;
+	transition: 0.25s width;
+}
+
+header nav ul li.over > span,
+header nav ul li.down > span {
+	width: 50%;
 }
 
 /****************************************
