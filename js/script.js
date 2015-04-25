@@ -22,20 +22,6 @@
 			.select("header nav > ul li:first-child");
 	});
 	
-	// Control "scrolling" state for <header> opacity
-	//
-	$(window).scroll(function() {
-
-		if ($(this).scrollTop() >= 5) {
-			$("header").addClass("scrolling");
-		}
-		
-		else {
-			$("header").removeClass("scrolling");
-		}
-	
-	});
-	
 	/* TO-DO: CONTROL SELECTED NAV ITEM BASED ON LOCATION/SCROLLING */
 	
 	/* TO-DO: PARALLAX */
@@ -43,6 +29,6 @@
 	
 	// Create hover/active states throughout the site
 	//
-	$("header, header nav li").mouseable();
+	$("header nav li").mouseable();
 	
 })();

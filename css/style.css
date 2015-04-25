@@ -89,14 +89,6 @@ header {
 	transition: opacity 0.25s;
 }
 
-header.scrolling {
-	opacity: 0.75;
-}
-
-header.scrolling.over {
-	opacity: 1;
-}
-
 header .logo {
 	margin: 16px 0 0;
 	cursor: pointer;
