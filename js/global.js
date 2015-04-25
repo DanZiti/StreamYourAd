@@ -8,7 +8,7 @@
 		navigate: function(_location) {
 			$("html, body").animate({
 				scrollTop: _location + "px"
-			}, 400);
+			}, 500);
 			return this;
 		},
 		

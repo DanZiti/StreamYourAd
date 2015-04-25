@@ -17,8 +17,8 @@
 	<body>
 		<?php
 			include 'templates/header.php';
-			//include 'templates/slider.php;
-			//include 'templates/about.php';
+			include 'templates/slider.php';
+			include 'templates/about.php';
 			//include 'templates/services.php';
 			//include 'templates/contact.php';
 		?>

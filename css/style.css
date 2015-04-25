@@ -6,9 +6,9 @@ Global
 
 /*
 	For all elements throughout the site, each content block is
-	contained within a "center" container @ 1200px width (auto height).
+	contained within a "center" container @ 960px width (auto height).
 	
-	Within the centering containers, allow for 120px padding on both
+	Within the centering containers, allow for 20px padding on both
 	the right-hand side and the left-hand side... I'm avoiding use
 	of the actual "padding" CSS property in favor of margins, due to
 	unpredictability and other issues at the mobile/responsive level.
@@ -32,12 +32,12 @@ Global
 }
 
 body {
-	min-width: 1024px;
-	background: #b0b0b0; /* TEMPORARY */
+	min-width: 1000px;
 }
 
 .center {
-	width: 1000px;
+	width: 960px;
+	height: 100%;
 	margin: 0 auto;
 	position: relative;
 }
@@ -66,11 +66,68 @@ li {
 	
 }
 
+button {
+	border: none;
+	outline: none;
+}
+
 article {
 	
 }
 
 .context {
+	
+}
+
+/****************************************
+Animations
+****************************************/
+
+@-webkit-keyframes bounce {
+	
+	10% {
+	  	-webkit-transform: translateY(-18%);
+	}
+	
+	20% {
+	  	-webkit-transform: translateY(5%);
+	}
+	
+	30% {
+	  	-webkit-transform: translateY(-5%);
+	}
+	
+	40% {
+	  	-webkit-transform: translateY(1%);
+	}
+	
+	60% {
+		-webkit-transform: translateY(0);
+	}
+	
+}
+
+@keyframes bounce {
+	
+	10% {
+	  	transform: translateY(-18%);
+	}
+	
+	20% {
+	  	transform: translateY(5%);
+	}
+	
+	30% {
+	  	transform: translateY(-5%);
+	}
+	
+	40% {
+	  	transform: translateY(1%);
+	}
+	
+	60% {
+		transform: translateY(0);
+	}
 	
 }
 
@@ -86,6 +143,7 @@ header {
 	box-shadow: 0 0 3px 0 #000;
 	position: fixed;
 	top: 0;
+	z-index: 1;
 	transition: opacity 0.25s;
 }
 
@@ -137,6 +195,35 @@ header nav ul li > span {
 header nav ul li.over > span,
 header nav ul li.down > span {
 	width: 50%;
+}
+
+/****************************************
+Slider
+****************************************/
+
+/*
+	This is a "splash page" of sorts, and the height of this
+	section will be dynamically fixed to the height of the
+	window when the page is loaded, in "js > slider.js"
+*/
+
+#slider {
+	position: relative;
+	background: #b0b0b0; /* TEMPORARY COLOR CHOICE */
+	overflow: hidden;
+}
+
+#splash-down-arrow {
+	width: 62px;
+	height: 43px;
+	cursor: pointer;
+	background: url('../img/splash-down-arrow.png') no-repeat 10px 10px;
+	background-size: 42px 23px;
+	position: absolute;
+	bottom: 40px;
+	left: 449px;
+	-webkit-animation: bounce 2.5s infinite;
+	animation: bounce 2.5s infinite;
 }
 
 /****************************************
