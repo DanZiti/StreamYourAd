@@ -10,8 +10,20 @@
 	
 	// "462" above was calculated to account for the contact image's location further down the page
 	
-	$(window).scroll(function() {
-		sya.parallax();
-	});
+	var isiPad = navigator.userAgent.match(/iPad/i) != null;
+	
+	if (!isiPad) {
+		$(window).scroll(function() {
+			
+			if ($(this).width() >= 800) {
+				sya.parallax();
+			}
+			
+			else {
+				$(".parallax > img").css("top", "0px");
+			}
+			
+		});
+	}
 	
 })();

@@ -23,13 +23,13 @@
 			include 'templates/services.php';
 			include 'templates/contact.php';
 		?>
-		<!--<footer>
+		<footer>
 			<ul>
 				<li>Privacy Policy</li>
 				<li>Terms & Conditions</li>
 				<li>&copy; <?php echo date('Y'); ?> StreamYourAd.com</li>
 			</ul>
-		</footer>-->
+		</footer>
 		<script type="text/javascript" src="js/script.js" async></script>
 		<script type="text/javascript" src="js/navigation.js" async></script>
 		<script type="text/javascript" src="js/parallax.js" async></script>

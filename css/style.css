@@ -17,6 +17,11 @@ Global
 * {
 	margin: 0;
 	padding: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:not(.selectable) {
+	-webkit-user-select: none;
 }
 
 @font-face {
@@ -76,8 +81,6 @@ Global
 
 body {
 	min-width: 1000px;
-	
-	min-height: 6000px; /* TEMPORARY!!! */
 }
 
 [data-navigate] {
@@ -100,7 +103,7 @@ h1, h2 {
 h1 {
 	font-size: 30px;
 	color: #fff;
-	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -136,9 +139,28 @@ button {
 	outline: none;
 }
 
-/*.blue-btn {
-	
-}*/
+.blue-btn {
+	padding: 5px 20px;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: 'SourceSansProSemibold', sans-serif;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.5);
+	background: linear-gradient(180deg, #15649a 0%, #15649a 50%, #025690 51%, #025690 100%);
+	transition: opacity 0.25s;
+}
+
+.blue-btn.over,
+.blue-btn.down {
+	opacity: 0.85;
+}
+
+.blue-btn.down {
+	box-shadow: none;
+}
 
 .parallax {
 	position: relative;
@@ -146,12 +168,8 @@ button {
 	overflow: hidden;
 }
 
-.parallax.about {
+.parallax {
 	height: 265px;
-}
-
-.parallax.contact {
-	height: 220px;
 }
 
 .parallax > img {
@@ -161,6 +179,36 @@ button {
 
 .nobr {
 	white-space: nowrap;
+}
+
+form {
+	position: absolute;
+	right: 100px;
+	top: 20px;
+	width: 45%;
+}
+
+form > input:not([type='submit']),
+form > textarea {
+	font-family: 'HelveticaLtCn', sans-serif;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 5px;
+	border: none;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+	background: linear-gradient(180deg, #c5c7ca 0px, #eceff1 3px);
+}
+
+form > textarea {
+	height: 70px;
+	resize: none;
+}
+
+form > input[type='submit'] {
+	display: inline-block;
+	position: absolute;
+	right: -10px;
 }
 
 /****************************************
@@ -457,7 +505,7 @@ Contact
 
 #contact-content {
 	background: #c0c9cf;
-	min-height: 500px;
+	min-height: 600px;
 }
 
 #contact-content .parallax h1 {
@@ -512,8 +560,8 @@ Contact
 
 #contact-content .social li.over,
 #contact-content .social li.down {
-	-webkit-transform: scale(1.2, 1.2);
-	transform: scale(1.2, 1.2);
+	-webkit-transform: scale3d(1.2, 1.2, 1.2);
+	transform: scale3d(1.2, 1.2, 1.2);
 }
 
 #contact-content .social li a {
@@ -526,8 +574,36 @@ Contact
 Footer
 ****************************************/
 
-footer li {
-	font-family: 'HelveticaLtCn', sans-serif;
+footer {
+	text-align: center;
+}
+
+footer ul {
+	display: inline-block;
+	margin-top: 20px;
+	padding-bottom: 15px;
+}
+
+footer ul li {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.2em;
+	transition: color 0.25s;
+}
+
+footer ul li:not(:last-child) {
+	cursor: pointer;
+	border-right: 1px solid #000;
+	padding-right: 5px;
+}
+
+footer ul li.over,
+footer ul li.down {
+	color: #025086;
+}
+
+footer ul li.down {
+	text-decoration: underline;
 }
 
 /****************************************
