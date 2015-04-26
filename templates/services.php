@@ -28,6 +28,8 @@
 				
 				<h2>OUR SERVICES</h2>
 				
+				<img src="img/services-phone-ad.png" alt="Our Services">
+				
 				<div class="txt-block">
 					
 					<p>Leverage the world's most advanced native ads platform to delight users with ads that blend seamlessly into your app's content.</p>

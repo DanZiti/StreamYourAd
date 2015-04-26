@@ -32,6 +32,6 @@
 	
 	// Create hover/active states throughout the site
 	//
-	$("header nav li").mouseable();
+	$("nav li").mouseable();
 	
 })();

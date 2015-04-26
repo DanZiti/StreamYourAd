@@ -1,8 +1,8 @@
 
 	<article id="about-content">
 		
-		<div class="parallax">
-			<img src="img/parallax-phone-bg.jpg" alt="Parallax Phone Background">
+		<div class="parallax about">
+			<img class="parallax-about" src="img/parallax-phone-bg.jpg" alt="Parallax Phone Background">
 			<div class="center">
 				<h1>Digital Branding<br>Social Solutions<br>Brand Promotions</h1>
 			</div>

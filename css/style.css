@@ -104,7 +104,7 @@ h1 {
 }
 
 h2 {
-	font-size: 24px;
+	font-size: 22px;
 	color: #245b81;
 	text-transform: uppercase;
 	margin-top: 80px;
@@ -123,6 +123,10 @@ p, li {
 	line-height: 1.4em;
 }
 
+p {
+	margin-bottom: 20px;
+}
+
 ul {
 	list-style: none;
 }
@@ -132,11 +136,22 @@ button {
 	outline: none;
 }
 
+/*.blue-btn {
+	
+}*/
+
 .parallax {
 	position: relative;
 	width: 100%;
-	height: 292px;
 	overflow: hidden;
+}
+
+.parallax.about {
+	height: 265px;
+}
+
+.parallax.contact {
+	height: 220px;
 }
 
 .parallax > img {
@@ -366,6 +381,11 @@ About
 Services
 ****************************************/
 
+#services-content {
+	min-height: 995px;
+	overflow: hidden;
+}
+
 #services-content-top {
 	background: #c0c9cf;
 	height: 292px;
@@ -397,7 +417,6 @@ Services
 	font-size: 22px;
 	color: #245b81;
 	text-transform: uppercase;
-	margin-bottom: 20px;
 	font-family: 'DIN', sans-serif;
 }
 
@@ -405,15 +424,103 @@ Services
 	width: 149px;
 }
 
-/*#services-content .txt-block {
-	
-}*/
+#services-content h2 {
+	padding-bottom: 25px;
+	background: url('../img/services-arrow.png') no-repeat 3px 100%;
+	background-size: 180px 15px;
+}
+
+#services-content .txt-block {
+	margin-top: 30px;
+	width: 350px;
+}
+
+#services-content ul.orange {
+	margin-left: 20px;
+}
+
+#services-content ul.orange li {
+	font-family: 'HelveticaBdCn', sans-serif;
+	color: #f39404;
+}
+
+#services-content .context > img {
+	width: 380px;
+	position: absolute;
+	right: 100px;
+	top: 10px;
+}
 
 /****************************************
 Contact
 ****************************************/
 
+#contact-content {
+	background: #c0c9cf;
+	min-height: 500px;
+}
 
+#contact-content .parallax h1 {
+	position: absolute;
+	bottom: 40px;
+}
+
+#contact-content h2 {
+	margin: 40px 0 20px;
+}
+
+#contact-content .social {
+	margin-top: 50px;
+}
+
+#contact-content .social ul li {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	background-image: url('../img/social-sprite.png');
+	background-size: 200px 32px;
+	background-repeat: no-repeat;
+	width: 34px;
+	height: 34px;
+	display: inline-block;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+#contact-content .social ul li:not(:first-child) {
+	margin-left: 8px;
+}
+
+#contact-content .social li.facebook {
+	background-position: 0 1px;
+}
+
+#contact-content .social li.google {
+	background-position: -41px 1px;
+}
+
+#contact-content .social li.instagram {
+	background-position: -82px 1px;
+}
+
+#contact-content .social li.pinterest {
+	background-position: -124px 1px;
+}
+
+#contact-content .social li.twitter {
+	background-position: -166px 1px;
+}
+
+#contact-content .social li.over,
+#contact-content .social li.down {
+	-webkit-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
+}
+
+#contact-content .social li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 
 /****************************************
 Footer

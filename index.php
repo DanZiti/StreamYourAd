@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="description" content="Leverage the world's most advanced native ads platform to delight users with ads that blend seamlessly into your app's content.">
 		<meta name="keywords" content="StreamYourAd, digital branding, social solutions, brand promotions, stream, ad, advertisement, promote, ads platform, app content, mobile, iOS, Android, Windows, HTML5">
+		<meta name="author" content="Dan Zervoudakes, Genevieve Calingo">
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
@@ -20,7 +21,7 @@
 			include 'templates/slider.php';
 			include 'templates/about.php';
 			include 'templates/services.php';
-			//include 'templates/contact.php';
+			include 'templates/contact.php';
 		?>
 		<!--<footer>
 			<ul>
