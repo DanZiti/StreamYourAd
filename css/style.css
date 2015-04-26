@@ -155,7 +155,7 @@ button {
 
 .blue-btn.over,
 .blue-btn.down {
-	opacity: 0.85;
+	opacity: 0.8;
 }
 
 .blue-btn.down {
@@ -191,10 +191,11 @@ form {
 form > input:not([type='submit']),
 form > textarea {
 	font-family: 'HelveticaLtCn', sans-serif;
+	font-size: 13px;
 	display: block;
 	width: 100%;
 	margin-bottom: 10px;
-	padding: 5px;
+	padding: 8px 5px 5px 5px;
 	border: none;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
 	background: linear-gradient(180deg, #c5c7ca 0px, #eceff1 3px);
@@ -209,6 +210,11 @@ form > input[type='submit'] {
 	display: inline-block;
 	position: absolute;
 	right: -10px;
+}
+
+form > input,
+form > textarea {
+	border-radius: 0; /* Removes automatic rounded edges in iOS */
 }
 
 /****************************************
@@ -276,7 +282,6 @@ header {
 	position: fixed;
 	top: 0;
 	z-index: 1;
-	transition: opacity 0.25s;
 }
 
 header .logo {
@@ -505,7 +510,7 @@ Contact
 
 #contact-content {
 	background: #c0c9cf;
-	min-height: 600px;
+	min-height: 620px;
 }
 
 #contact-content .parallax h1 {
@@ -599,7 +604,7 @@ footer ul li:not(:last-child) {
 
 footer ul li.over,
 footer ul li.down {
-	color: #025086;
+	color: #106cd6;
 }
 
 footer ul li.down {

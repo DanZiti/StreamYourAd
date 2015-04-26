@@ -31,7 +31,7 @@
 				<form action="" method="post">
 					<input class="selectable" type="text" name="name" placeholder="Name (Required)" required>
 					<input class="selectable" type="email" name="email" placeholder="Email (Required)" required>
-					<input  class="selectable"type="text" name="subject" placeholder="Subject">
+					<input  class="selectable" type="text" name="subject" placeholder="Subject">
 					<textarea class="selectable" name="comments"></textarea>
 					<input type="submit" value="GET IN TOUCH" class="blue-btn">
 				</form>
