@@ -5,10 +5,10 @@
 		
 		interaction: ("createTouch" in document) ? "touchend" : "click", // Basic interaction optimized for desktops and touchscreens
 		
-		navigate: function(_location) {
-			$("body").animate({
+		navigate: function(_location) { // Firefox scrolls at the "html" level only, thus including this in the selector
+			$("html, body").animate({
 				scrollTop: _location + "px"
-			}, 500);
+			}, 600);
 			return this;
 		},
 		

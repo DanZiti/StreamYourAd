@@ -1,6 +1,6 @@
 (function() {
 	
-	// Navigation throughout the site
+	// Controls navigation throughout the site - "sya.navigate" method is programmed within "js > global.js"
 	//
 	$("[data-navigate]").on(sya.interaction, function() {
 		
@@ -12,7 +12,7 @@
 		
 		else {
 			var scrollTo = $("#" + value + "-content").offset().top;
-			sya.navigate(scrollTo);
+			sya.navigate(scrollTo - 80); // -80 here accounts for adjustments in CSS for the sticky header
 		}
 		
 	});
