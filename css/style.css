@@ -706,11 +706,16 @@ Responsive Layouts
 	#services-content .context > img {
 		position: relative;
 		top: 20px;
+		right: 0;
 	}
 	
 	#services-content .context > .txt-block {
 		width: 90%;
 		margin: 30px auto;
+	}
+	
+	#services-content .context > .txt-block ul.orange {
+		margin-left: 0;
 	}
 	
 }
