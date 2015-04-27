@@ -10,7 +10,7 @@
 		
 		// For redirect after form submission
 		//
-		$thankyou_page = "index.php#contact-content";
+		$home_page = "index.php#contact-content";
 		
 		// Call form data
 		//
@@ -38,10 +38,10 @@
 	//
 	$headers = "From: " . $email_from . "\r\n" . "Reply-To: " . $email_from . "\r\n" . "X-Mailer: PHP/" . phpversion();
 
-	// Send email and redirect to Thank You page
+	// Send email and redirect back to Home page
 	//
 	@mail($email_to, $email_subject, $email_message, $headers);
-	@header("Location: $thankyou_page");
+	@header("Location: $home_page");
  }
  
 ?>

@@ -97,7 +97,7 @@
 	// Friendly alert regarding "Privacy Policy" and "Terms & Conditions" links in footer
 	//
 	$("footer ul li:not(:last-child)").on(sya.interaction, function() {
-		alert("'StreamYourAd' the company no longer exists as a legal entity, and thus I am prohibited from sharing any legal mumbo jumbo on the site. This site now serves as a dummy practice environment for my portfolio :)");
+		alert("'StreamYourAd' the company no longer exists as a legal entity, thus I am prohibited from sharing any legal mumbo jumbo on the site. This site now serves as a dummy practice environment for my portfolio :)");
 	});
 	
 	// Create hover/active states throughout the site

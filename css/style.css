@@ -581,6 +581,7 @@ Footer
 
 footer {
 	text-align: center;
+	width: 100%;
 }
 
 footer ul {
@@ -615,3 +616,196 @@ footer ul li.down {
 Responsive Layouts
 ****************************************/
 
+@media only screen and (max-width: 1000px) {
+	
+	body, header {
+		min-width: 100%;
+	}
+	
+	.center {
+		width: 96%;
+	}
+	
+	.parallax > img {
+		height: auto;
+		min-width: 790px;
+	}
+	
+}
+
+@media only screen and (max-width: 950px) {
+	
+	#contact-form,
+	#services-content .context > img,
+	#about-content .context > img:first-of-type,
+	#about-content .txt-block:not(:first-of-type) {
+		right: 20px;
+	}
+	
+	#contact-form {
+		width: 50%;
+	}
+	
+}
+
+@media only screen and (max-width: 876px) {
+	
+	#about-content .context > img:first-of-type {
+		top: 0;
+		width: 340px;
+	}
+	
+}
+
+@media only screen and (max-width: 844px) {
+	
+	#services-content-top .icon:nth-of-type(2) {
+		margin: 50px 30px 0;
+	}
+	
+}
+
+@media only screen and (max-width: 812px) {
+	
+	#about-content .context > h2 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	
+	#about-content .context > img:first-of-type,
+	#about-content .context > img:nth-of-type(2),
+	#about-content .context > img:last-of-type {
+		position: relative;
+		left: 0;
+		top: 0;
+		display: block;
+		margin: 0 auto;
+	}
+	
+	#about-content .context > .txt-block:first-of-type,
+	#about-content .context > .txt-block:nth-of-type(2),
+	#about-content .context > .txt-block:last-of-type {
+		position: relative;
+		left: 0;
+		top: 0;
+		margin: 40px auto;
+	}
+	
+}
+
+@media only screen and (max-width: 760px) {
+	
+	#services-content .context {
+		text-align: center;
+	}
+	
+	#services-content .context > h2 {
+		background-position: center 100%;
+	}
+	
+	#services-content .context > img {
+		position: relative;
+		top: 20px;
+	}
+	
+	#services-content .context > .txt-block {
+		width: 90%;
+		margin: 30px auto;
+	}
+	
+}
+
+@media only screen and (max-width: 740px) { /* BEGIN TRANSFORMATION OF HEADER NAV MENU HERE */
+	
+	
+	
+	header nav:first-of-type {
+		display: none;
+	}
+	
+}
+
+@media only screen and (max-width: 658px) {
+	
+	#services-content-top {
+		min-height: 750px;
+	}
+	
+	#services-content-top .icon,
+	#services-content-top .icon:nth-of-type(2) {
+		margin: 30px auto  0;
+		display: block;
+	}
+	
+}
+
+@media only screen and (max-width: 620px) {
+	
+	#contact-content {
+		min-height: 780px;
+	}
+	
+	#contact-content h2 {
+		text-align: center;
+	}
+	
+	#contact-content .logo {
+		margin: 0 auto;
+		display: block;
+	}
+	
+	#contact-content .social {
+		margin: 20px 0;
+		text-align: center;
+	}
+	
+	#contact-content .social ul {
+		display: inline-block;
+	}
+	
+	#contact-form {
+		width: 80%;
+		position: relative;
+		top: 0;
+		left: 0;
+		margin: 0 auto;
+	}
+	
+}
+
+@media only screen and (max-width: 420px) {
+	
+	#services-content .context > img {
+		width: 90%;
+	}
+	
+}
+
+@media only screen and (max-width: 396px) {
+	
+	h1 {
+		font-size: 25px;
+	}
+	
+	#about-content .context > img:first-of-type,
+	#about-content .context > img:nth-of-type(2),
+	#about-content .context > img:last-of-type {
+		width: 72%;
+	}
+	
+	#about-content .context > .txt-block:first-of-type,
+	#about-content .context > .txt-block:nth-of-type(2),
+	#about-content .context > .txt-block:last-of-type {
+		width: 90%;
+	}
+	
+	footer ul li {
+		display: block;
+		margin-bottom: 8px;
+	}
+	
+	footer ul li:not(:last-of-type) {
+		border-right: none;
+	}
+	
+}

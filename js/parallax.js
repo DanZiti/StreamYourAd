@@ -15,7 +15,7 @@
 	if (!isiPad) {
 		$(window).scroll(function() {
 			
-			if ($(this).width() >= 800) {
+			if ($(this).width() >= 1000) {
 				sya.parallax();
 			}
 			
