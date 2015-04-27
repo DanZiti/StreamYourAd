@@ -1,0 +1,47 @@
+<?php
+
+	if (isset($_POST['email'])) {
+		 
+		// Address and subject
+		//
+		$form_subject = $_POST['subject'];
+		$email_to = 'dan.zervoudakes@gmail.com';
+		$email_subject = 'StreamYourAd Contact Form Submission: ' . $form_subject;
+		
+		// For redirect after form submission
+		//
+		$thankyou_page = 'index.php#contact-content';
+		
+		// Call form data
+		//
+		$name = $_POST['name'];
+		$email_from = $_POST['email'];
+		$comments = $_POST['comments'];
+		
+		// Begin message content
+		//
+		$email_message = 'New inquiry submitted.\n\n';
+		 
+		function clean_string($string) {
+			$bad = array('content-type', 'bcc:', 'to:', 'cc:', 'href');
+			return str_replace($bad, '', $string);
+		}
+		
+		// Fill email content
+		//
+		$email_message .= 'Name: ' . clean_string($name) . '\n';
+		$email_message .= 'Email: ' . clean_string($email_from) . '\n';
+		$email_message .= 'Comments: ' . clean_string($comments) . '\n';
+		 
+		 
+	// Create email headers
+	//
+	$headers = 'From: ' . $email_from . '\r\n' . 'Reply-To: ' . $email_from . '\r\n' . 'X-Mailer: PHP/' . phpversion();
+
+	// Send email and redirect to Thank You page
+	//
+	@mail($email_to, $email_subject, $email_message, $headers);
+	@header("Location: $thankyou_page"); // Requires double-quotes
+ }
+ 
+?>

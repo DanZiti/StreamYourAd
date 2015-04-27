@@ -6,6 +6,15 @@
 	 */
 	 
 	 var _canScroll = true;
+	 
+	 function resetScroll() {
+		
+		_canScroll = false;
+		 
+		setTimeout(function() {
+			_canScroll = true;
+		}, 600);
+	 };
 	
 	// Control "SELECTED" states in header > nav > ul > li based on user location
 	//
@@ -17,11 +26,7 @@
 			.deselect("header nav li")
 			.select(self);
 		
-		_canScroll = false;
-		
-		setTimeout(function() {
-			_canScroll = true;
-		}, 600);
+		resetScroll();
 	});
 	
 	$(".logo").on(sya.interaction, function() {
@@ -29,11 +34,7 @@
 			.deselect("header nav li")
 			.select("header nav > ul li:first-of-type");
 		
-		_canScroll = false;
-		
-		setTimeout(function() {
-			_canScroll = true;
-		}, 600);
+		resetScroll();
 	});
 	
 	$("#splash-down-arrow").on(sya.interaction, function() {
@@ -41,11 +42,7 @@
 			.deselect("header nav li")
 			.select("header nav > ul li:nth-of-type(2)");
 		
-		_canScroll = false;
-		
-		setTimeout(function() {
-			_canScroll = true;
-		}, 600);
+		resetScroll();
 	});
 	
 	// Control automatic header > nav > ul > li "SELECTED" states updates while scrolling
@@ -87,6 +84,20 @@
 		
 		} // End _canScroll check
 		
+	});
+	
+	// Contact form submission
+	//
+	var _form = document.getElementById("contact-form");
+	
+	_form.onsubmit = function() {
+		alert("Thank you for your submission: someone will be in touch with you soon!");
+	};
+	
+	// Friendly alert regarding "Privacy Policy" and "Terms & Conditions" links in footer
+	//
+	$("footer ul li:not(:last-child)").on(sya.interaction, function() {
+		alert("'StreamYourAd' the company no longer exists as a legal entity, and thus I am prohibited from sharing any legal mumbo jumbo on the site. This site now serves a dummy practice environment for my portfolio :)");
 	});
 	
 	// Create hover/active states throughout the site
