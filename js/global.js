@@ -23,7 +23,7 @@
 		},
 		
 		select: function(_element, _toggle) {
-			$(_element)[_toggle ? "toggleClass" : "addClass"]("SELECTED");
+			$(_element).addClass("SELECTED");
 			return this;
 		},
 		

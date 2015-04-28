@@ -23,7 +23,7 @@
 		var self = this;
 		
 		sya
-			.deselect("header nav li")
+			.deselect("nav li")
 			.select(self);
 		
 		resetScroll();
@@ -31,16 +31,16 @@
 	
 	$(".logo").on(sya.interaction, function() {
 		sya
-			.deselect("header nav li")
-			.select("header nav > ul li:first-of-type");
+			.deselect("nav li")
+			.select("nav > ul li:first-of-type");
 		
 		resetScroll();
 	});
 	
 	$("#splash-down-arrow").on(sya.interaction, function() {
 		sya
-			.deselect("header nav li")
-			.select("header nav > ul li:nth-of-type(2)");
+			.deselect("nav li")
+			.select("nav > ul li:nth-of-type(2)");
 		
 		resetScroll();
 	});
@@ -60,26 +60,26 @@
 			
 			if (aboutOffset - scrolled < threshold) {
 				sya
-					.deselect("header nav li")
-					.select("header nav > ul li:nth-of-type(2)"); // About Us
+					.deselect("nav li")
+					.select("nav > ul li:nth-of-type(2)"); // About Us
 				
 				if (servicesOffset - scrolled < threshold) {
 					sya
-						.deselect("header nav li")
-						.select("header nav > ul li:nth-of-type(3)"); // Our Services
+						.deselect("nav li")
+						.select("nav > ul li:nth-of-type(3)"); // Our Services
 					
 					if (contactOffset - scrolled < threshold) {
 						sya
-							.deselect("header nav li")
-							.select("header nav > ul li:last-of-type"); // Contact Us
+							.deselect("nav li")
+							.select("nav > ul li:last-of-type"); // Contact Us
 					}
 				}
 			}
 			
 			else {
 				sya
-					.deselect("header nav li")
-					.select("header nav > ul li:first-of-type"); // Home
+					.deselect("nav li")
+					.select("nav > ul li:first-of-type"); // Home
 			}
 		
 		} // End _canScroll check
@@ -102,6 +102,8 @@
 	
 	// Create hover/active states throughout the site
 	//
-	$("nav li, .blue-btn, footer ul li:not(:last-child)").mouseable();
+	$(window).load(function() {
+		$("nav li, #responsive-nav-btn, .blue-btn, footer ul li:not(:last-child)").mouseable();
+	});
 	
 })();

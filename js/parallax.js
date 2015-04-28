@@ -13,9 +13,10 @@
 	var isiPad = navigator.userAgent.match(/iPad/i) != null;
 	
 	if (!isiPad) {
+		
 		$(window).scroll(function() {
 			
-			if ($(this).width() >= 1000) {
+			if ($(this).width() > 1000) {
 				sya.parallax();
 			}
 			
@@ -24,6 +25,15 @@
 			}
 			
 		});
-	}
+		
+		$(window).resize(function() {
+			
+			if ($(this).width() > 1000) {
+				$(".parallax > img").css("top", "0px");
+			}
+			
+		});
+		
+	} // End isiPad check
 	
 })();

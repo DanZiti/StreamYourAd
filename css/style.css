@@ -281,7 +281,7 @@ header {
 	box-shadow: 0 0 3px 0 #000;
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 }
 
 header .logo {
@@ -295,23 +295,14 @@ header nav {
 }
 
 header nav ul li {
-	font-family: 'SourceSansProSemibold', sans-serif;
 	position: relative;
 	display: inline-block;
 	font-size: 16px;
-	color: #f39200;
 	padding: 5px 0;
-	text-transform: uppercase;
-	transition: 0.25s color;
 }
 
 header nav ul li:not(:first-child) {
 	margin-left: 45px;
-}
-
-header nav ul li.over,
-header nav ul li.SELECTED {
-	color: #025086;
 }
 
 header nav ul li > span {
@@ -327,6 +318,89 @@ header nav ul li > span {
 header nav ul li.over > span,
 header nav ul li.down > span {
 	width: 50%;
+}
+
+#responsive-nav-btn {
+	display: none;
+	cursor: pointer;
+	width: 46px;
+	height: 40px;
+	box-shadow: inset 0 0 1px 0 #000;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: linear-gradient(180deg, #15649a 0%, #15649a 50%, #025690 51%, #025690 100%);
+	transition: opacity 0.25s;
+}
+
+#responsive-nav-btn.over,
+#responsive-nav-btn.down {
+	opacity: 0.8;
+}
+
+#responsive-nav-btn.down {
+	top: 21px;
+}
+
+#responsive-nav-btn > span {
+	display: table;
+	vertical-align: middle;
+	height: 3px;
+	width: 58%;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+#responsive-nav-btn > span:not(:nth-of-type(2)) {
+	margin: 0 auto;
+}
+
+#responsive-nav-btn > span:nth-of-type(2) {
+	margin: 5px auto;
+}
+
+#responsive-menu {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	right: -70%; /* Allow 2% extra so the shadow doesn't interfere with the main screen */
+	top: 80px;
+	width: 68%;
+	height: 100%;
+	background: #fff;
+	box-shadow: 0 0 3px 0 #000;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+#responsive-menu.SHOW {
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+#responsive-menu li {
+	padding: 18px 0 15px 25px;
+	font-size: 18px;
+	line-height: 1em;
+	border-bottom: 1px solid #c0c9cf;
+}
+
+/*
+	Below are generic selectors for all nav items,
+	both primary horizontal and responsive menus.
+*/
+
+nav li {
+	color: #f39200;
+	text-transform: uppercase;
+	font-family: 'SourceSansProSemibold', sans-serif;
+	transition: 0.25s color;
+}
+
+nav li.over,
+nav li.SELECTED {
+	color: #025086;
 }
 
 /****************************************
@@ -485,7 +559,7 @@ Services
 
 #services-content .txt-block {
 	margin-top: 30px;
-	width: 350px;
+	width: 342px;
 }
 
 #services-content ul.orange {
@@ -669,7 +743,7 @@ Responsive Layouts
 	
 	#about-content .context > h2 {
 		text-align: center;
-		margin-bottom: 20px;
+		margin: 48px 0 20px;
 	}
 	
 	#about-content .context > img:first-of-type,
@@ -701,6 +775,7 @@ Responsive Layouts
 	
 	#services-content .context > h2 {
 		background-position: center 100%;
+		margin: 48px 0 0;
 	}
 	
 	#services-content .context > img {
@@ -715,14 +790,20 @@ Responsive Layouts
 	}
 	
 	#services-content .context > .txt-block ul.orange {
-		margin-left: 0;
+		margin: 0 0 40px;
 	}
 	
 }
 
-@media only screen and (max-width: 740px) { /* BEGIN TRANSFORMATION OF HEADER NAV MENU HERE */
+@media only screen and (max-width: 740px) {
 	
+	#responsive-menu {
+		display: block;
+	}
 	
+	#responsive-nav-btn {
+		display: block;
+	}
 	
 	header nav:first-of-type {
 		display: none;
@@ -733,7 +814,7 @@ Responsive Layouts
 @media only screen and (max-width: 658px) {
 	
 	#services-content-top {
-		min-height: 750px;
+		min-height: 730px;
 	}
 	
 	#services-content-top .icon,
