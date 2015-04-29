@@ -27,11 +27,7 @@
 		});
 		
 		$(window).resize(function() {
-			
-			if ($(this).width() > 1000) {
-				$(".parallax > img").css("top", "0px");
-			}
-			
+			if ($(this).width() > 1000) $(".parallax > img").css("top", "0px");
 		});
 		
 	} // End isiPad check

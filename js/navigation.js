@@ -36,11 +36,7 @@
 	});
 	
 	$(window).resize(function() {
-			
-		if ($(this).width() > 740 && $("#responsive-menu").hasClass("SHOW")) {
-			sya.hide("#responsive-menu");
-		}
-		
+		if ($(this).width() > 740 && $("#responsive-menu").hasClass("SHOW")) sya.hide("#responsive-menu");
 	});
 	
 })();

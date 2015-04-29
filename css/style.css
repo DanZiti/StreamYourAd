@@ -420,14 +420,52 @@ Slider
 	margin-top: 80px; /* To account for the sticky header */
 }
 
+#slider .slide {
+	opacity: 0;
+	visibility: hidden; /* FINISH ME!!! */
+	
+	transition: all 0.4s;
+}
+
+#slider .slide.SHOW {
+	opacity: 1;
+	visibility: visible;
+}
+
+#slider-bullets {
+	position: absolute; /* POSITIONING TEMPORARY - WILL BE BASED ON POSITION OF THE IMGs */
+	bottom: 140px;
+	text-align: center;
+	width: 100%;
+}
+
+#slider-bullets li {
+	font-family: Arial, sans-serif;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 10px;
+	background: #8da4ac;
+	transition: background 0.4s;
+}
+
+#slider-bullets li:not(:first-child) {
+	margin-left: 12px;
+}
+
+#slider-bullets li.SELECTED {
+	background: #5e5f5e;
+}
+
 #splash-down-arrow {
 	width: 62px;
 	height: 43px;
 	background: url('../img/splash-down-arrow.png') no-repeat 10px 10px;
 	background-size: 42px 23px;
 	position: absolute;
-	bottom: 40px;
-	left: 449px;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -31px;
 	-webkit-animation: bounce 2.5s infinite;
 	animation: bounce 2.5s infinite;
 }

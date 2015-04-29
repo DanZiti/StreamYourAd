@@ -1,7 +1,7 @@
 <?php
-
+	
 	if (isset($_POST["email"])) {
-		 
+		
 		// Address and subject
 		//
 		$form_subject = $_POST["subject"];
@@ -21,7 +21,7 @@
 		// Begin message content
 		//
 		$email_message = "New inquiry submitted.\n\n";
-		 
+		
 		function clean_string($string) {
 			$bad = array("content-type", "bcc:", "to:", "cc:", "href");
 			return str_replace($bad, "", $string);
@@ -32,16 +32,16 @@
 		$email_message .= "Name: " . clean_string($name) . "\n";
 		$email_message .= "Email: " . clean_string($email_from) . "\n";
 		$email_message .= "Comments: " . clean_string($comments) . "\n";
-		 
-		 
-	// Create email headers
-	//
-	$headers = "From: " . $email_from . "\r\n" . "Reply-To: " . $email_from . "\r\n" . "X-Mailer: PHP/" . phpversion();
-
-	// Send email and redirect back to Home page
-	//
-	@mail($email_to, $email_subject, $email_message, $headers);
-	@header("Location: $home_page");
- }
- 
+		
+		// Create email headers
+		//
+		$headers = "From: " . $email_from . "\r\n" . "Reply-To: " . $email_from . "\r\n" . "X-Mailer: PHP/" . phpversion();
+		
+		// Send email and redirect back to Home page
+		//
+		@mail($email_to, $email_subject, $email_message, $headers);
+		@header("Location: $home_page");
+		
+	}
+	
 ?>
