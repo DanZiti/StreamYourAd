@@ -1,10 +1,25 @@
 (function() {
 	
-	// Ensure the height of this section is 100% of the window height when loaded
+	// Ensure the height of this section is 100% of the window height when loaded and when resizing
 	//
-	$(window).on("load resize", function() {
-		var newHeight = $(window).height();
-		$("#slider").height(newHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
+	var _windowHeight = [];
+	
+	$(window).load(function() {
+		
+		var _newHeight = $(window).height();
+		
+		_windowHeight.push(_newHeight);
+		
+		$("#slider").height(_newHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
+	});
+	
+	$(window).resize(function() {
+		
+		if ($(this).height() > _windowHeight[0]) {
+			$("#slider").height($(this).height() - 80);
+			_windowHeight[0] = $(this).height();
+		}
+		
 	});
 	
 	// Build slider bullets
@@ -39,6 +54,6 @@
 			.select(_bullets[_index]);
 	};
 	
-	setInterval(rotate, 6000);
+	setInterval(rotate, 6500);
 	
 })();

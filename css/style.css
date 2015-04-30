@@ -81,6 +81,7 @@ Global
 
 body {
 	min-width: 1000px;
+	-webkit-font-smoothing: antialiased;
 }
 
 [data-navigate] {
@@ -415,16 +416,26 @@ Slider
 
 #slider {
 	position: relative;
-	background: #c0c9cf;
-	overflow: hidden;
+	background-color: #b6c2cb;
 	margin-top: 80px; /* To account for the sticky header */
+	background-image: radial-gradient(#fff, rgba(255, 255, 255, 0));
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 #slider .slide {
+	width: 100%;
 	opacity: 0;
-	visibility: hidden; /* FINISH ME!!! */
-	
+	visibility: hidden;
+	position: absolute;
 	transition: all 0.4s;
+}
+
+#slider .slide p {
+	font-size: 22px;
+	color: #245b81;
+	font-family: 'DIN', sans-serif;
+	font-weight: normal;
 }
 
 #slider .slide.SHOW {
@@ -433,8 +444,8 @@ Slider
 }
 
 #slider-bullets {
-	position: absolute; /* POSITIONING TEMPORARY - WILL BE BASED ON POSITION OF THE IMGs */
-	bottom: 140px;
+	position: absolute;
+	bottom: 100px;
 	text-align: center;
 	width: 100%;
 }
@@ -463,11 +474,50 @@ Slider
 	background: url('../img/splash-down-arrow.png') no-repeat 10px 10px;
 	background-size: 42px 23px;
 	position: absolute;
-	bottom: 30px;
+	bottom: 25px;
 	left: 50%;
 	margin-left: -31px;
 	-webkit-animation: bounce 2.5s infinite;
 	animation: bounce 2.5s infinite;
+}
+
+/* Slide 1 */
+
+#slide-1 > img { /* ECK... SLIDE-01 LOOKS WEIRD WHEN SHRUNKEN DOWN... */
+	width: 100%;
+	margin-top: 20px;
+}
+
+#slide-1 > p {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/* Slide 2 */
+
+
+
+/* Slide 3 */
+
+#slide-3 > img {
+	width: 400px;
+	margin: 30px 0 0 80px;
+}
+
+#slide-3 > .blurb {
+	width: 260px;
+	position: absolute;
+	top: 150px;
+	right: 120px;
+}
+
+#slide-3 p {
+	border-bottom: 2px solid #f39200;
+	padding-bottom: 5px;
+}
+
+#slide-3 .blue-btn {
+	margin-top: 80px;
 }
 
 /****************************************
@@ -717,7 +767,7 @@ footer ul li:not(:last-child) {
 
 footer ul li.over,
 footer ul li.down {
-	color: #245b81;
+	color: #15649a;
 }
 
 footer ul li.down {
