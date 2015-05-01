@@ -26,8 +26,8 @@
 	//
 	$(window).on("load resize orientationchange", function() {
 		
-		if ($(this).width() <= 800) {
-			var minHeight = $("#responsive-slide").height() + 150; // BUG WITH ANDROID WHERE THE ADDRESS BAR MESSES WITH HEIGHT()
+		if ($(this).width() <= 760) {
+			var minHeight = $("#responsive-slide").height() + 150;
 			$("#slider").css("min-height", minHeight + "px");
 		}
 		

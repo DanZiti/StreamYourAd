@@ -827,6 +827,10 @@ Responsive Layouts
 		right: 60px;
 	}
 	
+	#slide-3 > img {
+		margin-left: 40px;
+	}
+	
 }
 
 @media only screen and (max-width: 876px) {
@@ -841,9 +845,12 @@ Responsive Layouts
 @media only screen and (max-width: 850px) {
 	
 	#slide-3 > .blurb {
-		right: 0;
+		right: 20px;
 	}
 	
+	#slide-3 > img {
+		margin-left: 20px;
+	}
 }
 
 @media only screen and (max-width: 844px) {
@@ -882,7 +889,7 @@ Responsive Layouts
 	
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 760px) {
 	
 	#slider .slide {
 		display: none;
@@ -895,10 +902,6 @@ Responsive Layouts
 	#responsive-slide {
 		display: block;
 	}
-	
-}
-
-@media only screen and (max-width: 760px) {
 	
 	#services-content .context {
 		text-align: center;
