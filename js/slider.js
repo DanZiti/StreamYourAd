@@ -22,6 +22,17 @@
 		
 	});
 	
+	// Make sure the slider section resizes when orientation changes on tablets and mobile
+	//
+	$(window).on("load resize orientationchange", function() {
+		
+		if ($(this).width() <= 800) {
+			var minHeight = $("#responsive-slide").height() + 150; // BUG WITH ANDROID WHERE THE ADDRESS BAR MESSES WITH HEIGHT()
+			$("#slider").css("min-height", minHeight + "px");
+		}
+		
+	});
+	
 	// Build slider bullets
 	//
 	var _slides = document.querySelectorAll("#slider .slide");
@@ -54,6 +65,6 @@
 			.select(_bullets[_index]);
 	};
 	
-	setInterval(rotate, 6500);
+	setInterval(rotate, 8000);
 	
 })();

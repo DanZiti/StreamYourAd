@@ -30,7 +30,7 @@ Global
     src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'),
          url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'),
-         url('../fonts/sourcesanspro-semibold-webfont.svg#source-sans-prosemibold') format('svg');
+         url('../fonts/sourcesanspro-semibold-webfont.svg#SourceSansProSemibold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -41,7 +41,7 @@ Global
     src: url('../fonts/DINMittelschriftStd.eot?#iefix') format('embedded-opentype'),
          url('../fonts/DINMittelschriftStd.woff') format('woff'),
          url('../fonts/DINMittelschriftStd.ttf') format('truetype'),
-         url('../fonts/DINMittelschriftStd.svg#dinmittelschriftstd') format('svg');
+         url('../fonts/DINMittelschriftStd.svg#DIN') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -52,7 +52,7 @@ Global
     src: url('../fonts/HelveticaLTStd-BoldCond.eot?#iefix') format('embedded-opentype'),
          url('../fonts/HelveticaLTStd-BoldCond.woff') format('woff'),
          url('../fonts/HelveticaLTStd-BoldCond.ttf') format('truetype'),
-         url('../fonts/HelveticaLTStd-BoldCond.svg#helveticaltstd-boldcond') format('svg');
+         url('../fonts/HelveticaLTStd-BoldCond.svg#HelveticaBdCn') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -63,7 +63,7 @@ Global
     src: url('../fonts/HelveticaLTStd-Cond.eot?#iefix') format('embedded-opentype'),
          url('../fonts/HelveticaLTStd-Cond.woff') format('woff'),
          url('../fonts/HelveticaLTStd-Cond.ttf') format('truetype'),
-         url('../fonts/HelveticaLTStd-Cond.svg#helveticaltstd-cond') format('svg');
+         url('../fonts/HelveticaLTStd-Cond.svg#HelveticaMedCn') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -74,7 +74,7 @@ Global
     src: url('../fonts/HelveticaLTStd-LightCond.eot?#iefix') format('embedded-opentype'),
          url('../fonts/HelveticaLTStd-LightCond.woff') format('woff'),
          url('../fonts/HelveticaLTStd-LightCond.ttf') format('truetype'),
-         url('../fonts/HelveticaLTStd-LightCond.svg#helveticaltstd-lightcond') format('svg');
+         url('../fonts/HelveticaLTStd-LightCond.svg#HelveticaLtCn') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -421,6 +421,7 @@ Slider
 	background-image: radial-gradient(#fff, rgba(255, 255, 255, 0));
 	background-repeat: no-repeat;
 	background-position: center center;
+	height: 620px; /* Default until page loads */
 }
 
 #slider .slide {
@@ -483,7 +484,7 @@ Slider
 
 /* Slide 1 */
 
-#slide-1 > img { /* ECK... SLIDE-01 LOOKS WEIRD WHEN SHRUNKEN DOWN... */
+#slide-1 > img {
 	width: 100%;
 	margin-top: 20px;
 }
@@ -518,6 +519,16 @@ Slider
 
 #slide-3 .blue-btn {
 	margin-top: 80px;
+}
+
+/* Responsive Slide */
+
+#responsive-slide {
+	display: none;
+	width: 500px;
+	margin: 0 auto;
+	position: relative;
+	top: 40px;
 }
 
 /****************************************
@@ -810,11 +821,27 @@ Responsive Layouts
 	
 }
 
+@media only screen and (max-width: 920px) {
+	
+	#slide-3 > .blurb {
+		right: 60px;
+	}
+	
+}
+
 @media only screen and (max-width: 876px) {
 	
 	#about-content .context > img:first-of-type {
 		top: 0;
 		width: 340px;
+	}
+	
+}
+
+@media only screen and (max-width: 850px) {
+	
+	#slide-3 > .blurb {
+		right: 0;
 	}
 	
 }
@@ -851,6 +878,22 @@ Responsive Layouts
 		left: 0;
 		top: 0;
 		margin: 40px auto;
+	}
+	
+}
+
+@media only screen and (max-width: 800px) {
+	
+	#slider .slide {
+		display: none;
+	}
+	
+	#slider-bullets {
+		display: none;
+	}
+	
+	#responsive-slide {
+		display: block;
 	}
 	
 }
@@ -943,6 +986,14 @@ Responsive Layouts
 		top: 0;
 		left: 0;
 		margin: 0 auto;
+	}
+	
+}
+
+@media only screen and (max-width: 555px) {
+	
+	#responsive-slide {
+		width: 90%;
 	}
 	
 }
