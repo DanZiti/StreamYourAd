@@ -421,7 +421,7 @@ Slider
 	background-image: radial-gradient(#fff, rgba(255, 255, 255, 0));
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 620px; /* Default until page loads */
+	height: 650px; /* Default until page loads */
 }
 
 #slider .slide {
@@ -446,7 +446,7 @@ Slider
 
 #slider-bullets {
 	position: absolute;
-	bottom: 100px;
+	bottom: 85px;
 	text-align: center;
 	width: 100%;
 }
@@ -462,7 +462,7 @@ Slider
 }
 
 #slider-bullets li:not(:first-child) {
-	margin-left: 12px;
+	margin-left: 15px;
 }
 
 #slider-bullets li.SELECTED {
@@ -486,7 +486,7 @@ Slider
 
 #slide-1 > img {
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 16px;
 }
 
 #slide-1 > p {
@@ -502,7 +502,7 @@ Slider
 
 #slide-3 > img {
 	width: 400px;
-	margin: 30px 0 0 80px;
+	margin: 26px 0 0 80px;
 }
 
 #slide-3 > .blurb {
@@ -525,7 +525,7 @@ Slider
 
 #responsive-slide {
 	display: none;
-	width: 500px;
+	width: 535px;
 	margin: 0 auto;
 	position: relative;
 	top: 40px;
@@ -621,6 +621,7 @@ Services
 
 #services-content-top h1.hide {
 	visibility: hidden;
+	color: transparent;
 	text-indent: -9999px;
 	height: 0;
 }
@@ -808,21 +809,6 @@ Responsive Layouts
 
 @media only screen and (max-width: 950px) {
 	
-	#contact-form,
-	#services-content .context > img,
-	#about-content .context > img:first-of-type,
-	#about-content .txt-block:not(:first-of-type) {
-		right: 20px;
-	}
-	
-	#contact-form {
-		width: 50%;
-	}
-	
-}
-
-@media only screen and (max-width: 920px) {
-	
 	#slide-3 > .blurb {
 		right: 60px;
 	}
@@ -831,13 +817,19 @@ Responsive Layouts
 		margin-left: 40px;
 	}
 	
-}
-
-@media only screen and (max-width: 876px) {
+	#contact-form,
+	#services-content .context > img,
+	#about-content .txt-block:not(:first-of-type) {
+		right: 20px;
+	}
 	
 	#about-content .context > img:first-of-type {
-		top: 0;
-		width: 340px;
+		right: 0;
+		width: 360px;
+	}
+	
+	#contact-form {
+		width: 50%;
 	}
 	
 }
@@ -851,40 +843,27 @@ Responsive Layouts
 	#slide-3 > img {
 		margin-left: 20px;
 	}
-}
-
-@media only screen and (max-width: 844px) {
+	
+	#slide-1 {
+		margin-top: 40px;
+	}
 	
 	#services-content-top .icon:nth-of-type(2) {
 		margin: 50px 30px 0;
 	}
-	
 }
 
 @media only screen and (max-width: 812px) {
 	
-	#about-content .context > h2 {
-		text-align: center;
-		margin: 48px 0 20px;
+	#about-content .context > img:first-of-type {
+		width: 40%;
+		top: 10px;
 	}
 	
-	#about-content .context > img:first-of-type,
 	#about-content .context > img:nth-of-type(2),
 	#about-content .context > img:last-of-type {
-		position: relative;
-		left: 0;
-		top: 0;
-		display: block;
-		margin: 0 auto;
-	}
-	
-	#about-content .context > .txt-block:first-of-type,
-	#about-content .context > .txt-block:nth-of-type(2),
-	#about-content .context > .txt-block:last-of-type {
-		position: relative;
-		left: 0;
-		top: 0;
-		margin: 40px auto;
+		left: 20px;
+		width: 30%;
 	}
 	
 }
@@ -901,6 +880,31 @@ Responsive Layouts
 	
 	#responsive-slide {
 		display: block;
+	}
+	
+	#about-content .context > h2 {
+		text-align: center;
+		margin: 48px 0 20px;
+	}
+	
+	#about-content .context > img:first-of-type,
+	#about-content .context > img:nth-of-type(2),
+	#about-content .context > img:last-of-type {
+		position: relative;
+		left: 0;
+		top: 0;
+		display: block;
+		margin: 0 auto;
+		width: 60%;
+	}
+	
+	#about-content .context > .txt-block:first-of-type,
+	#about-content .context > .txt-block:nth-of-type(2),
+	#about-content .context > .txt-block:last-of-type {
+		position: relative;
+		left: 0;
+		top: 0;
+		margin: 40px auto;
 	}
 	
 	#services-content .context {
@@ -926,10 +930,6 @@ Responsive Layouts
 	#services-content .context > .txt-block ul.orange {
 		margin: 0 0 40px;
 	}
-	
-}
-
-@media only screen and (max-width: 740px) {
 	
 	#responsive-menu {
 		display: block;
@@ -991,10 +991,6 @@ Responsive Layouts
 		margin: 0 auto;
 	}
 	
-}
-
-@media only screen and (max-width: 555px) {
-	
 	#responsive-slide {
 		width: 90%;
 	}
@@ -1003,28 +999,20 @@ Responsive Layouts
 
 @media only screen and (max-width: 420px) {
 	
+	#responsive-slide {
+		top: 50px;
+	}
+	
 	#services-content .context > img {
 		width: 90%;
 	}
-	
-}
-
-@media only screen and (max-width: 396px) {
 	
 	h1 {
 		font-size: 25px;
 	}
 	
-	#about-content .context > img:first-of-type,
-	#about-content .context > img:nth-of-type(2),
-	#about-content .context > img:last-of-type {
-		width: 72%;
-	}
-	
-	#about-content .context > .txt-block:first-of-type,
-	#about-content .context > .txt-block:nth-of-type(2),
-	#about-content .context > .txt-block:last-of-type {
-		width: 90%;
+	#about-content .txt-block {
+		width: 96%;
 	}
 	
 	footer ul li {

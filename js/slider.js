@@ -24,13 +24,19 @@
 	
 	// Make sure the slider section resizes when orientation changes on tablets and mobile
 	//
-	$(window).on("load resize orientationchange", function() {
+	$(window).on("load resize", function() {
 		
 		if ($(this).width() <= 760) {
 			var minHeight = $("#responsive-slide").height() + 150;
 			$("#slider").css("min-height", minHeight + "px");
 		}
 		
+	});
+	
+	$(window).on("orientationchange", function() { // FINAL BUG IN THE SITE LIES HERE SOMEWHERE...
+		var newHeight = $(this).height() - 80;
+		$("#slider").height(newHeight);
+		$("#slider").css("min-height", newHeight);
 	});
 	
 	// Build slider bullets
