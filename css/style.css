@@ -281,7 +281,7 @@ header {
 	height: 80px;
 	width: 100%;
 	min-width: 1000px;
-	box-shadow: 0 0 3px 0 #000;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 	position: fixed;
 	top: 0;
 	z-index: 2;
@@ -372,7 +372,7 @@ header nav ul li.down > span {
 	width: 68%;
 	height: 100%;
 	background: #fff;
-	box-shadow: 0 0 3px 0 #000;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
