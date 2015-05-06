@@ -4,14 +4,14 @@
 	//
 	$(document).on(sya.interaction, "[data-navigate]",function() {
 		
-		var value = $(this).attr("data-navigate");
+		var section = $(this).attr("data-navigate");
 		
-		if (value === "home") {
+		if (section === "home") {
 			sya.navigate(0);
 		}
 		
 		else {
-			var scrollTo = $("#" + value + "-content").offset().top;
+			var scrollTo = $("#" + section + "-content").offset().top;
 			sya.navigate(scrollTo - 80); // -80 here accounts for adjustments in CSS for the sticky header
 		}
 		

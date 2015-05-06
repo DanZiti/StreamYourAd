@@ -18,29 +18,29 @@
 	
 	// Control "SELECTED" states in header > nav > ul > li based on user location
 	//
-	$("header nav li").on(sya.interaction, function() {
+	$("[data-navigate]").on(sya.interaction, function() {
 		
-		var self = this;
+		var section = $(this).attr("data-navigate");
 		
 		sya
-			.deselect("nav li")
-			.select(self);
+			.deselect("[data-navigate]")
+			.select("[data-navigate='" + section + "']");
 		
 		resetScroll();
 	});
 	
 	$(".logo").on(sya.interaction, function() {
 		sya
-			.deselect("nav li")
-			.select("nav > ul li:first-of-type");
+			.deselect("[data-navigate]")
+			.select("[data-navigate='home']");
 		
 		resetScroll();
 	});
 	
 	$("#splash-down-arrow").on(sya.interaction, function() {
 		sya
-			.deselect("nav li")
-			.select("nav > ul li:nth-of-type(2)");
+			.deselect("[data-navigate='home']")
+			.select("[data-navigate='about']");
 		
 		resetScroll();
 	});
@@ -60,26 +60,26 @@
 			
 			if (aboutOffset - scrolled < threshold) {
 				sya
-					.deselect("nav li")
-					.select("nav > ul li:nth-of-type(2)"); // About Us
+					.deselect("[data-navigate]")
+					.select("[data-navigate='about']"); // How it Works
 				
 				if (servicesOffset - scrolled < threshold) {
 					sya
-						.deselect("nav li")
-						.select("nav > ul li:nth-of-type(3)"); // Our Services
+						.deselect("[data-navigate]")
+						.select("[data-navigate='services']"); // Our Services
 					
 					if (contactOffset - scrolled < threshold) {
 						sya
-							.deselect("nav li")
-							.select("nav > ul li:last-of-type"); // Contact Us
+							.deselect("[data-navigate]")
+							.select("[data-navigate='contact']"); // Contact Us
 					}
 				}
 			}
 			
 			else {
 				sya
-					.deselect("nav li")
-					.select("nav > ul li:first-of-type"); // Home
+					.deselect("[data-navigate]")
+					.select("[data-navigate='home']"); // Home
 			}
 		
 		} // End _canScroll check

@@ -24,15 +24,15 @@
 				</nav>
 				
 				<!--
-					Class "selectable" below is necessary for a bug fix in Safari.
-					"-webkit-user-select" is set to "none" for all elements, though
-					in Safari only this also prevents users from filling out form inputs.
+					Class "user-selectable" below is necessary for a bug fix in Safari.
+					"user-select" is set to "none" for all elements, though in Safari
+					only this also prevents users from filling out form inputs.
 				-->
 				<form id="contact-form" action="mail.php" method="post">
-					<input class="selectable" type="text" name="name" placeholder="Name (Required)" required>
-					<input class="selectable" type="email" name="email" placeholder="Email (Required)" required>
-					<input  class="selectable" type="text" name="subject" placeholder="Subject">
-					<textarea class="selectable" name="comments"></textarea>
+					<input class="user-selectable" type="text" name="name" placeholder="Name (Required)" required>
+					<input class="user-selectable" type="email" name="email" placeholder="Email (Required)" required>
+					<input  class="user-selectable" type="text" name="subject" placeholder="Subject">
+					<textarea class="user-selectable" name="comments"></textarea>
 					<input type="submit" value="GET IN TOUCH" class="blue-btn">
 				</form>
 				

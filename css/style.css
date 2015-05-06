@@ -20,7 +20,7 @@ Global
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-*:not(.selectable) {
+*:not(.user-selectable) {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;

@@ -9,7 +9,6 @@
 		var _newHeight = $(window).height();
 		
 		_windowHeight.push(_newHeight);
-		
 		$("#slider").height(_newHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
 	});
 	
@@ -34,7 +33,9 @@
 	});
 	
 	$(window).on("orientationchange", function() { // FINAL BUG IN THE SITE LIES HERE SOMEWHERE...
+		
 		var newHeight = $(this).height() - 80;
+		
 		$("#slider").height(newHeight);
 		$("#slider").css("min-height", newHeight);
 	});
