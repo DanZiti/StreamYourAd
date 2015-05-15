@@ -14,18 +14,6 @@ Global
 	unpredictability and other issues at the mobile/responsive level.
 */
 
-* {
-	margin: 0;
-	padding: 0;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-*:not(.user-selectable) {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
 @font-face {
     font-family: 'SourceSansProSemibold';
     src: url('../fonts/sourcesanspro-semibold-webfont.eot');
@@ -79,6 +67,18 @@ Global
          url('../fonts/HelveticaLTStd-LightCond.svg#HelveticaLtCn') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:not(.user-selectable) {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
 body {
@@ -171,8 +171,12 @@ button {
 	overflow: hidden;
 }
 
-.parallax {
+.parallax.about {
 	height: 265px;
+}
+
+.parallax.contact {
+	height: 200px;
 }
 
 .parallax > img {
