@@ -452,7 +452,7 @@ Slider
 
 #slider-bullets {
 	position: absolute;
-	bottom: 85px;
+	bottom: 75px;
 	text-align: center;
 	width: 100%;
 }
@@ -481,7 +481,7 @@ Slider
 	background: url('../img/splash-down-arrow.png') no-repeat 10px 10px;
 	background-size: 42px 23px;
 	position: absolute;
-	bottom: 25px;
+	bottom: 15px;
 	left: 50%;
 	margin-left: -31px;
 	-webkit-animation: bounce 2.5s infinite;
@@ -498,6 +498,7 @@ Slider
 #slide-1 > p {
 	text-transform: uppercase;
 	text-align: center;
+	margin-top: -8px;
 }
 
 /* Slide 2 */

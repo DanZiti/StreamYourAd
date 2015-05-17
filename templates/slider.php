@@ -11,7 +11,7 @@
 			
 			<div id="slide-2" class="slide">
 				<!-- <img src="img/slider/slide-2.png" alt=""> -->
-				<p>slide 2 pending...</p>
+				<p>slide 2 pending... Awaiting art assets from my designer.</p>
 			</div>
 			
 			<div id="slide-3" class="slide">

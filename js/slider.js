@@ -6,7 +6,7 @@
 	
 	$(window).load(function() {
 		
-		var _newHeight = $(window).height();
+		var _newHeight = window.innerHeight;
 		
 		_windowHeight.push(_newHeight);
 		$("#slider").height(_newHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
@@ -15,8 +15,8 @@
 	$(window).resize(function() {
 		
 		if ($(this).height() > _windowHeight[0]) {
-			$("#slider").height($(this).height() - 80);
-			_windowHeight[0] = $(this).height();
+			$("#slider").height(window.innerHeight - 80);
+			_windowHeight[0] = window.innerHeight;
 		}
 		
 	});
@@ -32,9 +32,9 @@
 		
 	});
 	
-	$(window).on("orientationchange", function() { // FINAL BUG IN THE SITE LIES HERE SOMEWHERE...
+	$(window).on("orientationchange", function() {
 		
-		var newHeight = $(this).height() - 80;
+		var newHeight = window.innerHeight - 80;
 		
 		$("#slider").height(newHeight);
 		$("#slider").css("min-height", newHeight);
