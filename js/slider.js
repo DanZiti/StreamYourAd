@@ -4,7 +4,7 @@
 	//
 	var _windowHeight = [];
 	
-	$(window).load(function() {
+	$(document).ready(function() {
 		
 		var _newHeight = window.innerHeight;
 		

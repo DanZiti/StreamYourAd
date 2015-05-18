@@ -10,8 +10,11 @@
 			</div>
 			
 			<div id="slide-2" class="slide">
-				<!-- <img src="img/slider/slide-2.png" alt=""> -->
-				<p>slide 2 pending... Awaiting art assets from my designer.</p>
+				<img src="img/slider/slide-2.png" alt="Effective Brand Recognition Through Exposure">
+				<div class="blurb">
+					<p>Effective Brand Recognition Through Exposure</p>
+					<img class="logo" src="img/logo-large.png" alt="StreamYourAd Logo">
+				</div>
 			</div>
 			
 			<div id="slide-3" class="slide">

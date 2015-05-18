@@ -12,9 +12,9 @@
 	
 	// "462" above was calculated to account for the contact image's location further down the page
 	
-	var isiPad = navigator.userAgent.match(/iPad/i) != null;
+	var isMobile = navigator.userAgent.match(/Android|webOS|iPad|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i) !== null;
 	
-	if (!isiPad) {
+	if (!isMobile) {
 		
 		$(window).scroll(function() {
 			
@@ -32,6 +32,6 @@
 			if ($(this).width() > 1000) $(".parallax > img").css("top", "0px");
 		});
 		
-	} // End isiPad check
+	}
 	
 })();
