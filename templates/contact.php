@@ -31,7 +31,7 @@
 				<form id="contact-form" action="mail.php" method="post">
 					<input class="user-selectable" type="text" name="name" placeholder="Name (Required)" required>
 					<input class="user-selectable" type="email" name="email" placeholder="Email (Required)" required>
-					<input  class="user-selectable" type="text" name="subject" placeholder="Subject">
+					<input class="user-selectable" type="text" name="subject" placeholder="Subject">
 					<textarea class="user-selectable" name="comments"></textarea>
 					<input type="submit" value="GET IN TOUCH" class="blue-btn">
 				</form>
