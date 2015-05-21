@@ -73,12 +73,13 @@ Global
 	margin: 0;
 	padding: 0;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-*:not(.user-selectable) {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	user-select: text;
+	/* Prevent auto-font-scaling on iPhone */
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -713,7 +714,7 @@ Contact
 
 #contact-content {
 	background: #c0c9cf;
-	min-height: 620px;
+	min-height: 560px;
 }
 
 #contact-content .parallax h1 {
@@ -1007,7 +1008,7 @@ Responsive Layouts
 @media only screen and (max-width: 620px) {
 	
 	#contact-content {
-		min-height: 780px;
+		min-height: 720px;
 	}
 	
 	#contact-content h2 {
