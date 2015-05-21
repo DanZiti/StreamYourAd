@@ -5,7 +5,7 @@
 		// Address and subject
 		//
 		$form_subject = $_POST["subject"];
-		$email_to = "dan.zervoudakes@gmail.com";
+		$email_to = "dan@drzwebdev.com";
 		$email_subject = "StreamYourAd Contact Form Submission: $form_subject";
 		
 		// For redirect after form submission
