@@ -10,7 +10,7 @@
 		
 		// For redirect after form submission
 		//
-		$home_page = "index.php#contact-content";
+		$home_page = "http://www.drzwebdev.com/sites/StreamYourAd/";
 		
 		// Call form data
 		//
