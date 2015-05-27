@@ -225,6 +225,10 @@ form > textarea {
 	border-radius: 0; /* Removes automatic rounded edges in iOS */
 }
 
+form > input.invalid {
+	border: 1px solid #f00;
+}
+
 /****************************************
 Animations
 ****************************************/

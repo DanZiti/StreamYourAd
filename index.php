@@ -28,5 +28,6 @@
 		<script type="text/javascript" src="js/navigation.js" async></script>
 		<script type="text/javascript" src="js/parallax.js" async></script>
 		<script type="text/javascript" src="js/slider.js" async></script>
+		<script type="text/javascript" src="js/validation.js" async></script>
 	</body>
 </html>

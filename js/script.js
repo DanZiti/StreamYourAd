@@ -86,14 +86,6 @@
 		
 	});
 	
-	// Contact form submission
-	//
-	var _form = document.getElementById("contact-form");
-	
-	_form.onsubmit = function() {
-		alert("Thank you for your submission: someone will be in touch with you soon!");
-	};
-	
 	// Friendly alert regarding "Privacy Policy" and "Terms & Conditions" links in footer
 	//
 	$("footer ul li:not(:last-child)").on(sya.interaction, function() {
