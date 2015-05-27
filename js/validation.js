@@ -3,8 +3,8 @@
 	// Validate the contact form in browsers that don't yet support web form validation attributes
 	//
 	var _form = document.forms["contact-form"];
-	var _name = document.forms["contact-form"]["name"];
-	var _email = document.forms["contact-form"]["email"];
+	var _name = _form["name"];
+	var _email = _form["email"];
 	
 	_form.onsubmit = function() {
 		
