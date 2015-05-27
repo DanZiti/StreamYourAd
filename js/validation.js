@@ -9,8 +9,12 @@
 	_form.onsubmit = function() {
 		
 		if (_name.value === null || _name.value === "") {
+			
 			alert("Hey there, looks like you didn't fill out your name...");
+			
 			_name.className = "invalid";
+			_name.focus();
+			
 			return false;
 		}
 		
@@ -19,8 +23,12 @@
 		}
 		
 		if (!_email.value.match("@")) {
+			
 			alert("Please provide a valid email address, e.g. john@doe.com");
+			
 			_email.className = "invalid";
+			_email.focus();
+			
 			return false;
 		}
 		
