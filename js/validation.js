@@ -27,6 +27,7 @@
 			alert("Please provide a valid email address, e.g. john@doe.com");
 			
 			_email.className = "invalid";
+			_email.select();
 			_email.focus();
 			
 			return false;
