@@ -1,4 +1,4 @@
-<div id="slider">
+<div id="slider" class="slider">
 	<div class="center">
 		
 		<img id="responsive-slide" src="img/slider/responsive-slide.png" alt="StreamYourAd: Digital Branding, Social Solutions, Brand Promotions">
@@ -26,7 +26,7 @@
 		
 		<ul id="slider-bullets"></ul>
 		
-		<button id="splash-down-arrow" data-navigate="about"></button>
+		<button id="splash-down-arrow" class="splash-down-arrow" data-navigate="about"></button>
 		
 	</div>
 </div>

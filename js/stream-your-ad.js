@@ -15,7 +15,7 @@
 	// Gather elements
 	//
 	var collectDom = function() {
-		state.dom.responsiveNavButton = d.getElementById("responsive-nav-btn");
+		state.dom.responsiveNavButton = d.getElementById("responsive-nav-button");
 		state.dom.slider = d.getElementById("slider");
 		state.dom.splashDownArrow = d.getElementById("splash-down-arrow");
 		state.dom.logo = d.getElementById("logo");
@@ -47,7 +47,8 @@
 		//
 		$responsiveNav
 			.insertAfter("header")
-			.attr("id", "responsive-menu");
+			.attr("id", "responsive-menu")
+			.attr("className", "responsive-menu");
 		
 		// Controls responsive nav/menu button and opening/closing of the nav menu while in mobile/responsive view
 		//
@@ -276,7 +277,7 @@
 	// Create hover/active states
 	//
 	var initMousables = function() {
-		return $("nav li, #responsive-nav-btn, .blue-btn, footer ul li:not(:last-child)").mouseable();
+		return $("nav li, #responsive-nav-button, .blue-button, footer ul li:not(:last-child)").mouseable();
 	};
 	
 	

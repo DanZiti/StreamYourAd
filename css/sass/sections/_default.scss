@@ -169,23 +169,21 @@ form {
 	}
 }
 
+/*
+	Below are generic selectors for all nav items,
+	both primary/horizontal and responsive menus.
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+nav {
+	li {
+		color: #f39200;
+		text-transform: uppercase;
+		font-family: 'SourceSansProSemibold', sans-serif;
+		transition: 0.25s color;
+		
+		&.over,
+		&.SELECTED {
+			color: #025086;
+		}
+	}
+}

@@ -1,0 +1,73 @@
+/*
+	This is a "splash page" of sorts, and the height of this
+	section will be dynamically fixed to the height of the
+	window when the page is loaded, in "js > slider.js"
+*/
+
+.slider {
+	position: relative;
+	background-color: #b6c2cb;
+	margin-top: 80px; /* To account for the sticky header */
+	background-image: radial-gradient(#fff, rgba(255, 255, 255, 0));
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 650px; /* Default until page loads */
+	
+	.slide {
+		width: 100%;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		transition: all 0.4s;
+		
+		p {
+			font-size: 22px;
+			color: #245b81;
+			font-family: 'DIN', sans-serif;
+			font-weight: normal;
+		}
+		
+		&.SHOW {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	
+	.slider-bullets {
+		position: absolute;
+		bottom: 75px;
+		text-align: center;
+		width: 100%;
+		
+		li {
+			font-family: Arial, sans-serif;
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			border-radius: 10px;
+			background: #8da4ac;
+			transition: background 0.4s;
+			
+			&:not(:first-child) {
+				margin-left: 15px;
+			}
+			
+			&.SELECTED {
+				background: #5e5f5e;
+			}
+		}
+	}
+	
+	.splash-down-arrow {
+		width: 62px;
+		height: 43px;
+		background: url('../img/splash-down-arrow.png') no-repeat 10px 10px;
+		background-size: 42px 23px;
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		margin-left: -31px;
+		-webkit-animation: bounce 2.5s infinite;
+		animation: bounce 2.5s infinite;
+	}
+}
