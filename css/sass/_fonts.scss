@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'SourceSansProSemibold';
+    src: url('../fonts/sourcesanspro-semibold-webfont.eot');
+    src: url('../fonts/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sourcesanspro-semibold-webfont.woff') format('woff'),
+         url('../fonts/sourcesanspro-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/sourcesanspro-semibold-webfont.svg#SourceSansProSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('../fonts/DINMittelschriftStd.eot');
+    src: url('../fonts/DINMittelschriftStd.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DINMittelschriftStd.woff') format('woff'),
+         url('../fonts/DINMittelschriftStd.ttf') format('truetype'),
+         url('../fonts/DINMittelschriftStd.svg#DIN') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaBdCn';
+    src: url('../fonts/HelveticaLTStd-BoldCond.eot');
+    src: url('../fonts/HelveticaLTStd-BoldCond.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaLTStd-BoldCond.woff') format('woff'),
+         url('../fonts/HelveticaLTStd-BoldCond.ttf') format('truetype'),
+         url('../fonts/HelveticaLTStd-BoldCond.svg#HelveticaBdCn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaMedCn';
+    src: url('../fonts/HelveticaLTStd-Cond.eot');
+    src: url('../fonts/HelveticaLTStd-Cond.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaLTStd-Cond.woff') format('woff'),
+         url('../fonts/HelveticaLTStd-Cond.ttf') format('truetype'),
+         url('../fonts/HelveticaLTStd-Cond.svg#HelveticaMedCn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaLtCn';
+    src: url('../fonts/HelveticaLTStd-LightCond.eot');
+    src: url('../fonts/HelveticaLTStd-LightCond.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaLTStd-LightCond.woff') format('woff'),
+         url('../fonts/HelveticaLTStd-LightCond.ttf') format('truetype'),
+         url('../fonts/HelveticaLTStd-LightCond.svg#HelveticaLtCn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

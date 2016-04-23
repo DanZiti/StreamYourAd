@@ -12,7 +12,7 @@
 				<li data-navigate="contact">CONTACT US<span></span></li>
 			</ul>
 		</nav>
-		<button id="responsive-nav-btn">
+		<button id="responsive-nav-button">
 			<span></span>
 			<span></span>
 			<span></span>
