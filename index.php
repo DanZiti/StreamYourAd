@@ -13,7 +13,7 @@
 		<meta name="author" content="Dan Zervoudakes, Genevieve Calingo">
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-		<script type="text/javascript" src="js/jquery-2.2.3.min"></script>
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-mouseable.min.js"></script>
 		<script type="text/javascript" src="js/services.js"></script>
 	</head>
@@ -26,11 +26,6 @@
 			include 'includes/contact.php';
 			include 'includes/footer.php';
 		?>
-		<!--<script type="text/javascript" src="js/script.js" async></script>
-		<script type="text/javascript" src="js/navigation.js" async></script>
-		<script type="text/javascript" src="js/parallax.js" async></script>
-		<script type="text/javascript" src="js/slider.js" async></script>
-		<script type="text/javascript" src="js/validation.js" async></script>-->
 		<script type="text/javascript" src="js/stream-your-ad.js" async></script>
 	</body>
 </html>

@@ -2,11 +2,27 @@
 	
 	var state = {};
 	state.dom = {};
+	state.canScroll = true; // For page scroll checks
+	state.sliderIndex = 0; // For slider rotations
+	
+	state.resetScroll = function() {
+		state.canScroll = false;
+		setTimeout(function() {
+			return state.canScroll = true;
+		}, 600);
+	 };
 	
 	// Gather elements
 	//
 	var collectDom = function() {
-		// TODO: FILL THIS!!!
+		state.dom.responsiveNavButton = d.getElementById("responsive-nav-btn");
+		state.dom.slider = d.getElementById("slider");
+		state.dom.splashDownArrow = d.getElementById("splash-down-arrow");
+		state.dom.logo = d.getElementById("logo");
+		state.dom.contactForm = d.forms["contact-form"];
+		state.dom.$navigators = $("[data-navigate]");
+		state.dom.$parallaxImages = $(".parallax > img");
+		state.dom.$footerLinks = $("footer ul li:not(:last-child)");
 	};
 	
 	// Navigation for desktop and mobile
@@ -35,7 +51,7 @@
 		
 		// Controls responsive nav/menu button and opening/closing of the nav menu while in mobile/responsive view
 		//
-		$("#responsive-nav-btn").on(services.interaction(), function() {
+		$(state.dom.responsiveNavButton).on(services.interaction(), function() {
 			services.show("#responsive-menu", true);
 		});
 		
@@ -60,11 +76,11 @@
 					if ($(this).width() > 1000) {
 						services.parallax();
 					} else {
-						$(".parallax > img").css("top", "0px");
+						state.dom.$parallaxImages.css("top", "0px");
 					}
 				})			
 				.resize(function() {
-					if ($(this).width() > 1000) $(".parallax > img").css("top", "0px");
+					if ($(this).width() > 1000) state.dom.$parallaxImages.css("top", "0px");
 				});
 		}
 	};
@@ -74,32 +90,29 @@
 	//
 	var controlSlider = function() {
 		
-		var index = 0;
 		var curHeight = w.innerHeight;
 		var slides = d.querySelectorAll("#slider .slide");
 		var list = d.getElementById("slider-bullets");
-		var bullets = d.querySelectorAll("#slider-bullets li");
 		
-		
-		$("#slider").height(initialHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
+		$(state.dom.slider).height(curHeight - 80); // -80 here accounts for adjustments in CSS for the sticky header
 		
 		$(w).resize(function() {
 			if ($(this).height() > curHeight) {
-				$("#slider").height(w.innerHeight - 80);
+				$(state.dom.slider).height(w.innerHeight - 80);
 				curHeight = w.innerHeight;
 			}
 		})
 		.on("load resize", function() {
 			if ($(this).width() <= 760) {
 				var minHeight = $("#responsive-slide").height() + 150;
-				$("#slider").css("min-height", minHeight + "px");
+				$(state.dom.slider).css("min-height", minHeight + "px");
 			}
 		})
 		.on("orientationchange", function() {
 			
 			var newHeight = w.innerHeight - 80;
 			
-			$("#slider")
+			$(state.dom.slider)
 				.height(newHeight)
 				.css("min-height", newHeight);
 		});
@@ -116,29 +129,32 @@
 		//
 		function rotate() {
 			
-			index++;
+			var bullets = d.querySelectorAll("#slider-bullets li");
 			
-			if (index === slides.length) index = 0;
+			state.sliderIndex++;
 			
-			sya
+			if (state.sliderIndex === slides.length) state.sliderIndex = 0;
+			
+			services
 				.hide("#slider .slide")
-				.show(slides[index])
+				.show(slides[state.sliderIndex])
 				.deselect("#slider-bullets li")
-				.select(bullets[index]);
+				.select(bullets[state.sliderIndex]);
 			
-			setTimeout(rotate, 8000); // Trigger rotation every 8 seconds recursively
+			setTimeout(rotate, 8000); // Recursively trigger rotation every 8 seconds
 		};
+		
+		setTimeout(rotate, 8000); // Init slider
 	};
 	
-	// Form validation
+	// Contact form validation
 	//
-	var validateForm = function() {
+	var validateContactForm = function() {
 		
-		var form = d.forms["contact-form"];
-		var name = form["name"];
-		var email = form["email"];
+		var name = state.dom.contactForm["name"];
+		var email = state.dom.contactForm["email"];
 		
-		$(form).on("submit", function() {
+		$(state.dom.contactForm).on("submit", function() { // TODO: REFACTOR VALIDATION ERROR MESSAGING AND INCLUDE REQUIREMENT FOR TEXTAREA
 			
 			if (name.value === null || name.value === "") {
 			
@@ -172,12 +188,96 @@
 		});
 		
 	};
+	
+	// Control automatic header > nav > ul > li "SELECTED" states updates while scrolling
+	//
+	var controlSelectedStates = function() {
 		
+		$(w).scroll(function() {
+			
+			if (state.canScroll) { // Necessary to prevent weird transition errors after clicking/tapping on nav items
+			
+				var scrolled = $(w).scrollTop();
+				var threshold = ($(w).height() * 0.4);
+				var aboutOffset = $("#about-content").offset().top;
+				var servicesOffset = $("#services-content").offset().top;
+				var contactOffset = $("#contact-content").offset().top;
+				
+				if (aboutOffset - scrolled < threshold) {
+					services
+						.deselect("[data-navigate]")
+						.select("[data-navigate='about']"); // How it Works
+					
+					if (servicesOffset - scrolled < threshold) {
+						services
+							.deselect("[data-navigate]")
+							.select("[data-navigate='services']"); // Our Services
+						
+						if (contactOffset - scrolled < threshold) {
+							services
+								.deselect("[data-navigate]")
+								.select("[data-navigate='contact']"); // Contact Us
+						}
+					}
+					
+				} else {
+					services
+						.deselect("[data-navigate]")
+						.select("[data-navigate='home']"); // Home
+				}
+			
+			} // End state.canScroll check
+		});
+		
+		// Control "SELECTED" states in header > nav > ul > li based on user location
+		//
+		state.dom.$navigators.on(services.interaction(), function() {
+			
+			var section = $(this).attr("data-navigate");
+			
+			services
+				.deselect("[data-navigate]")
+				.select("[data-navigate='" + section + "']");
+			
+			state.resetScroll();
+		});
+		
+		$(state.dom.logo).on(services.interaction(), function() {
+			services
+				.deselect("[data-navigate]")
+				.select("[data-navigate='home']");
+			
+			state.resetScroll();
+		});
+		
+		$(state.dom.splashDownArrow).on(services.interaction(), function() {
+			services
+				.deselect("[data-navigate='home']")
+				.select("[data-navigate='about']");
+			
+			state.resetScroll();
+		});
+		
+	};
 	
-	/////////////////////////////////////////////////////////////////////
-	// TODO: PUT ALL THE RANDOM SHIT FROM "SCRIPT" IN HERE
-	/////////////////////////////////////////////////////////////////////
 	
+	// "Privacy Policy" / "Terms & Conditions" alerts
+	//
+	var controlAlerts = function() {
+		state.dom.$footerLinks.on(services.interaction(), function() {
+			var delay = ("ontouchend" in d) ? 50 : 0;
+			setTimeout(function() {
+				alert("'StreamYourAd' the company no longer exists as a legal entity, thus I am prohibited from sharing any legal mumbo jumbo on the site. This site now serves as a dummy practice environment for my portfolio :)");
+			}, delay);
+		});
+	};
+	
+	
+	// Create hover/active states
+	//
+	var initMousables = function() {
+		return $("nav li, #responsive-nav-btn, .blue-btn, footer ul li:not(:last-child)").mouseable();
+	};
 	
 	
 	// Start
@@ -187,7 +287,10 @@
 		controlNavigation();
 		controlParallax();
 		controlSlider();
-		validateForm();
+		validateContactForm();
+		controlAlerts();
+		controlSelectedStates();
+		initMousables();
 	};
 	
 	$(d).ready(init);
