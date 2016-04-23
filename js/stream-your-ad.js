@@ -268,7 +268,7 @@
 		state.dom.$footerLinks.on(services.interaction(), function() {
 			var delay = ("ontouchend" in d) ? 50 : 0;
 			setTimeout(function() {
-				alert("'StreamYourAd' the company no longer exists as a legal entity, thus I am prohibited from sharing any legal mumbo jumbo on the site. This site now serves as a dummy practice environment for my portfolio :)");
+				alert("'StreamYourAd' the company no longer exists as a legal entity, thus I am prohibited from sharing any legal bric-a-brac on the site. This site now serves as a dummy practice environment for my portfolio :)");
 			}, delay);
 		});
 	};

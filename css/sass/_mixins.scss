@@ -1,0 +1,19 @@
+// 3-stop linear gradient mixin; $start and $stop includes both position and color value
+//
+@mixin linear-gradient($direction, $start, $stop) {
+	background: -webkit-linear-gradient($direction, $start, $stop);
+	background: -moz-linear-gradient($direction, $start, $stop);
+	background: -ms-linear-gradient($direction, $start, $stop);
+	background: -o-linear-gradient($direction, $start, $stop);
+	background: linear-gradient($direction, $start, $stop);
+}
+
+// 2-stop radial gradient mixin; $start and $stop are color values only
+//
+@mixin radial-gradient($start, $stop) {
+	background: -webkit-radial-gradient($start, $stop);
+	background: -moz-radial-gradient($start, $stop);
+	background: -ms-radial-gradient($start, $stop);
+	background: -o-radial-gradient($start, $stop);
+	background: radial-gradient($start, $stop);
+}

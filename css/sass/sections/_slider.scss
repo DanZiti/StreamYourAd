@@ -6,12 +6,14 @@
 
 .slider {
 	position: relative;
-	background-color: #b6c2cb;
 	margin-top: 80px; /* To account for the sticky header */
-	background-image: radial-gradient(#fff, rgba(255, 255, 255, 0));
-	background-repeat: no-repeat;
-	background-position: center center;
+	background: {
+		color: #b6c2cb;
+		repeat: no-repeat;
+		position: center center;
+	}
 	height: 650px; /* Default until page loads */
+	@include radial-gradient(#fff, rgba(255, 255, 255, 0));
 	
 	.slide {
 		width: 100%;
@@ -21,10 +23,12 @@
 		transition: all 0.4s;
 		
 		p {
-			font-size: 22px;
 			color: #245b81;
-			font-family: 'DIN', sans-serif;
-			font-weight: normal;
+			font: {
+				size: 22px;
+				family: $font-din;
+				weight: normal;
+			}
 		}
 		
 		&.SHOW {
@@ -40,7 +44,7 @@
 		width: 100%;
 		
 		li {
-			font-family: Arial, sans-serif;
+			font-family: $font-neutral;
 			display: inline-block;
 			width: 8px;
 			height: 8px;

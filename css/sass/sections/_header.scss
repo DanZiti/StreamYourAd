@@ -3,7 +3,7 @@ header {
 	height: 80px;
 	width: 100%;
 	min-width: 1000px;
-	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: $standard-box-shadow;
 	position: fixed;
 	top: 0;
 	z-index: 2;
@@ -56,8 +56,8 @@ header {
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	background: linear-gradient(180deg, #15649a 0%, #15649a 50%, #025690 51%, #025690 100%);
 	transition: opacity 0.25s;
+	@include linear-gradient(bottom, #15649a 50%, #025690 51%);
 	
 	&.over,
 	&.down {
@@ -96,7 +96,7 @@ header {
 	width: 68%;
 	height: 100%;
 	background: #fff;
-	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: $standard-box-shadow;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	
