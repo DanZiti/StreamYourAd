@@ -1,5 +1,7 @@
 (function() {
 	
+	// TODO: MAKE ACTUAL DOM MANIPULATION HAPPEN INSTEAD OF AN ALERT FOR VALIDATION ERRORS
+	
 	// Validate the contact form in browsers that don't yet support web form validation attributes
 	//
 	var _form = document.forms["contact-form"];
