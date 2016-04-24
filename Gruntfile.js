@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 
-  	// Configure the tasks
-  	//
   	grunt.initConfig({
 	  	
 	  	clean: {
@@ -12,20 +10,41 @@ module.exports = function(grunt) {
 		
 	  	copy: {
 		    build: {
-		        src: ["**"],
+		        src: [
+		        	"css/style.css",
+		        	"favicon.ico",
+		        	"fonts/*",
+		        	"img/**/*",
+		        	"includes/*",
+		        	"index.php",
+		        	"js/*",
+		        	"mail.php"
+		        ],
 		        dest: "_prod",
 		        expand: true
 	    	}
-	    }
+	    },
+		
+		uglify: {
+			build: {
+				files: [
+					{
+						src: "_prod/js/services.js",
+						dest: "_prod/js/services.js"
+					},
+					{
+						src: "_prod/js/stream-your-ad.js",
+						dest: "_prod/js/stream-your-ad.js"
+					}
+				]
+			}
+		}
 	
 	});
 
-	// Load the tasks
-	//
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
 	
-	// Define the tasks
-	//
-	
+	grunt.registerTask("build", ["clean", "copy", "uglify"]);
 };
