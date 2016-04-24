@@ -1,46 +1,47 @@
 <?php
 	
-	if (isset($_POST["email"])) {
+	if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["subject"]) && isset($_POST["comments"])) {
 		
 		// Address and subject
 		//
-		$form_subject = $_POST["subject"];
-		$email_to = "dan@drzwebdev.com";
-		$email_subject = "StreamYourAd Contact Form Submission: $form_subject";
+		$formSubject = $_POST["subject"];
+		$emailTo = "dan@drzwebdev.com";
+		$emailSubject = "StreamYourAd Contact Form Submission: $formSubject";
 		
 		// For redirect after form submission
 		//
-		$home_page = "http://www.drzwebdev.com/sites/StreamYourAd/";
+		//$homePage = "http://www.drzwebdev.com/sites/StreamYourAd/?formSubmitted=true";
+		$homePage = "http://localhost:8888/StreamYourAd/?formSubmitted=true"; // TODO: HAVE THE DOM CREATE A MODAL CONFIRMING SUCCESSFUL SUBMISSION, LIKE PROSPER
 		
 		// Call form data
 		//
 		$name = $_POST["name"];
-		$email_from = $_POST["email"];
+		$emailFrom = $_POST["email"];
 		$comments = $_POST["comments"];
 		
 		// Begin message content
 		//
-		$email_message = "New inquiry submitted.\n\n";
+		$emailMessage = "New inquiry submitted.\n\n";
 		
-		function clean_string($string) {
+		function cleanString($string) {
 			$bad = array("content-type", "bcc:", "to:", "cc:", "href");
 			return str_replace($bad, "", $string);
 		}
 		
 		// Fill email content
 		//
-		$email_message .= "Name: " . clean_string($name) . "\n";
-		$email_message .= "Email: " . clean_string($email_from) . "\n";
-		$email_message .= "Comments: " . clean_string($comments) . "\n";
+		$emailMessage .= "Name: " . cleanString($name) . "\n";
+		$emailMessage .= "Email: " . cleanString($emailFrom) . "\n";
+		$emailMessage .= "Comments: " . cleanString($comments) . "\n";
 		
 		// Create email headers
 		//
-		$headers = "From: " . $email_from . "\r\n" . "Reply-To: " . $email_from . "\r\n" . "X-Mailer: PHP/" . phpversion();
+		$headers = "From: " . $emailFrom . "\r\n" . "Reply-To: " . $emailFrom . "\r\n" . "X-Mailer: PHP/" . phpversion();
 		
 		// Send email and redirect back to Home page
 		//
-		@mail($email_to, $email_subject, $email_message, $headers);
-		@header("Location: $home_page");
+		@mail($emailTo, $emailSubject, $emailMessage, $headers);
+		@header("Location: $homePage");
 		
 	}
 	

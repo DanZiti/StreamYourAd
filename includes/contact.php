@@ -26,7 +26,7 @@
 				<input type="text" name="name" placeholder="Name (Required)" required>
 				<input type="email" name="email" placeholder="Email (Required)" required>
 				<input type="text" name="subject" placeholder="Subject (Required)" required>
-				<textarea name="comments"></textarea>
+				<textarea name="comments" required></textarea>
 				<input type="submit" value="GET IN TOUCH" class="blue-button">
 			</form>
 			

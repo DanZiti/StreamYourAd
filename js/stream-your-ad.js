@@ -155,11 +155,11 @@
 		var name = state.dom.contactForm["name"];
 		var email = state.dom.contactForm["email"];
 		
-		$(state.dom.contactForm).on("submit", function() { // TODO: REFACTOR VALIDATION ERROR MESSAGING AND INCLUDE REQUIREMENT FOR TEXTAREA
+		$(state.dom.contactForm).on("submit", function() { // TODO: REFACTOR VALIDATION ERROR MESSAGING AND INCLUDE REQUIREMENT FOR SUBJECT
 			
 			if (name.value === null || name.value === "") {
 			
-				alert("Hey there, looks like you didn't fill out your name...");
+				//alert("Hey there, looks like you didn't fill out your name...");
 				
 				name.className = "invalid";
 				name.focus();
@@ -172,7 +172,7 @@
 			
 			if (!email.value.match("@")) {
 				
-				alert("Please provide a valid email address, e.g. john@doe.com");
+				//alert("Please provide a valid email address, e.g. john@doe.com");
 				
 				email.className = "invalid";
 				email.select();
@@ -184,7 +184,7 @@
 				email.className = "";
 			}
 			
-			alert("Thank you for your submission: someone will be in touch with you soon!");
+			//alert("Thank you for your submission: someone will be in touch with you soon!");
 			
 		});
 		
