@@ -17,23 +17,25 @@
 
 @media only screen and (max-width: 950px) {
 	
-	.slide-2 {
-		> .blurb {
-			left: 80px;
+	.slider {
+		.slide-2 {
+			> .blurb {
+				left: 80px;
+			}
+			
+			> img {
+				right: 40px;
+			}
 		}
 		
-		> img {
-			right: 40px;
-		}
-	}
-	
-	.slide-3 {
-		> .blurb {
-			right: 60px;
-		}
-		
-		> img {
-			margin-left: 40px;
+		.slide-3 {
+			> .blurb {
+				right: 60px;
+			}
+			
+			> img {
+				margin-left: 40px;
+			}
 		}
 	}
 	
@@ -56,27 +58,29 @@
 
 @media only screen and (max-width: 850px) {
 	
-	.slide-1 {
-		margin-top: 40px;
-	}
-	
-	.slide-2 {
-		> .blurb {
-			left: 40px;
+	.slider {
+		.slide-1 {
+			margin-top: 40px;
 		}
 		
-		> img {
-			right: 20px;
-		}
-	}
-	
-	.slide-3 {
-		> .blurb {
-			right: 20px;
+		.slide-2 {
+			> .blurb {
+				left: 40px;
+			}
+			
+			> img {
+				right: 20px;
+			}
 		}
 		
-		> img {
-			margin-left: 20px;
+		.slide-3 {
+			> .blurb {
+				right: 20px;
+			}
+			
+			> img {
+				margin-left: 20px;
+			}
 		}
 	}
 	
