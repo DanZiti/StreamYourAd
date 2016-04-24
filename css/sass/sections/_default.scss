@@ -59,13 +59,13 @@ h1 {
 
 h2 {
 	font-size: 22px;
-	color: #245b81;
+	color: $main-blue;
 	text-transform: uppercase;
 	margin-top: 80px;
 }
 
 h3 {
-	color: #f39404;
+	color: $main-orange;
 	font: {
 		family: $font-helvetica-bold;
 		size: 18px;
