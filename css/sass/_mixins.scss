@@ -11,9 +11,9 @@
 // 2-stop radial gradient mixin; $start and $stop are color values only
 //
 @mixin radial-gradient($start, $stop) {
-	background: -webkit-radial-gradient($start, $stop);
-	background: -moz-radial-gradient($start, $stop);
-	background: -ms-radial-gradient($start, $stop);
-	background: -o-radial-gradient($start, $stop);
-	background: radial-gradient($start, $stop);
+	background-image: -webkit-radial-gradient($start, $stop);
+	background-image: -moz-radial-gradient($start, $stop);
+	background-image: -ms-radial-gradient($start, $stop);
+	background-image: -o-radial-gradient($start, $stop);
+	background-image: radial-gradient($start, $stop);
 }

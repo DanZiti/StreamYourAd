@@ -1,4 +1,4 @@
-<article id="about-content">
+<article id="about-content" class="about-content">
 	
 	<div class="parallax about">
 		<img class="parallax-about" src="img/parallax-phone-bg.jpg" alt="Parallax Phone Background">

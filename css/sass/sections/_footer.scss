@@ -1,0 +1,32 @@
+footer {
+	text-align: center;
+	width: 100%;
+	
+	ul {
+		display: inline-block;
+		margin-top: 20px;
+		padding-bottom: 15px;
+		
+		li {
+			display: inline-block;
+			font-size: 14px;
+			line-height: 1.2em;
+			transition: color 0.25s;
+			
+			&:not(:last-child) {
+				cursor: pointer;
+				border-right: 1px solid #000;
+				padding-right: 5px;
+			}
+			
+			&.over,
+			&.down {
+				color: #15649a;
+			}
+			
+			&.down {
+				text-decoration: underline;
+			}
+		}
+	}
+}

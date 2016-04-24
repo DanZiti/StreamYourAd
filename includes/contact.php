@@ -1,4 +1,4 @@
-<article id="contact-content">
+<article id="contact-content" class="contact-content">
 	
 	<div class="parallax contact">
 		<img class="parallax-contact" src="img/parallax-social-bg.jpg" alt="Parallax Phone Background">
@@ -22,7 +22,7 @@
 				</ul>
 			</nav>
 			
-			<form id="contact-form" name="contact-form" action="mail.php" method="post">
+			<form id="contact-form" class="contact-form" name="contact-form" action="mail.php" method="post">
 				<input type="text" name="name" placeholder="Name (Required)" required>
 				<input type="email" name="email" placeholder="Email (Required)" required>
 				<input type="text" name="subject" placeholder="Subject (Required)" required>

@@ -1,0 +1,66 @@
+.contact-content {
+	background: #c0c9cf;
+	min-height: 560px;
+	
+	.parallax h1 {
+		position: absolute;
+		bottom: 40px;
+	}
+	
+	h2 {
+		margin: 40px 0 20px;
+	}
+	
+	.social {
+		margin-top: 50px;
+		
+		li {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			background-image: url('../img/social-sprite.png');
+			background-size: 200px 32px;
+			background-repeat: no-repeat;
+			width: 34px;
+			height: 34px;
+			display: inline-block;
+			-webkit-transition: all 0.25s;
+			transition: all 0.25s;
+			
+			&:not(:first-child) {
+				margin-left: 8px;
+			}
+			
+			&.facebook {
+				background-position: 0 1px;
+			}
+			
+			&.google {
+				background-position: -41px 1px;
+			}
+			
+			&.instagram {
+				background-position: -82px 1px;
+			}
+			
+			&.pinterest {
+				background-position: -124px 1px;
+			}
+			
+			&.twitter {
+				background-position: -166px 1px;
+			}
+			
+			&.over,
+			&.down {
+				-webkit-transform: scale3d(1.2, 1.2, 1.2);
+				transform: scale3d(1.2, 1.2, 1.2);
+			}
+			
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

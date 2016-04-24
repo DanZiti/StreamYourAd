@@ -48,7 +48,7 @@
 		$responsiveNav
 			.insertAfter("header")
 			.attr("id", "responsive-menu")
-			.attr("className", "responsive-menu");
+			.attr("class", "responsive-menu");
 		
 		// Controls responsive nav/menu button and opening/closing of the nav menu while in mobile/responsive view
 		//

@@ -1,0 +1,67 @@
+.about-content {
+	min-height: 1320px;
+	
+	.parallax h1 {
+		position: absolute;
+		bottom: 32px;
+	}
+	
+	h3 {
+		margin-bottom: 20px;
+	}
+	
+	.context > img {
+		position: absolute;
+		
+		&:first-of-type {
+			right: 80px;
+			top: -10px;
+			width: 425px;
+		}
+		
+		&:nth-of-type(2) {
+			top: 350px;
+			left: 80px;
+			width: 253px;
+		}
+		
+		&:last-of-type {
+			top: 660px;
+			left: 80px;
+			width: 225px;
+		}
+	}
+	
+	.txt-block {
+		width: 380px;
+		
+		&:not(:first-of-type) {
+			position: absolute;
+			right: 100px;
+		}
+		
+		&:first-of-type {
+			margin-top: 30px;
+		}
+		
+		&:nth-of-type(2) {
+			top: 400px;
+		}
+		
+		&:last-of-type {
+			top: 700px;
+		}
+	}
+	
+	ul {
+		padding-left: 15px;
+		
+		li:before {
+			content: "\2022";
+			position: absolute;
+			left: 0;
+			margin-top: -2px;
+			font-family: sans-serif;
+		}
+	}
+}

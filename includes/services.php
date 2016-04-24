@@ -1,10 +1,10 @@
-<article id="services-content">
+<article id="services-content" class="services-content">
 	
 	<!--
 		The <h1></h1> only here for screen readers and semantics...
 		This has been removed from the overall site design and thus hidden.
 	-->
-	<div id="services-content-top">
+	<div id="services-content-top" class="services-content-top">
 		<h1 class="hide">Digital Branding, Social Solutions and Brand Promotions: Our Services</h1>
 		<div class="center">
 			<div class="icon">

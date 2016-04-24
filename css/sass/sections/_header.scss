@@ -8,7 +8,7 @@ header {
 	top: 0;
 	z-index: 2;
 	
-	&.logo {
+	.logo {
 		margin: 16px 0 0;
 	}
 	
@@ -17,31 +17,29 @@ header {
 		right: 0;
 		bottom: 5px;
 		
-		ul {
-			li {
-				position: relative;
-				display: inline-block;
-				font-size: 16px;
-				padding: 5px 0;
-				
-				&:not(:first-child) {
-					margin-left: 45px;
-				}
-				
-				span {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					height: 2px;
-					background: #025086;
-					width: 0;
-					transition: 0.25s width;
-				}
-				
-				&.over span,
-				&.down span {
-					width: 50%;
-				}
+		li {
+			position: relative;
+			display: inline-block;
+			font-size: 16px;
+			padding: 5px 0;
+			
+			&:not(:first-child) {
+				margin-left: 45px;
+			}
+			
+			span {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				background: #025086;
+				width: 0;
+				transition: 0.25s width;
+			}
+			
+			&.over span,
+			&.down span {
+				width: 50%;
 			}
 		}
 	}
@@ -57,7 +55,7 @@ header {
 	top: 20px;
 	right: 20px;
 	transition: opacity 0.25s;
-	@include linear-gradient(bottom, #15649a 50%, #025690 51%);
+	@include linear-gradient(top, #15649a 50%, #025690 51%);
 	
 	&.over,
 	&.down {
