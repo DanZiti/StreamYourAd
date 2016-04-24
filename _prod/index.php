@@ -17,7 +17,18 @@
 		<script type="text/javascript" src="js/jquery-mouseable.min.js"></script>
 		<script type="text/javascript" src="js/services.js"></script>
 	</head>
-	<body>
+	<body class="<?= ($_GET["formSubmitted"] == true) ? 'overflow-hidden' : 'overflow-visible' ?>">
+		<?php
+			if ($_GET["formSubmitted"] == true) { ?>
+				<div id="successful-form-submission-overlay" class="successful-form-submission-overlay">
+					<div class="enclosure">
+						<button class="close-button">X</button>
+						<h3>Thank you for your submission!</h2>
+						<p>Someone will be in touch with you shortly.</p>
+					</div>
+				</div>
+			<?php }
+		?>
 		<?php
 			include 'includes/header.php';
 			include 'includes/slider.php';

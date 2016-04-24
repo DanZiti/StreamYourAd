@@ -20,6 +20,8 @@
 		state.dom.splashDownArrow = d.getElementById("splash-down-arrow");
 		state.dom.logo = d.getElementById("logo");
 		state.dom.contactForm = d.forms["contact-form"];
+		state.dom.contactFormErrorMessage = d.getElementById("contact-form-error-message");
+		state.dom.formSubmissionOverlay = d.getElementById("successful-form-submission-overlay");
 		state.dom.$navigators = $("[data-navigate]");
 		state.dom.$parallaxImages = $(".parallax > img");
 		state.dom.$footerLinks = $("footer ul li:not(:last-child)");
@@ -154,40 +156,60 @@
 		
 		var name = state.dom.contactForm["name"];
 		var email = state.dom.contactForm["email"];
+		var subject = state.dom.contactForm["subject"];
+		var comments = state.dom.contactForm["comments"];
 		
-		$(state.dom.contactForm).on("submit", function() { // TODO: REFACTOR VALIDATION ERROR MESSAGING AND INCLUDE REQUIREMENT FOR SUBJECT
+		$(state.dom.contactForm).on("submit", function() {
+			
+			var hasErrors = false;
 			
 			if (name.value === null || name.value === "") {
-			
-				//alert("Hey there, looks like you didn't fill out your name...");
-				
+				hasErrors = true;
 				name.className = "invalid";
-				name.focus();
-				
-				return false;
-				
 			} else {
 				name.className = "";
 			}
 			
-			if (!email.value.match("@")) {
-				
-				//alert("Please provide a valid email address, e.g. john@doe.com");
-				
+			if (name.value === null || name.value === "" || !email.value.match("@")) {
+				hasErrors = true;
 				email.className = "invalid";
-				email.select();
-				email.focus();
-				
-				return false;
-				
 			} else {
 				email.className = "";
 			}
 			
-			//alert("Thank you for your submission: someone will be in touch with you soon!");
+			if (subject.value === null || subject.value === "") {
+				hasErrors = true;
+				subject.className = "invalid";
+			} else {
+				subject.className = "";
+			}
+			
+			if (comments.value === null || comments.value === "") {
+				hasErrors = true;
+				comments.className = "invalid";
+			} else {
+				comments.className = "";
+			}
+			
+			if (hasErrors) {
+				if (!$(state.dom.contactFormErrorMessage).hasClass("SHOW")) services.show(state.dom.contactFormErrorMessage);
+				return false;
+			} else {
+				if ($(state.dom.contactFormErrorMessage).hasClass("SHOW")) services.hide(state.dom.contactFormErrorMessage);
+			}
 			
 		});
-		
+	};
+	
+	// Control successful form submission overlay
+	//
+	var controlFormSubmissionOverlay = function() {
+		if (state.dom.formSubmissionOverlay !== null) {
+			var closeButton = d.querySelector("#successful-form-submission-overlay .close-button");
+			$(closeButton).on(services.interaction(), function() {
+				return w.location.href = "http://www.drzwebdev.com/sites/StreamYourAd/";
+			});
+		}
 	};
 	
 	// Control automatic header > nav > ul > li "SELECTED" states updates while scrolling
@@ -290,6 +312,7 @@
 		controlSlider();
 		validateContactForm();
 		controlAlerts();
+		controlFormSubmissionOverlay();
 		controlSelectedStates();
 		initMousables();
 	};

@@ -234,6 +234,13 @@
 		width: 90%;
 	}
 	
+	form .contact-form-error-message {
+		position: relative;
+		top: 0;
+		margin-bottom: 5px;
+		margin-top: -10px;
+	}
+	
 }
 
 @media only screen and (max-width: 420px) {

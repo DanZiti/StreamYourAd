@@ -10,8 +10,7 @@
 		
 		// For redirect after form submission
 		//
-		//$homePage = "http://www.drzwebdev.com/sites/StreamYourAd/?formSubmitted=true";
-		$homePage = "http://localhost:8888/StreamYourAd/?formSubmitted=true"; // TODO: HAVE THE DOM CREATE A MODAL CONFIRMING SUCCESSFUL SUBMISSION, LIKE PROSPER
+		$homePage = "http://www.drzwebdev.com/sites/StreamYourAd/?formSubmitted=true";
 		
 		// Call form data
 		//
