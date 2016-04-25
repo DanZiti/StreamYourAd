@@ -298,7 +298,7 @@
 	
 	// Create hover/active states
 	//
-	var initMousables = function() {
+	var setMousables = function() {
 		return $("nav li, #responsive-nav-button, .blue-button, footer ul li:not(:last-child)").mouseable();
 	};
 	
@@ -314,7 +314,7 @@
 		controlAlerts();
 		controlFormSubmissionOverlay();
 		controlSelectedStates();
-		initMousables();
+		setMousables();
 	};
 	
 	$(d).ready(init);
