@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		        	"css/style.css",
 		        	"favicon.ico",
 		        	"fonts/*",
-		        	"img/**/*",
+		        	"images/**/*",
 		        	"includes/*",
 		        	"index.php",
 		        	"js/*",

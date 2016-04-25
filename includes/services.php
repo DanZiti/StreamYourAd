@@ -9,15 +9,15 @@
 		<div class="center">
 			<div class="icon">
 				<p>DIGITAL BRANDING</p>
-				<img src="img/services-icon-digital-branding.png" alt="Digital Branding">
+				<img src="images/services-icon-digital-branding.png" alt="Digital Branding">
 			</div>
 			<div class="icon">
 				<p>SOCIAL SOLUTIONS</p>
-				<img src="img/services-icon-social-solutions.png" alt="Social Solutions">
+				<img src="images/services-icon-social-solutions.png" alt="Social Solutions">
 			</div>
 			<div class="icon">
 				<p>BRAND PROMOTION</p>
-				<img src="img/services-icon-brand-promotion.png" alt="Brand Promotion">
+				<img src="images/services-icon-brand-promotion.png" alt="Brand Promotion">
 			</div>
 		</div>
 	</div>
@@ -27,7 +27,7 @@
 			
 			<h2>OUR SERVICES</h2>
 			
-			<img src="img/services-phone-ad.png" alt="Our Services">
+			<img src="images/services-phone-ad.png" alt="Our Services">
 			
 			<div class="txt-block">
 				

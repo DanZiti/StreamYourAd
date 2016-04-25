@@ -1,6 +1,6 @@
 <header>
 	<div class="center">
-		<img data-navigate="home" id="logo" class="logo" src="img/logo.png" alt="StreamYourAd Logo" width="172">
+		<img data-navigate="home" id="logo" class="logo" src="images/logo.png" alt="StreamYourAd Logo" width="172">
 		<nav>
 			<ul>
 				<!--
