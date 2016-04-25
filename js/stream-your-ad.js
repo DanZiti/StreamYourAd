@@ -163,28 +163,28 @@
 			
 			var hasErrors = false;
 			
-			if (name.value === null || name.value === "") {
+			if (!name.value.match(/^\s*\S/)) {
 				hasErrors = true;
 				name.className = "invalid";
 			} else {
 				name.className = "";
 			}
 			
-			if (name.value === null || name.value === "" || !email.value.match("@")) {
+			if (!email.value.match(/^\S+@\S+$/)) {
 				hasErrors = true;
 				email.className = "invalid";
 			} else {
 				email.className = "";
 			}
 			
-			if (subject.value === null || subject.value === "") {
+			if (!subject.value.match(/^\s*\S/)) {
 				hasErrors = true;
 				subject.className = "invalid";
 			} else {
 				subject.className = "";
 			}
 			
-			if (comments.value === null || comments.value === "") {
+			if (!comments.value.match(/^\s*\S/)) {
 				hasErrors = true;
 				comments.className = "invalid";
 			} else {
