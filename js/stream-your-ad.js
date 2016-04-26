@@ -163,33 +163,19 @@
 			
 			var hasErrors = false;
 			
-			if (!name.value.match(/^\s*\S/)) {
-				hasErrors = true;
-				name.className = "invalid";
-			} else {
-				name.className = "";
-			}
+			function validate(selector, regx) {
+				if (!selector.value.match(regx)) {
+					if (!hasErrors) hasErrors = true;
+					selector.className = "invalid";
+				} else {
+					selector.className = "";
+				}
+			};
 			
-			if (!email.value.match(/^\S+@\S+$/)) {
-				hasErrors = true;
-				email.className = "invalid";
-			} else {
-				email.className = "";
-			}
-			
-			if (!subject.value.match(/^\s*\S/)) {
-				hasErrors = true;
-				subject.className = "invalid";
-			} else {
-				subject.className = "";
-			}
-			
-			if (!comments.value.match(/^\s*\S/)) {
-				hasErrors = true;
-				comments.className = "invalid";
-			} else {
-				comments.className = "";
-			}
+			validate(name, /^\s*\S/);
+			validate(email, /^\S+@\S+$/);
+			validate(subject, /^\s*\S/);
+			validate(comments, /^\s*\S/);
 			
 			if (hasErrors) {
 				if (!$(state.dom.contactFormErrorMessage).hasClass("SHOW")) services.show(state.dom.contactFormErrorMessage);
