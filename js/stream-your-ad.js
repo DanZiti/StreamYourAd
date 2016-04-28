@@ -13,7 +13,6 @@
 	 };
 	
 	// Gather elements
-	//
 	var collectDom = function() {
 		state.dom.responsiveNavButton = d.getElementById("responsive-nav-button");
 		state.dom.slider = d.getElementById("slider");
@@ -28,15 +27,10 @@
 	};
 	
 	// Navigation for desktop and mobile
-	//
 	var controlNavigation = function() {
-		
 		var $responsiveNav = $("header nav").clone();
-		
 		$(d).on(services.interaction(), "[data-navigate]", function() {
-			
 			var section = $(this).attr("data-navigate");
-			
 			if (section === "home") {
 				services.navigate(0);
 			} else {
@@ -45,15 +39,12 @@
 			}
 		});
 		
-		// Create responsive nav menu
-		//
+		// Create/control responsive nav menu
 		$responsiveNav
 			.insertAfter("header")
 			.attr("id", "responsive-menu")
 			.attr("class", "responsive-menu");
 		
-		// Controls responsive nav/menu button and opening/closing of the nav menu while in mobile/responsive view
-		//
 		$(state.dom.responsiveNavButton).on(services.interaction(), function() {
 			services.show("#responsive-menu", true);
 		});
@@ -69,11 +60,8 @@
 	};
 	
 	// Control parallax banner
-	//
 	var controlParallax = function() {
-		
 		if (!services.isMobile()) {
-		
 			$(w)
 				.scroll(function() {
 					if ($(this).width() > 1000) {
@@ -90,7 +78,6 @@
 	
 	
 	// Control slider animations
-	//
 	var controlSlider = function() {
 		
 		var curHeight = w.innerHeight;
@@ -121,7 +108,6 @@
 		});
 		
 		// Build bullets
-		//
 		for (var i = 0; i < slides.length; i++) {
 			var bullet = d.createElement("li");
 			if (i === 0) bullet.className = "SELECTED";
@@ -129,29 +115,21 @@
 		}
 		
 		// Auto rotations
-		//
 		function rotate() {
-			
 			var bullets = d.querySelectorAll("#slider-bullets li");
-			
 			state.sliderIndex++;
-			
 			if (state.sliderIndex === slides.length) state.sliderIndex = 0;
-			
 			services
 				.hide("#slider .slide")
 				.show(slides[state.sliderIndex])
 				.deselect("#slider-bullets li")
 				.select(bullets[state.sliderIndex]);
-			
 			setTimeout(rotate, 8000); // Recursively trigger rotation every 8 seconds
 		};
-		
 		setTimeout(rotate, 8000); // Init slider
 	};
 	
 	// Contact form validation
-	//
 	var validateContactForm = function() {
 		
 		var name = state.dom.contactForm["name"];
@@ -188,7 +166,6 @@
 	};
 	
 	// Control successful form submission overlay
-	//
 	var controlFormSubmissionOverlay = function() {
 		if (state.dom.formSubmissionOverlay !== null) {
 			var closeButton = d.querySelector("#successful-form-submission-overlay .close-button");
@@ -199,7 +176,6 @@
 	};
 	
 	// Control automatic header > nav > ul > li "SELECTED" states updates while scrolling
-	//
 	var controlSelectedStates = function() {
 		
 		$(w).scroll(function() {
@@ -239,15 +215,11 @@
 		});
 		
 		// Control "SELECTED" states in header > nav > ul > li based on user location
-		//
 		state.dom.$navigators.on(services.interaction(), function() {
-			
 			var section = $(this).attr("data-navigate");
-			
 			services
 				.deselect("[data-navigate]")
 				.select("[data-navigate='" + section + "']");
-			
 			state.resetScroll();
 		});
 		
@@ -255,7 +227,6 @@
 			services
 				.deselect("[data-navigate]")
 				.select("[data-navigate='home']");
-			
 			state.resetScroll();
 		});
 		
@@ -263,7 +234,6 @@
 			services
 				.deselect("[data-navigate='home']")
 				.select("[data-navigate='about']");
-			
 			state.resetScroll();
 		});
 		
@@ -271,7 +241,6 @@
 	
 	
 	// "Privacy Policy" / "Terms & Conditions" alerts
-	//
 	var controlAlerts = function() {
 		state.dom.$footerLinks.on(services.interaction(), function() {
 			var delay = ("ontouchend" in d) ? 50 : 0;
@@ -283,14 +252,12 @@
 	
 	
 	// Create hover/active states
-	//
 	var setMousables = function() {
 		return $("nav li, #responsive-nav-button, .blue-button, footer ul li:not(:last-child)").mouseable();
 	};
 	
 	
 	// Start
-	//
 	var init = function() {
 		collectDom();
 		controlNavigation();
