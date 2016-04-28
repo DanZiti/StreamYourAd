@@ -99,9 +99,7 @@
 			}
 		})
 		.on("orientationchange", function() {
-			
 			var newHeight = w.innerHeight - 80;
-			
 			$(state.dom.slider)
 				.height(newHeight)
 				.css("min-height", newHeight);
