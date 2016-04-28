@@ -130,23 +130,24 @@
 	// Contact form validation
 	var validateContactForm = function() {
 		
+		var hasErrors;
 		var name = state.dom.contactForm["name"];
 		var email = state.dom.contactForm["email"];
 		var subject = state.dom.contactForm["subject"];
 		var comments = state.dom.contactForm["comments"];
 		
+		function validate(selector, regx) {
+			if (!selector.value.match(regx)) {
+				if (!hasErrors) hasErrors = true;
+				selector.className = "invalid";
+			} else {
+				selector.className = "";
+			}
+		};
+		
 		$(state.dom.contactForm).on("submit", function() {
 			
-			var hasErrors = false;
-			
-			function validate(selector, regx) {
-				if (!selector.value.match(regx)) {
-					if (!hasErrors) hasErrors = true;
-					selector.className = "invalid";
-				} else {
-					selector.className = "";
-				}
-			};
+			hasErrors = false;
 			
 			validate(name, /^\s*\S/);
 			validate(email, /^\S+@\S+$/);
