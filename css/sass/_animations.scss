@@ -1,49 +1,36 @@
 // Splash screen down-arrow animation
-//
 @-webkit-keyframes bounce {
-	
 	10% {
-	  	-webkit-transform: translateY(-18%);
+		-webkit-transform: translateY(-18%);
 	}
-	
 	20% {
-	  	-webkit-transform: translateY(5%);
+		-webkit-transform: translateY(5%);
 	}
-	
 	30% {
-	  	-webkit-transform: translateY(-5%);
+		-webkit-transform: translateY(-5%);
 	}
-	
 	40% {
-	  	-webkit-transform: translateY(1%);
+		-webkit-transform: translateY(1%);
 	}
-	
 	60% {
 		-webkit-transform: translateY(0);
 	}
-	
 }
 
 @keyframes bounce {
-	
 	10% {
-	  	transform: translateY(-18%);
+		transform: translateY(-18%);
 	}
-	
 	20% {
-	  	transform: translateY(5%);
+		transform: translateY(5%);
 	}
-	
 	30% {
-	  	transform: translateY(-5%);
+		transform: translateY(-5%);
 	}
-	
 	40% {
-	  	transform: translateY(1%);
+		transform: translateY(1%);
 	}
-	
 	60% {
 		transform: translateY(0);
 	}
-	
 }
