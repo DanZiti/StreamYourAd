@@ -17,9 +17,9 @@
 		<script type="text/javascript" src="js/jquery-mouseable.min.js"></script>
 		<script type="text/javascript" src="js/services.js"></script>
 	</head>
-	<body class="overflow-<?= ($_GET["formSubmitted"] == true) ? 'hidden' : 'visible' ?>">
+	<body class="overflow-<?= ($_GET["formSubmitted"]) ? 'hidden' : 'visible' ?>">
 		<?php
-			if ($_GET["formSubmitted"] == true) { ?>
+			if ($_GET["formSubmitted"]) { ?>
 				<div id="successful-form-submission-overlay" class="successful-form-submission-overlay">
 					<div class="enclosure">
 						<button class="close-button">X</button>
@@ -37,6 +37,6 @@
 			include 'includes/contact.php';
 			include 'includes/footer.php';
 		?>
-		<script type="text/javascript" src="js/stream-your-ad.js" async></script>
+		<script type="text/javascript" src="js/stream-your-ad.js"></script>
 	</body>
 </html>
