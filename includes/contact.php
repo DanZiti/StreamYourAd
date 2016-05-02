@@ -1,15 +1,12 @@
 <article id="contact-content" class="contact-content">
-	
 	<div class="parallax contact">
 		<img class="parallax-contact" src="images/parallax-social-bg.jpg" alt="Parallax Phone Background">
 		<div class="center">
 			<h1>Promote your Ad today</h1>
 		</div>
 	</div>
-	
 	<div class="center">
 		<section class="context">
-			
 			<h2>CONTACT US</h2>
 			<img class="logo" src="images/logo-large.png" alt="StreamYourAd Logo" width="220">
 			<nav class="social">
@@ -21,7 +18,6 @@
 					<li class="twitter"><a href="https://twitter.com/"></a></li>
 				</ul>
 			</nav>
-			
 			<form id="contact-form" class="contact-form" name="contact-form" action="mail.php" method="post">
 				<p id="contact-form-error-message" class="contact-form-error-message">Please fix the highlighted errors below.</p>
 				<input type="text" name="name" placeholder="Name (Required)">
@@ -30,8 +26,6 @@
 				<textarea name="comments" placeholder="Comments (Required)"></textarea>
 				<input type="submit" value="GET IN TOUCH" class="blue-button">
 			</form>
-			
 		</section>
 	</div>
-	
 </article>

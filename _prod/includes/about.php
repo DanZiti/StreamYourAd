@@ -1,19 +1,14 @@
 <article id="about-content" class="about-content">
-	
 	<div class="parallax about">
 		<img class="parallax-about" src="images/parallax-phone-bg.jpg" alt="Parallax Phone Background">
 		<div class="center">
 			<h1>Digital Branding<br>Social Solutions<br>Brand Promotions</h1>
 		</div>
 	</div>
-	
 	<div class="center">
 		<section class="context">
-			
 			<h2>HOW IT WORKS</h2>
-			
 			<img src="images/about-finger-point.png" alt="Create without boundaries.">
-			
 			<div class="txt-block">
 				<h3>Create without boundaries.</h3>
 				<ul>
@@ -22,9 +17,7 @@
 					<li>Includes human interface gestures, animation, video, <span class="nobr">geo-location</span>, mini-games and more.</li>
 				</ul>
 			</div>
-			
 			<img src="images/about-gears.png" alt="Build once. Run anywhere.">
-			
 			<div class="txt-block">
 				<h3>Build once. Run anywhere.</h3>
 				<ul>
@@ -33,9 +26,7 @@
 					<li>Run ads confidently regardless of publisher or application.</li>
 				</ul>
 			</div>
-			
 			<img src="images/about-bar-graph.png" alt="Optimize creative in real time.">
-			
 			<div class="txt-block">
 				<h3>Optimize creative in real time.</h3>
 				<ul>
@@ -44,8 +35,6 @@
 					<li>Measure and create your own custom event.</li>
 				</ul>
 			</div>
-			
 		</section>
 	</div>
-	
 </article>
