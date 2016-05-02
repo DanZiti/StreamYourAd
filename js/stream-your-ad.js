@@ -10,7 +10,7 @@
 		setTimeout(function() {
 			return state.canScroll = true;
 		}, 600);
-	 };
+	};
 	
 	// Gather elements
 	var collectDom = function() {
