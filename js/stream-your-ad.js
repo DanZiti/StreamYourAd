@@ -13,7 +13,7 @@
 	};
 	
 	// Gather elements
-	var collectDom = function() {
+	var collectDOM = function() {
 		state.dom.responsiveNavButton = d.getElementById("responsive-nav-button");
 		state.dom.slider = d.getElementById("slider");
 		state.dom.splashDownArrow = d.getElementById("splash-down-arrow");
@@ -258,7 +258,7 @@
 	
 	// Start
 	var init = function() {
-		collectDom();
+		collectDOM();
 		controlNavigation();
 		controlParallax();
 		controlSlider();
