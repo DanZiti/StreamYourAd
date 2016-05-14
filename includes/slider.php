@@ -16,7 +16,7 @@
 			<img src="images/slider/slide-3.png" alt="Find Out How StreamYourAd Can Help">
 			<div class="blurb">
 				<p>Interested? Find out how StreamYourAd can help.</p>
-				<button class="blue-button" data-navigate="about">See how it works</button>
+				<button class="blue-btn" data-navigate="about">See how it works</button>
 			</div>
 		</div>
 		<ul id="slider-bullets" class="slider-bullets"></ul>

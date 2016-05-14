@@ -17,12 +17,12 @@
 		<script type="text/javascript" src="js/jquery-mouseable.min.js"></script>
 		<script type="text/javascript" src="js/services.js"></script>
 	</head>
-	<body class="overflow-<?= ($_GET["formSubmitted"]) ? 'hidden' : 'visible' ?>">
+	<body class="overflow-<?= ($_GET['formSubmitted']) ? 'hidden' : 'visible' ?>">
 		<?php
-			if ($_GET["formSubmitted"]) { ?>
+			if ($_GET['formSubmitted']) { ?>
 				<div id="successful-form-submission-overlay" class="successful-form-submission-overlay">
 					<div class="enclosure">
-						<button class="close-button">X</button>
+						<button class="close-btn">X</button>
 						<h3>Thank you for your submission!</h2>
 						<p>Someone will be in touch with you shortly.</p>
 					</div>

@@ -1,33 +1,33 @@
 var services = (function(w, d, $, pub) {
 	
 	pub.interaction = function() {
-		return ("ontouchend" in d) ? "touchend" : "click";
+		return ('ontouchend' in d) ? 'touchend' : 'click';
 	};
 	
 	pub.navigate = function(location) {
-		$("html, body").animate({
-			scrollTop: location + "px"
+		$('html, body').animate({
+			scrollTop: location + 'px'
 		}, 600);
 		return this;
 	};
 	
 	pub.show = function(elem, toggle) {
-		$(elem)[toggle ? "toggleClass" : "addClass"]("SHOW");
+		$(elem)[toggle ? 'toggleClass' : 'addClass']('SHOW');
 		return this;
 	};
 	
 	pub.hide = function(elem) {
-		$(elem).removeClass("SHOW");
+		$(elem).removeClass('SHOW');
 		return this;
 	};
 	
 	pub.select = function(elem, toggle) {
-		$(elem)[toggle ? "toggleClass" : "addClass"]("SELECTED");
+		$(elem)[toggle ? 'toggleClass' : 'addClass']('SELECTED');
 		return this;
 	};
 	
 	pub.deselect = function(elem) {
-		$(elem).removeClass("SELECTED");
+		$(elem).removeClass('SELECTED');
 		return this;
 	};
 	
@@ -37,10 +37,10 @@ var services = (function(w, d, $, pub) {
 	
 	pub.parallax = function() {
 		var scrolled = $(w).scrollTop();
-		$(".parallax > img.parallax-about").css("top", -(scrolled * 0.2) + "px");
-		$(".parallax > img.parallax-contact").css("top", -(scrolled * 0.2) + 462 + "px"); // 462 accounts for the image's location further down the page
+		$('.parallax > img.parallax-about').css('top', -(scrolled * 0.2) + 'px');
+		$('.parallax > img.parallax-contact').css('top', -(scrolled * 0.2) + 462 + 'px'); // 462 accounts for the image's location further down the page
 	};
 	
 	return pub;
 	
-})(window, document, jQuery, services || {});
+})(window, document, jQuery, {});

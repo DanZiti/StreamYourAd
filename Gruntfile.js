@@ -4,23 +4,23 @@ module.exports = function(grunt) {
 	  	
 	  	clean: {
 			build: {
-		    	src: ["_prod"]
+		    	src: ['_prod']
 			}
 		},
 		
 	  	copy: {
 		    build: {
 		        src: [
-		        	"css/style.css",
-		        	"favicon.ico",
-		        	"fonts/*",
-		        	"images/**/*",
-		        	"includes/*",
-		        	"index.php",
-		        	"js/*",
-		        	"mail.php"
+		        	'css/style.css',
+		        	'favicon.ico',
+		        	'fonts/*',
+		        	'images/**/*',
+		        	'includes/*',
+		        	'index.php',
+		        	'js/*',
+		        	'mail.php'
 		        ],
-		        dest: "_prod",
+		        dest: '_prod',
 		        expand: true
 	    	}
 	    },
@@ -29,12 +29,12 @@ module.exports = function(grunt) {
 			build: {
 				files: [
 					{
-						src: "_prod/js/services.js",
-						dest: "_prod/js/services.js"
+						src: '_prod/js/services.js',
+						dest: '_prod/js/services.js'
 					},
 					{
-						src: "_prod/js/stream-your-ad.js",
-						dest: "_prod/js/stream-your-ad.js"
+						src: '_prod/js/stream-your-ad.js',
+						dest: '_prod/js/stream-your-ad.js'
 					}
 				]
 			}
@@ -42,9 +42,9 @@ module.exports = function(grunt) {
 	
 	});
 
-	grunt.loadNpmTasks("grunt-contrib-copy");
-	grunt.loadNpmTasks("grunt-contrib-clean");
-	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
-	grunt.registerTask("build", ["clean", "copy", "uglify"]);
+	grunt.registerTask('build', ['clean', 'copy', 'uglify']);
 };
