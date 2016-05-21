@@ -23,24 +23,8 @@ module.exports = function(grunt) {
 		        expand: true
 	    	}
 	    },
-		
-		uglify: {
-			build: {
-				files: [
-					{
-						expand: true,
-						cwd: '_prod/js',
-						src: [
-							'*.js',
-							'!*.min.js'
-						],
-						dest: '_prod/js'
-					}
-				]
-			}
-		},
-		
-		htmlmin: {
+	    
+	    htmlmin: {
 			dist: {
 		    	options: {
 			    	minifyJS: true,
@@ -60,14 +44,30 @@ module.exports = function(grunt) {
 			    	}
 		    	]
 		    }
+		},
+		
+		uglify: {
+			build: {
+				files: [
+					{
+						expand: true,
+						cwd: '_prod/js',
+						src: [
+							'*.js',
+							'!*.min.js'
+						],
+						dest: '_prod/js'
+					}
+				]
+			}
 		}
 	
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
-	grunt.registerTask('build', ['clean', 'copy', 'uglify', 'htmlmin']);
+	grunt.registerTask('build', ['clean', 'copy', 'htmlmin', 'uglify']);
 };
