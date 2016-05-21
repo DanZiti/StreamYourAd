@@ -3,11 +3,11 @@
   "description": "Compile the final output of the StreamYourAd site.",
   "author": "Dan Zervoudakes (http://drzwebdev.com)",
   "devDependencies": {
-    "grunt": "0.x.x",
-    "grunt-contrib-clean": "0.5.x",
-    "grunt-contrib-copy": "0.4.x",
-    "grunt-contrib-uglify": "0.7.x",
-    "grunt-contrib-htmlmin": "1.4.x"
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-htmlmin": "^1.4.0",
+    "grunt-contrib-uglify": "^0.7.0"
   },
   "engine": "node >= 0.10",
   "license": "MIT"
