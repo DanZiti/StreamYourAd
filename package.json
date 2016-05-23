@@ -1,7 +1,7 @@
 {
   "name": "stream-your-ad",
   "description": "Compile the final output of the StreamYourAd site.",
-  "author": "Dan Zervoudakes (http://drzwebdev.com)",
+  "author": "Dan Zervoudakes <dan.zervoudakes@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/dzervoudakes/StreamYourAd/"
