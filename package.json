@@ -4,7 +4,7 @@
   "author": "Dan Zervoudakes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dzervoudakes/StreamYourAd.git"
+    "url": "https://github.com/dzervoudakes/StreamYourAd"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
