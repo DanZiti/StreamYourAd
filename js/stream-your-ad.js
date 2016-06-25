@@ -76,7 +76,6 @@
 		}
 	};
 	
-	
 	// Control slider animations
 	var controlSlider = function() {
 		
@@ -237,7 +236,6 @@
 		});
 	};
 	
-	
 	// "Privacy Policy" / "Terms & Conditions" alerts
 	var controlAlerts = function() {
 		state.dom.$footerLinks.on(services.interaction(), function() {
@@ -248,12 +246,10 @@
 		});
 	};
 	
-	
 	// Create hover/active states
 	var setMousables = function() {
 		return $('nav li, #responsive-nav-btn, .blue-btn, footer ul li:not(:last-child)').mouseable();
 	};
-	
 	
 	// Start
 	var init = function() {
