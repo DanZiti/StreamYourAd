@@ -2,7 +2,7 @@
 
 Source code behind the StreamYourAd site...
 
-The live site can be viewed here: http://drzwebdev.com/sites/StreamYourAd/
+The live site can be viewed here: http://drzwebdev.com/sites/streamyourad/
 
 ##### Some notes:
 
