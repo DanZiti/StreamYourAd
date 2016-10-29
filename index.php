@@ -13,9 +13,6 @@
 		<meta name="author" content="Dan Zervoudakes, Genevieve Calingo">
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-		<script type="text/javascript" src="js/jquery-mouseable.min.js"></script>
-		<script type="text/javascript" src="js/services.js"></script>
 	</head>
 	<body class="overflow-<?= ($_GET['formSubmitted']) ? 'hidden' : 'visible' ?>">
 		<?php
@@ -37,6 +34,9 @@
 			include 'includes/contact.php';
 			include 'includes/footer.php';
 		?>
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery-mouseable.min.js"></script>
+		<script type="text/javascript" src="js/services.js"></script>
 		<script type="text/javascript" src="js/stream-your-ad.js"></script>
 	</body>
 </html>
