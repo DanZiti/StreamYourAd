@@ -168,7 +168,7 @@
 		if (state.dom.formSubmissionOverlay !== null) {
 			var closeButton = d.querySelector('#successful-form-submission-overlay .close-btn');
 			$(closeButton).on(services.interaction(), function() {
-				return w.location.href = 'http://www.drzwebdev.com/sites/StreamYourAd/';
+				return w.location.href = 'http://www.drzwebdev.com/sites/streamyourad/';
 			});
 		}
 	};
