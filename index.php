@@ -16,7 +16,7 @@
 	</head>
 	<body class="overflow-<?= ($_GET['formSubmitted']) ? 'hidden' : 'visible' ?>">
 		<?php
-			if ($_GET['formSubmitted']) { ?>
+			if ($_GET['formSubmitted'] === 'true') { ?>
 				<div id="successful-form-submission-overlay" class="successful-form-submission-overlay">
 					<div class="enclosure">
 						<button class="close-btn">X</button>
