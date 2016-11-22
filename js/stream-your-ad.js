@@ -144,7 +144,7 @@
 			}
 		};
 		
-		$(state.dom.contactForm).on('submit', function() {
+		$(state.dom.contactForm).on('submit', function(evt) {
 			
 			hasErrors = false;
 			
@@ -155,7 +155,7 @@
 			
 			if (hasErrors) {
 				if (!$(state.dom.contactFormErrorMessage).hasClass('SHOW')) services.show(state.dom.contactFormErrorMessage);
-				return false;
+				evt.preventDefault();
 			} else {
 				if ($(state.dom.contactFormErrorMessage).hasClass('SHOW')) services.hide(state.dom.contactFormErrorMessage);
 			}
