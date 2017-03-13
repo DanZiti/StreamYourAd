@@ -149,7 +149,7 @@
 			hasErrors = false;
 			
 			validate(name, /^\s*\S/);
-			validate(email, /^\S+@\S+$/);
+			validate(email, /^\S+@\S+\.\S+$/);
 			validate(subject, /^\s*\S/);
 			validate(comments, /^\s*\S/);
 			
