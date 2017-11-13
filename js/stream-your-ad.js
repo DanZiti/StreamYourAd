@@ -247,7 +247,7 @@
 	};
 	
 	// Create hover/active states
-	var setMousables = function() {
+	var setMouseables = function() {
 		return $('nav li, #responsive-nav-btn, .blue-btn, footer ul li:not(:last-child)').mouseable();
 	};
 	
@@ -261,7 +261,7 @@
 		controlAlerts();
 		controlFormSubmissionOverlay();
 		controlSelectedStates();
-		setMousables();
+		setMouseables();
 	};
 	
 	$(d).ready(init);
