@@ -1,0 +1,58 @@
+.services-content {
+	min-height: 995px;
+	overflow: hidden;
+	.services-content-top {
+		background: #c0c9cf;
+		height: 292px;
+		width: 100%;
+		position: relative;
+		.title.hide {
+			visibility: hidden;
+			color: transparent;
+			text-indent: -9999px;
+			height: 0;
+		}
+		.icon,
+		.center {
+			text-align: center;
+		}
+		.icon {
+			display: inline-block;
+			margin-top: 50px;
+			&:nth-of-type(2) {
+				margin: 50px 120px 0;
+			}
+			p {
+				font-size: 22px;
+				color: #245b81;
+				text-transform: uppercase;
+				font-family: 'DIN', sans-serif;
+			}
+			img {
+				width: 149px;
+			}
+		}
+	}
+	h2 {
+		padding-bottom: 25px;
+		background: url('../images/services-arrow.png') no-repeat 3px 100%;
+		background-size: 180px 15px;
+	}
+	.txt-block {
+		margin-top: 30px;
+		width: 342px;
+	}
+	ul.orange {
+		margin-left: 20px;
+		li {
+			font-family: 'HelveticaBdCn', sans-serif;
+			color: $main-orange;
+		}
+	}
+	.context img {
+		width: 380px;
+		position: absolute;
+		right: 100px;
+		top: 10px;
+	}
+}

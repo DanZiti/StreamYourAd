@@ -1,5 +1,5 @@
 {
-  "name": "stream-your-ad",
+  "name": "streamyourad",
   "description": "Compile the final output of the StreamYourAd site.",
   "author": "Dan Zervoudakes",
   "repository": {
@@ -7,12 +7,25 @@
     "url": "https://github.com/dzervoudakes/streamyourad"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-copy": "^0.4.1",
-    "grunt-contrib-htmlmin": "^1.4.0",
-    "grunt-contrib-uglify": "^0.7.0"
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-strict-mode": "^6.24.1",
+    "babel-preset-es2015-script": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
   },
   "engine": "node >= 0.10",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-mailer": "^0.3.1",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.4.5"
+  }
 }

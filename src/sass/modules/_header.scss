@@ -1,0 +1,100 @@
+.header {
+	background: #fff;
+	height: 80px;
+	width: 100%;
+	min-width: 1000px;
+	box-shadow: $standard-box-shadow;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	.logo {
+		margin: 16px 0 0;
+	}
+	.navigation {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+		.nav-items {
+			li {
+				position: relative;
+				display: inline-block;
+				font-size: 16px;
+				padding: 5px 0;
+				&:not(:first-child) {
+					margin-left: 45px;
+				}
+				.underline {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 2px;
+					background: #025086;
+					width: 0;
+					transition: 0.25s width;
+				}
+				&.over .underline,
+				&.down .underline {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+
+.responsive-nav-button {
+	display: none;
+	cursor: pointer;
+	width: 46px;
+	height: 40px;
+	box-shadow: inset 0 0 1px 0 #000;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	transition: opacity 0.25s;
+	@include linear-gradient(top, #15649a 50%, #025690 51%);
+	&.over,
+	&.down {
+		opacity: 0.8;
+	}
+	&.down {
+		top: 21px;
+	}
+	& .bar {
+		display: table;
+		vertical-align: middle;
+		height: 3px;
+		width: 58%;
+		background: #fff;
+		border-radius: 5px;
+		box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.5);
+	}
+	& .bar:not(:nth-of-type(2)) {
+		margin: 0 auto;
+	}
+	& .bar:nth-of-type(2) {
+		margin: 5px auto;
+	}
+}
+
+.responsive-menu {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	right: -70%; // Allow 2% extra so the shadow doesn't interfere with the main screen
+	top: 80px;
+	width: 68%;
+	height: 100%;
+	background: #fff;
+	box-shadow: $standard-box-shadow;
+	transition: all 0.5s;
+	&.SHOW {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+	li {
+		padding: 18px 0 15px 25px;
+		font-size: 18px;
+		line-height: 1em;
+		border-bottom: 1px solid #c0c9cf;
+	}
+}
