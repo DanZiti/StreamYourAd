@@ -28,7 +28,7 @@
 		}
 	}
 	.slide-1 {
-		> img {
+		.slide-image {
 			width: 100%;
 			margin-top: 16px;
 		}
@@ -41,7 +41,7 @@
 		}
 	}
 	.slide-2 {
-		> img {
+		.slide-image {
 			width: 400px;
 			position: absolute;
 			top: 100px;
@@ -63,7 +63,7 @@
 		}
 	}
 	.slide-3 {
-		> img {
+		.slide-image {
 			width: 400px;
 			margin: 26px 0 0 80px;
 		}

@@ -18,7 +18,7 @@
 		state.dom.contactForm = d.forms['contactForm'];
 		state.dom.contactFormErrorMessage = d.getElementById('contactFormErrorMessage');
 		state.dom.$navigators = $('[data-navigate]');
-		state.dom.$parallaxImages = $('.parallax > img');
+		state.dom.$parallaxImages = $('.parallax .plx-image');
 		state.dom.$footerLinks = $('.footer-items li:not(:last-child)');
 		state.dom.copyrightYear = d.getElementById('copyrightYear');
 	};

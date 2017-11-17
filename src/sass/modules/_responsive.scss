@@ -8,7 +8,7 @@
 	.center {
 		width: 96%;
 	}
-	.parallax > img {
+	.parallax .plx-image {
 		height: auto;
 		min-width: 790px;
 	}
@@ -17,28 +17,28 @@
 @media only screen and (max-width: 950px) {
 	.slider {
 		.slide-2 {
-			> .blurb {
+			.blurb {
 				left: 80px;
 			}
-			> img {
+			.slide-image {
 				right: 40px;
 			}
 		}
 		.slide-3 {
-			> .blurb {
+			.blurb {
 				right: 60px;
 			}
-			> img {
+			.slide-image {
 				margin-left: 40px;
 			}
 		}
 	}
 	.contact-form,
-	.services-content .context > img,
+	.services-content .context .ctx-image,
 	.about-content .txt-block:not(:first-of-type) {
 		right: 20px;
 	}
-	.about-content .context > img:first-of-type {
+	.about-content .context .ctx-image:first-of-type {
 		right: 0;
 		width: 360px;
 	}
@@ -53,18 +53,18 @@
 			margin-top: 40px;
 		}
 		.slide-2 {
-			> .blurb {
+			.blurb {
 				left: 40px;
 			}
-			> img {
+			.slide-image {
 				right: 20px;
 			}
 		}
 		.slide-3 {
-			> .blurb {
+			.blurb {
 				right: 20px;
 			}
-			> img {
+			.slide-image {
 				margin-left: 20px;
 			}
 		}
@@ -76,12 +76,12 @@
 
 @media only screen and (max-width: 812px) {
 	.about-content .context {
-		> img:first-of-type {
+		.ctx-image:first-of-type {
 			width: 40%;
 			top: 10px;
 		}
-		> img:nth-of-type(2),
-		> img:last-of-type {
+		.ctx-image:nth-of-type(2),
+		.ctx-image:last-of-type {
 			left: 20px;
 			width: 30%;
 		}
@@ -101,13 +101,13 @@
 		}
 	}
 	.about-content .context {
-		> h2 {
+		h2 {
 			text-align: center;
 			margin: 48px 0 20px;
 		}
-		> img:first-of-type,
-		> img:nth-of-type(2),
-		> img:last-of-type {
+		.ctx-image:first-of-type,
+		.ctx-image:nth-of-type(2),
+		.ctx-image:last-of-type {
 			position: relative;
 			left: 0;
 			top: 0;
@@ -115,9 +115,9 @@
 			margin: 0 auto;
 			width: 60%;
 		}
-		> .txt-block:first-of-type,
-		> .txt-block:nth-of-type(2),
-		> .txt-block:last-of-type {
+		.txt-block:first-of-type,
+		.txt-block:nth-of-type(2),
+		.txt-block:last-of-type {
 			position: relative;
 			left: 0;
 			top: 0;
@@ -126,16 +126,16 @@
 	}
 	.services-content .context {
 		text-align: center;
-		> h2 {
+		h2 {
 			background-position: center 100%;
 			margin: 48px 0 0;
 		}
-		> img {
+		.ctx-image {
 			position: relative;
 			top: 20px;
 			right: 0;
 		}
-		> .txt-block {
+		.txt-block {
 			width: 90%;
 			margin: 30px auto;
 			ul.orange {
@@ -206,7 +206,7 @@
 	.responsive-slide {
 		top: 50px;
 	}
-	.services-content .context > img {
+	.services-content .context .ctx-image {
 		width: 90%;
 	}
 	.title {

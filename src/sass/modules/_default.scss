@@ -84,7 +84,7 @@ button {
 .blue-button {
 	padding: 5px 20px;
 	text-transform: uppercase;
-	border-radius: 0;
+	border-radius: 3px;
 	color: #fff;
 	font: {
 		family: $source-sans-semibold;
@@ -115,7 +115,7 @@ button {
 	&.contact {
 		height: 200px;
 	}
-	> img {
+	.plx-image {
 		position: absolute;
 		width: 100%;
 	}
@@ -141,7 +141,7 @@ form {
 	}
 	input,
 	textarea {
-		border-radius: 0; // Removes automatic rounded edges in iOS
+		border-radius: 3px;
 		outline: none;
 		transition: border-color 0.2s;
 		&:not([type='submit']) {
