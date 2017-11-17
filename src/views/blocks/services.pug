@@ -1,16 +1,12 @@
+include ../mixins/icon
+
 block services
     article#servicesContent.services-content
         #servicesContentTop.services-content-top
             .center
-                .icon
-                    p DIGITAL BRANDING
-                    img(src="images/services-icon-digital-branding.png" alt="Digital Branding")
-                .icon
-                    p SOCIAL SOLUTIONS
-                    img(src="images/services-icon-social-solutions.png" alt="Social Solutions")
-                .icon
-                    p BRAND PROMOTION
-                    img(src="images/services-icon-brand-promotion.png" alt="Brand Promotion")
+                +icon('Digital Branding', 'images/services-icon-digital-branding.png')
+                +icon('Social Solutions', 'images/services-icon-social-solutions.png')
+                +icon('Brand Promotion', 'images/services-icon-brand-promotion.png')
         .center
             section.context
                 h2 OUR SERVICES

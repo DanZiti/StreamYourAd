@@ -1,0 +1,3 @@
+mixin navItem(text, first)
+    li(class=first ? 'selected' : '' data-navigate=text) #{text.toUpperCase()}
+        span.underline

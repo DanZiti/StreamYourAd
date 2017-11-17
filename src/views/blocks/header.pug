@@ -1,18 +1,15 @@
+include ../mixins/navItem
+
 block header
     header.header
         .center
             img#logo.logo(data-navigate="home" src="images/logo.png" alt="StreamYourAd Logo" width="172")
             nav.navigation
                 ul.nav-items
-                    li.selected(data-navigate="home") HOME
-                        span.underline
-                    li(data-navigate="about") HOW IT WORKS
-                        span.underline
-                    li(data-navigate="services") OUR SERVICES
-                        span.underline
-                    li(data-navigate="contact") CONTACT US
-                        span.underline
+                    +navItem('home', true)
+                    +navItem('about')
+                    +navItem('services')
+                    +navItem('contact')
             button#responsiveNavButton.responsive-nav-button
-                span.bar
-                span.bar
-                span.bar
+                - for (let i = 0; i < 3; i++)
+                    span.bar
