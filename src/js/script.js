@@ -107,7 +107,7 @@
 			const method = !selector.value.match(regx) ? 'add' : 'remove';
 			selector.classList[method]('invalid');
 		};
-		const submitForm = (e) => {
+		const submitForm = e => {
 			e.preventDefault();
 			hasErrors = false;
 			validate(name, /^\s*\S/);
