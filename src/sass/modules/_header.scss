@@ -3,7 +3,7 @@
 	height: 80px;
 	width: 100%;
 	min-width: 1000px;
-	box-shadow: $standard-box-shadow;
+	box-shadow: $box-shadow;
 	position: fixed;
 	top: 0;
 	z-index: 2;
@@ -85,7 +85,7 @@
 	width: 68%;
 	height: 100%;
 	background: #fff;
-	box-shadow: $standard-box-shadow;
+	box-shadow: $box-shadow;
 	transition: all 0.5s;
 	&.show {
 		-webkit-transform: translateX(-100%);

@@ -46,13 +46,13 @@ h1, h2.promote {
 
 h2 {
 	font-size: 22px;
-	color: $main-blue;
+	color: $color-blue-primary;
 	text-transform: uppercase;
 	margin-top: 80px;
 }
 
 h3 {
-	color: $main-orange;
+	color: $color-orange-primary;
 	font: {
 		family: $font-helvetica-bold;
 		size: 18px;
@@ -87,7 +87,7 @@ button {
 	border-radius: 3px;
 	color: #fff;
 	font: {
-		family: $source-sans-semibold;
+		family: $font-source-sans-semibold;
 		size: 16px;
 	}
 	border: none;
@@ -191,7 +191,7 @@ form {
 	li {
 		color: #f39200;
 		text-transform: uppercase;
-		font-family: $source-sans-semibold;
+		font-family: $font-source-sans-semibold;
 		transition: 0.25s color;
 		&.over,
 		&.selected {
