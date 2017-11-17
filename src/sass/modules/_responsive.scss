@@ -1,7 +1,7 @@
 // NOTE TO SELF FOR THE FUTURE: I'll leave this here as this is just a test site...
 // ...but a dedicated '_respnsive' file like this does not scale. :facepalm:
 
-@media only screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
 	body, .header {
 		min-width: 100%;
 	}
@@ -14,7 +14,7 @@
 	}
 }
 
-@media only screen and (max-width: 950px) {
+@media (max-width: 950px) {
 	.slider {
 		.slide-2 {
 			.blurb {
@@ -47,7 +47,7 @@
 	}
 }
 
-@media only screen and (max-width: 850px) {
+@media (max-width: 850px) {
 	.slider {
 		.slide-1 {
 			margin-top: 40px;
@@ -74,7 +74,7 @@
 	}
 }
 
-@media only screen and (max-width: 812px) {
+@media (max-width: 812px) {
 	.about-content .context {
 		.ctx-image:first-of-type {
 			width: 40%;
@@ -88,7 +88,7 @@
 	}
 }
 
-@media only screen and (max-width: 760px) {
+@media (max-width: 760px) {
 	.slider {
 		.slide {
 			display: none;
@@ -154,7 +154,7 @@
 	}
 }
 
-@media only screen and (max-width: 658px) {
+@media (max-width: 658px) {
 	.services-content .services-content-top {
 		min-height: 730px;
 		padding-top: 10px;
@@ -166,7 +166,7 @@
 	}
 }
 
-@media only screen and (max-width: 620px) {
+@media (max-width: 620px) {
 	.contact-content {
 		min-height: 720px;
 		h2 {
@@ -202,7 +202,7 @@
 	}
 }
 
-@media only screen and (max-width: 420px) {
+@media (max-width: 420px) {
 	.responsive-slide {
 		top: 50px;
 	}
