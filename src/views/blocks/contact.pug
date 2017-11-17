@@ -1,3 +1,5 @@
+include ../mixins/social
+
 block contact
     #contactContent.contact-content
         .parallax.contact
@@ -10,16 +12,11 @@ block contact
                 img.ctx-image.logo(src="images/logo-large.png" alt="StreamYourAd Logo" width="220")
                 nav.social
                     ul
-                        li.facebook
-                            a(href="https://www.facebook.com/")
-                        li.google
-                            a(href="https://plus.google.com/")
-                        li.instagram
-                            a(href="https://instagram.com/")
-                        li.pinterest
-                            a(href="https://www.pinterest.com/")
-                        li.twitter
-                            a(href="https://twitter.com/")
+                        +social('facebook', 'https://www.facebook.com/')
+                        +social('google', 'https://plus.google.com/')
+                        +social('instagram', 'https://instagram.com/')
+                        +social('pinterest', 'https://www.pinterest.com/')
+                        +social('twitter', 'https://twitter.com/')
                 form#contactForm.contact-form(name="contactForm")
                     p#contactFormErrorMessage.contact-form-error-message Please fix the highlighted errors below.
                     input(type="text" name="name" placeholder="Name (Required)")
