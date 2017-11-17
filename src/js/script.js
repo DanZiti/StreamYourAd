@@ -38,7 +38,7 @@
 		$responsiveNav.insertAfter('header').attr('id', 'responsiveMenu').attr('class', 'responsive-menu');
 		$(state.dom.responsiveNavButton).on(s.interaction(), () => s.show('#responsiveMenu', true));
 		$('#responsiveMenu li, header .logo').on(s.interaction(), () => s.hide('#responsiveMenu'));
-		const winResize = () => { if ($(w).width() > 740 && $('#responsiveMenu').hasClass('SHOW')) s.hide('#responsiveMenu'); };
+		const winResize = () => { if ($(w).width() > 740 && $('#responsiveMenu').hasClass('show')) s.hide('#responsiveMenu'); };
 		$(w).resize(winResize);
 	};
 	
@@ -83,7 +83,7 @@
 		// build bullets
 		for (let i = 0; i < slides.length; i++) {
 			const bullet = d.createElement('li');
-			if (i === 0) bullet.className = 'SELECTED';
+			if (i === 0) bullet.className = 'selected';
 			list.appendChild(bullet);
 		}
 		
@@ -140,7 +140,7 @@
 		$(state.dom.contactForm).on('submit', e => submitForm(e));
 	};
 	
-	// control automatic header > nav > ul > li 'SELECTED' states updates while scrolling
+	// control automatic header > nav > ul > li 'selected' states updates while scrolling
 	const controlSelectedStates = () => {
 		const winScroll = () => {
 			if (state.canScroll) {
@@ -158,7 +158,7 @@
 
 		$(w).scroll(winScroll);
 		
-		// control 'SELECTED' states in header > nav > ul > li based on user location
+		// control 'selected' states in header > nav > ul > li based on user location
 		const navigate = section => {
 			s.deselect('[data-navigate]').select(`[data-navigate="${section}"]`);
 			state.resetScroll();

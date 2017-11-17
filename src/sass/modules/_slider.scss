@@ -22,7 +22,7 @@
 				weight: normal;
 			}
 		}
-		&.SHOW {
+		&.show {
 			opacity: 1;
 			visibility: visible;
 		}
@@ -97,7 +97,7 @@
 			&:not(:first-child) {
 				margin-left: 15px;
 			}
-			&.SELECTED {
+			&.selected {
 				background: #5e5f5e;
 			}
 		}

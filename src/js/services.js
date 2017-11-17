@@ -12,22 +12,22 @@ const services = (function(w, d, $, pub) {
 	};
 	
 	pub.show = function(elem, toggle) {
-		$(elem)[toggle ? 'toggleClass' : 'addClass']('SHOW');
+		$(elem)[toggle ? 'toggleClass' : 'addClass']('show');
 		return this;
 	};
 	
 	pub.hide = function(elem) {
-		$(elem).removeClass('SHOW');
+		$(elem).removeClass('show');
 		return this;
 	};
 	
 	pub.select = function(elem, toggle) {
-		$(elem)[toggle ? 'toggleClass' : 'addClass']('SELECTED');
+		$(elem)[toggle ? 'toggleClass' : 'addClass']('selected');
 		return this;
 	};
 	
 	pub.deselect = function(elem) {
-		$(elem).removeClass('SELECTED');
+		$(elem).removeClass('selected');
 		return this;
 	};
 	

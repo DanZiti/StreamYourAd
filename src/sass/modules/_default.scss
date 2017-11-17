@@ -174,7 +174,7 @@ form {
 		opacity: 0;
 		visibility: hidden;
 		transition: all 0.2s;
-		&.SHOW {
+		&.show {
 			opacity: 1;
 			visibility: visible;
 		}
@@ -194,7 +194,7 @@ form {
 		font-family: $source-sans-semibold;
 		transition: 0.25s color;
 		&.over,
-		&.SELECTED {
+		&.selected {
 			color: #025086;
 		}
 	}
