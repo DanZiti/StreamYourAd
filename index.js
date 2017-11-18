@@ -15,10 +15,6 @@ mailer.extend(app, {});
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'pug');
 
-app.get('*/favicon.ico', (req, res) => {
-    res.status(204);
-});
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
