@@ -28,7 +28,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('watch', () => {
-	gulp.watch(['./src/**/*'], () => {
+	gulp.watch('./src/**/*', () => {
 		gulp.run('build');
 	});
 });
