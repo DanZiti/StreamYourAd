@@ -29,11 +29,11 @@
 			const section = $(e.target).attr('data-navigate');
 			if (section === 'home') return s.navigate(0);
 			const scrollTo = $(`#${section}Content`).offset().top;
-			s.navigate(scrollTo - 80); // -80 here accounts for adjustments in CSS for the sticky header
+			// -80 here accounts for adjustments in CSS for the sticky header
+			s.navigate(scrollTo - 80);
 		};
 		$(d).on(s.interaction(), '[data-navigate]', e => docInteract(e));
-		
-		// Create/control responsive nav menu
+		// create and control the responsive nav menu
 		$responsiveNav.insertAfter('header').attr('id', 'responsiveMenu').attr('class', 'responsive-menu');
 		$(state.dom.responsiveNavButton).on(s.interaction(), () => s.show('#responsiveMenu', true));
 		$('#responsiveMenu li, header .logo').on(s.interaction(), () => s.hide('#responsiveMenu'));
@@ -50,42 +50,34 @@
 	
 	// control slider animations
 	const controlSlider = () => {
-		
 		let curHeight = w.innerHeight;
 		const slides = d.querySelectorAll('#slider .slide');
 		const list = d.getElementById('sliderBullets');
-		
 		// '-80' here accounts for adjustments in CSS for the sticky header
 		$(state.dom.slider).height(curHeight - 80);
-
 		const winResize = () => {
 			if ($(w).height() > curHeight) {
 				$(state.dom.slider).height(w.innerHeight - 80);
 				curHeight = w.innerHeight;
 			}
 		};
-
 		const loadResize = () => {
 			if ($(w).width() <= 760) {
 				const minHeight = $('#responsiveSlide').height() + 150;
 				$(state.dom.slider).css('min-height', `${minHeight}px`);
 			}
 		};
-
 		const winOrientationChange = () => {
 			const newHeight = w.innerHeight - 80;
 			$(state.dom.slider).height(newHeight).css('min-height', newHeight);
 		};
-		
 		$(w).resize(winResize).on('load resize', loadResize).on('orientationchange', winOrientationChange);
-		
 		// build bullets
 		for (let i = 0; i < slides.length; i++) {
 			const bullet = d.createElement('li');
 			if (i === 0) bullet.className = 'selected';
 			list.appendChild(bullet);
 		}
-		
 		// auto rotations
 		const rotate = () => {
 			const bullets = d.querySelectorAll('#sliderBullets li');
@@ -154,22 +146,18 @@
 				if (!(aboutOffset - scrolled < threshold))	s.deselect('[data-navigate]').select('[data-navigate="home"]');
 			}
 		};
-
-		$(w).scroll(winScroll);
-		
-		// control 'selected' states in header > nav > ul > li based on user location
 		const navigate = section => {
 			s.deselect('[data-navigate]').select(`[data-navigate="${section}"]`);
 			state.resetScroll();
 		};
-
-		state.dom.$navigators.on(s.interaction(), function() {
-			const section = $(this).attr('data-navigate');
+		const handleNavClick = e => {
+			const section = $(e.target).attr('data-navigate');
 			navigate(section);
-		});
-
+		};
+		$(w).scroll(winScroll);
 		$(state.dom.logo).on(s.interaction(), () => navigate('home'));
 		$(state.dom.splashDownArrow).on(s.interaction(), () => navigate('about'));
+		state.dom.$navigators.on(s.interaction(), e => handleNavClick(e));
 	};
 	
 	// 'Privacy Policy' and 'Terms & Conditions' alerts
