@@ -20,7 +20,6 @@
 		state.dom.$navigators = $('[data-navigate]');
 		state.dom.$parallaxImages = $('.parallax .plx-image');
 		state.dom.$footerLinks = $('.footer-items li:not(:last-child)');
-		state.dom.copyrightYear = d.getElementById('copyrightYear');
 	};
 	
 	// navigation for desktop and mobile
@@ -188,8 +187,9 @@
 
 	// update copyright year
 	const updateCopyrightYear = () => {
+		const copyrightYear = d.getElementById('copyrightYear');
 		const dateYear = new Date().getFullYear();
-		return state.dom.copyrightYear.innerHTML = dateYear;
+		return copyrightYear.innerHTML = dateYear;
 	};
 	
 	// start
