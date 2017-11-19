@@ -2,7 +2,12 @@
 	background: #fff;
 	height: 80px;
 	width: 100%;
-	min-width: 1000px;
+	@media (min-width: $breakpoint-1000 + 1) {
+		min-width: 1000px;
+	}
+	@media (max-width: $breakpoint-1000) {
+		min-width: 100%;
+	}
 	box-shadow: $box-shadow;
 	position: fixed;
 	top: 0;
@@ -11,26 +16,31 @@
 		margin: 16px 0 0;
 	}
 	.navigation {
+		bottom: 20px;
 		position: absolute;
 		right: 0;
-		bottom: 20px;
+		&:first-of-type {
+			@media (max-width: $breakpoint-760) {
+				display: none;
+			}
+		}
 		.nav-items {
 			li {
-				position: relative;
 				display: inline-block;
 				font-size: 16px;
 				padding: 5px 0;
+				position: relative;
 				&:not(:first-child) {
 					margin-left: 45px;
 				}
 				.underline {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					height: 2px;
 					background: #025086;
-					width: 0;
+					bottom: 0;
+					height: 2px;
+					left: 0;
+					position: absolute;
 					transition: 0.25s width;
+					width: 0;
 				}
 				&.over .underline,
 				&.down .underline {
@@ -42,15 +52,20 @@
 }
 
 .responsive-nav-button {
-	display: none;
-	cursor: pointer;
-	width: 46px;
-	height: 40px;
 	box-shadow: inset 0 0 1px 0 #000;
+	cursor: pointer;
+	@media (min-width: $breakpoint-760 + 1) {
+		display: none;
+	}
+	@media (max-width: $breakpoint-760) {
+		display: block;
+	}
+	height: 40px;
 	position: absolute;
-	top: 20px;
 	right: 20px;
+	top: 20px;
 	transition: opacity 0.25s;
+	width: 46px;
 	@include linear-gradient(top, #15649a 50%, #025690 51%);
 	&.over,
 	&.down {
@@ -60,13 +75,13 @@
 		top: 21px;
 	}
 	& .bar {
-		display: table;
-		vertical-align: middle;
-		height: 3px;
-		width: 58%;
 		background: #fff;
 		border-radius: 5px;
 		box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.5);
+		display: table;
+		height: 3px;
+		vertical-align: middle;
+		width: 58%;
 	}
 	& .bar:not(:nth-of-type(2)) {
 		margin: 0 auto;
@@ -77,24 +92,29 @@
 }
 
 .responsive-menu {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	right: -70%; // Allow 2% extra so the shadow doesn't interfere with the main screen
-	top: 80px;
-	width: 68%;
-	height: 100%;
 	background: #fff;
 	box-shadow: $box-shadow;
+	@media (min-width: $breakpoint-760 + 1) {
+		display: none;
+	}
+	@media (max-width: $breakpoint-760) {
+		display: block;
+	}
+	height: 100%;
+	position: fixed;
+	right: -70%;
+	top: 80px;
 	transition: all 0.5s;
+	width: 68%;
+	z-index: 1;
 	&.show {
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
 	}
 	li {
-		padding: 18px 0 15px 25px;
+		border-bottom: 1px solid #c0c9cf;
 		font-size: 18px;
 		line-height: 1em;
-		border-bottom: 1px solid #c0c9cf;
+		padding: 18px 0 15px 25px;
 	}
 }

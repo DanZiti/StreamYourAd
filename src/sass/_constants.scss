@@ -1,4 +1,4 @@
-// Font-families
+// font-families
 $font-din: 'DIN', Helvetica, sans-serif;
 $font-helvetica-bold: 'HelveticaBdCn', Helvetica, sans-serif;
 $font-helvetica-light: 'HelveticaLtCn', Helvetica, sans-serif;
@@ -6,9 +6,19 @@ $font-helvetica-medium: 'HelveticaMedCn', Helvetica, sans-serif;
 $font-neutral: Arial, sans-serif;
 $font-source-sans-semibold: 'SourceSansProSemibold', Helvetica, sans-serif;
 
-// Colors
+// colors
 $color-blue-primary: #245b81;
 $color-orange-primary: #f39404;
 
-// Other
+// other
 $box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+
+// breakpoints
+$breakpoint-1000: 1000px;
+$breakpoint-950: 950px;
+$breakpoint-850: 850px;
+$breakpoint-812: 812px;
+$breakpoint-760: 760px;
+$breakpoint-658: 658px;
+$breakpoint-620: 620px;
+$breakpoint-420: 420px;

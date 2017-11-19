@@ -1,52 +1,114 @@
 .contact-content {
 	background: #c0c9cf;
-	min-height: 560px;
+	@media (min-width: $breakpoint-620 + 1) {
+		min-height: 560px;
+	}
+	@media (max-width: $breakpoint-620) {
+		min-height: 720px;
+	}
 	.parallax .title {
-		position: absolute;
 		bottom: 40px;
+		position: absolute;
 	}
 	h2 {
 		margin: 40px 0 20px;
+		@media (max-width: $breakpoint-620) {
+			text-align: center;
+		}
+	}
+	.logo {
+		@media (max-width: $breakpoint-620) {
+			display: block;
+			margin: 0 auto;
+		}
 	}
 	.social {
-		margin-top: 50px;
-		li {
-			-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-			background-image: url('../images/social-sprite.png');
-			background-size: 200px 32px;
-			background-repeat: no-repeat;
-			width: 34px;
-			height: 34px;
-			display: inline-block;
-			transition: all 0.25s;
-			&:not(:first-child) {
-				margin-left: 8px;
+		@media (min-width: $breakpoint-620 + 1) {
+			margin-top: 50px;
+		}
+		@media (max-width: $breakpoint-620) {
+			margin: 20px 0;
+			text-align: center;
+		}
+		ul {
+			@media (max-width: $breakpoint-620) {
+				display: inline-block;
 			}
-			&.facebook {
-				background-position: 0 1px;
+			li {
+				background: {
+					image: url('../images/social-sprite.png');
+					repeat: no-repeat;
+					size: 200px 32px;
+				}
+				display: inline-block;
+				height: 34px;
+				transition: all 0.25s;
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+				width: 34px;
+				&:not(:first-child) {
+					margin-left: 8px;
+				}
+				&.facebook {
+					background-position: 0 1px;
+				}
+				&.google {
+					background-position: -41px 1px;
+				}
+				&.instagram {
+					background-position: -82px 1px;
+				}
+				&.pinterest {
+					background-position: -124px 1px;
+				}
+				&.twitter {
+					background-position: -166px 1px;
+				}
+				&.over,
+				&.down {
+					-webkit-transform: scale3d(1.2, 1.2, 1.2);
+					transform: scale3d(1.2, 1.2, 1.2);
+				}
+				a {
+					display: block;
+					height: 100%;
+					width: 100%;
+				}
 			}
-			&.google {
-				background-position: -41px 1px;
+		}
+	}
+	.contact-form {
+		@media (max-width: $breakpoint-950) {
+			right: 20px;
+			width: 50%;
+		}
+		@media (max-width: $breakpoint-620) {
+			left: 0;
+			margin: 0 auto;
+			position: relative;
+			top: 0;
+			width: 80%;
+		}
+		.contact-form-error-message {
+			color: #f00;
+			font: {
+				style: italic;
+				size: 12px;
 			}
-			&.instagram {
-				background-position: -82px 1px;
+			opacity: 0;
+			position: absolute;
+			top: -20px;
+			transition: all 0.2s;
+			visibility: hidden;
+			@media (max-width: $breakpoint-620) {
+				margin-bottom: 5px;
+				margin-top: -10px;
+				position: relative;
+				top: 0;
 			}
-			&.pinterest {
-				background-position: -124px 1px;
-			}
-			&.twitter {
-				background-position: -166px 1px;
-			}
-			&.over,
-			&.down {
-				-webkit-transform: scale3d(1.2, 1.2, 1.2);
-				transform: scale3d(1.2, 1.2, 1.2);
-			}
-			a {
-				display: block;
-				width: 100%;
-				height: 100%;
+			&.show {
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}

@@ -12,7 +12,12 @@
 }
 
 body {
-	min-width: 1000px;
+	@media (min-width: $breakpoint-1000 + 1) {
+		min-width: 1000px;
+	}
+	@media (max-width: $breakpoint-1000) {
+		min-width: 100%;
+	}
 	-webkit-font-smoothing: antialiased;
 	&.overflow-hidden {
 		overflow: hidden;
@@ -24,31 +29,42 @@ body {
 }
 
 .center {
-	width: 960px;
 	height: 100%;
 	margin: 0 auto;
 	position: relative;
+	@media (min-width: $breakpoint-1000 + 1) {
+		width: 960px;
+	}
+	@media (max-width: $breakpoint-1000) {
+		width: 96%;
+	}
 }
 
 h1, h2 {
-	line-height: 1.2em;
 	font: {
 		family: $font-din;
 		weight: normal;
 	}
+	line-height: 1.2em;
+}
+
+h1.title {
+	@media (max-width: $breakpoint-420) {
+		font-size: 25px;
+	}
 }
 
 h1, h2.promote {
-	font-size: 30px;
 	color: #fff;
+	font-size: 30px;
 	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-	font-size: 22px;
 	color: $color-blue-primary;
-	text-transform: uppercase;
+	font-size: 22px;
 	margin-top: 80px;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -61,11 +77,11 @@ h3 {
 }
 
 p, li {
-	line-height: 1.4em;
 	font: {
 		family: $font-helvetica-medium;
 		size: 16px;
 	}
+	line-height: 1.4em;
 }
 
 p {
@@ -82,18 +98,18 @@ button {
 }
 
 .blue-button {
-	padding: 5px 20px;
-	text-transform: uppercase;
+	border: none;
 	border-radius: 3px;
+	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.5);
 	color: #fff;
+	cursor: pointer;
 	font: {
 		family: $font-source-sans-semibold;
 		size: 16px;
 	}
-	border: none;
 	outline: none;
-	cursor: pointer;
-	box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.5);
+	padding: 5px 20px;
+	text-transform: uppercase;
 	transition: opacity 0.25s;
 	@include linear-gradient(top, #15649a 50%, #025690 51%);
 	&.over,
@@ -106,9 +122,9 @@ button {
 }
 
 .parallax {
+	overflow: hidden;
 	position: relative;
 	width: 100%;
-	overflow: hidden;
 	&.about {
 		height: 265px;
 	}
@@ -118,6 +134,10 @@ button {
 	.plx-image {
 		position: absolute;
 		width: 100%;
+		@media (max-width: $breakpoint-1000) {
+			height: auto;
+			min-width: 790px;
+		}
 	}
 }
 
@@ -145,39 +165,22 @@ form {
 		outline: none;
 		transition: border-color 0.2s;
 		&:not([type='submit']) {
+			border: none;
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+			display: block;
 			font: {
 				family: $font-helvetica-light;
 				size: 13px;
 			}
-			display: block;
-			width: 100%;
 			margin-bottom: 10px;
 			padding: 8px 5px 5px 5px;
-			border: none;
-			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+			width: 100%;
 			@include linear-gradient(top, #c5c7ca 0px, #eceff1 3px);
 		}
 	}
-	
 	input.invalid,
 	textarea.invalid {
 		border: 1px solid #f00;
-	}
-	.contact-form-error-message {
-		color: #f00;
-		font: {
-			style: italic;
-			size: 12px;
-		}
-		position: absolute;
-		top: -20px;
-		opacity: 0;
-		visibility: hidden;
-		transition: all 0.2s;
-		&.show {
-			opacity: 1;
-			visibility: visible;
-		}
 	}
 }
 
@@ -190,8 +193,8 @@ form {
 .responsive-menu {
 	li {
 		color: #f39200;
-		text-transform: uppercase;
 		font-family: $font-source-sans-semibold;
+		text-transform: uppercase;
 		transition: 0.25s color;
 		&.over,
 		&.selected {

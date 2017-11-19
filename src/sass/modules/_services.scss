@@ -4,13 +4,17 @@
 	.services-content-top {
 		background: #c0c9cf;
 		height: 292px;
-		width: 100%;
+		@media (max-width: $breakpoint-658) {
+			min-height: 730px;
+			padding-top: 10px;
+		}
 		position: relative;
+		width: 100%;
 		.title.hide {
-			visibility: hidden;
 			color: transparent;
-			text-indent: -9999px;
 			height: 0;
+			text-indent: -9999px;
+			visibility: hidden;
 		}
 		.icon,
 		.center {
@@ -19,40 +23,82 @@
 		.icon {
 			display: inline-block;
 			margin-top: 50px;
+			@media (max-width: $breakpoint-658) {
+				margin: 30px auto 0;
+				display: block;
+			}
 			&:nth-of-type(2) {
-				margin: 50px 120px 0;
+				@media (min-width: $breakpoint-850 + 1) {
+					margin: 50px 120px 0;
+				}
+				@media (max-width: $breakpoint-850) {
+					margin: 50px 30px 0;
+				}
+				@media (max-width: $breakpoint-658) {
+					margin: 30px auto 0;
+					display: block;
+				}
 			}
 			p {
-				font-size: 22px;
 				color: #245b81;
+				font: {
+					family: 'DIN', sans-serif;
+					size: 22px;
+				}
 				text-transform: uppercase;
-				font-family: 'DIN', sans-serif;
 			}
-			img {
+			.icon-image {
 				width: 149px;
 			}
 		}
 	}
 	h2 {
-		padding-bottom: 25px;
 		background: url('../images/services-arrow.png') no-repeat 3px 100%;
 		background-size: 180px 15px;
-	}
-	.txt-block {
-		margin-top: 30px;
-		width: 342px;
-	}
-	ul.orange {
-		margin-left: 20px;
-		li {
-			font-family: 'HelveticaBdCn', sans-serif;
-			color: $color-orange-primary;
+		padding-bottom: 25px;
+		@media (max-width: $breakpoint-760) {
+			background-position: center 100%;
+			margin: 48px 0 0;
 		}
 	}
-	.context img {
-		width: 380px;
-		position: absolute;
-		right: 100px;
-		top: 10px;
+	.txt-block {
+		@media (min-width: $breakpoint-760 + 1) {
+			margin-top: 30px;
+			width: 342px;
+		}
+		@media (max-width: $breakpoint-760) {
+			margin: 30px auto;
+			width: 90%;
+		}
+	}
+	ul.orange {
+		@media (min-width: $breakpoint-760 + 1) {
+			margin-left: 20px;
+		}
+		@media (max-width: $breakpoint-760) {
+			margin: 0 0 40px;
+		}
+		li {
+			color: $color-orange-primary;
+			font-family: 'HelveticaBdCn', sans-serif;
+		}
+	}
+	.context {
+		@media (max-width: $breakpoint-760) {
+			text-align: center;
+		}
+		.ctx-image {
+			@media (min-width: $breakpoint-760 + 1) {
+				position: absolute;
+				right: 80px;
+				top: 10px;
+			}
+			@media (max-width: $breakpoint-760) {
+				position: relative;
+				right: 0;
+				top: 20px;
+			}
+			width: 380px;
+		}
 	}
 }

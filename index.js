@@ -3,10 +3,8 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const favicon = require('serve-favicon');
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -41,7 +39,7 @@ app.post('/api/contact', (req, res) => {
     };
     transporter.sendMail(opts, (error, info) => {
         if (error) return console.log(error);
-        return console.log('StreamYourAd email sent!');
+        return console.log('StreamYourAd email sent.');
     });
 });
 
