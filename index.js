@@ -2,15 +2,13 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const mailer = require('express-mailer');
+const nodemailer = require('nodemailer');
 const favicon = require('serve-favicon');
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-mailer.extend(app, {});
 
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'pug');
@@ -19,21 +17,31 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-// @TODO: FIGURE OUT WHY THE THING WON'T SEND... :sadpanda:
-// @TODO: TRY https://nodemailer.com/about/ SO WE CAN GET RID OF email.pug
 app.post('/api/contact', (req, res) => {
     const { name, email, subject, comments } = req.body;
-    app.mailer.send('email', {
-        to: 'dan.zervoudakes@gmail.com',
-        subject: subject,
-        from: email,
-        replyTo: email
-    }, err => {
-        if (!err) res.send(req.body);
-        if (err) {
-            res.send(err);
-            res.status(500);
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            type: 'OAuth2',
+            user: 'dan.zervoudakes@gmail.com',
+            clientId: '286048389250-86g4pd8jcdes2j6sqtuqbq4s4d3vug7v.apps.googleusercontent.com'//,
+            // clientSecret: 'XxxxxXXxX0xxxxxxxx0XXxX0',
+            // refreshToken: '1/XXxXxsss-xxxXXXXXxXxx0XXXxxXXx0x00xxx',
+            // accessToken: 'ya29.Xx_XX0xxxxx-xX0X0XxXXxXxXXXxX0x',
+            // expires: 1484314697598
         }
+    });
+    const opts = {
+        from: `${name} <${email}>`,
+        to: 'dan.zervoudakes@gmail.com',
+        subject: `New 'StreamYourAd' inquiry submitted: ${subject}`,
+        html: `<p style="font-weight: bold;">${name}'s comments are below:</p><p>${comments}<p>`
+    };
+    transporter.sendMail(opts, (error, info) => {
+        if (error) return console.log(error);
+        return console.log('StreamYourAd email sent!');
     });
 });
 
