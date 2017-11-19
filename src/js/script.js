@@ -93,18 +93,18 @@
 	const submitContactForm = () => {
 		let hasErrors = false;
 		const { name, email, subject, comments } = state.dom.contactForm;
-		const validate = (selector, regx) => {
-			if (!selector.value.match(regx) && !hasErrors) hasErrors = true;
-			const method = !selector.value.match(regx) ? 'add' : 'remove';
-			selector.classList[method]('invalid');
+		const validateForm = (...inputs) => {
+			inputs.forEach(item => {
+				const regx = item === email ? /^\S+@\S+\.\S+$/ : /^\s*\S/;
+				const method = !item.value.match(regx) ? 'add' : 'remove';
+				if (!item.value.match(regx) && !hasErrors) hasErrors = true;
+				item.classList[method]('invalid');
+			});
 		};
 		const submitForm = e => {
 			e.preventDefault();
 			hasErrors = false;
-			validate(name, /^\s*\S/);
-			validate(email, /^\S+@\S+\.\S+$/);
-			validate(subject, /^\s*\S/);
-			validate(comments, /^\s*\S/);
+			validateForm(name, email, subject, comments);
 			const method = hasErrors ? 'show' : 'hide';
 			s[method](state.dom.contactFormErrorMessage);
 			const makeAsyncCall = () => {
