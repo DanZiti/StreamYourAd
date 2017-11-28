@@ -32,7 +32,7 @@
 			// -80 here accounts for adjustments in CSS for the sticky header
 			s.navigate(scrollTo - 80);
 		};
-		$(d).on(s.interaction(), '[data-navigate]', e => docInteract(e));
+		$(d).on(s.interaction(), '[data-navigate]', docInteract);
 		// create and control the responsive nav menu
 		$responsiveNav.insertAfter('header').attr('id', 'responsiveMenu').attr('class', 'responsive-menu');
 		$(state.dom.responsiveNavButton).on(s.interaction(), () => s.show('#responsiveMenu', true));
@@ -126,9 +126,9 @@
 				});
 			};
 			// @TODO: ACTUAL SUCCESS AND ERROR HANDLING HERE
-			if (!hasErrors) return makeAsyncCall().then(resp => console.log(resp)).catch(e => console.log(e));
+			if (!hasErrors) return makeAsyncCall().then(resp => console.log(resp)).catch(err => console.log(err));
 		};
-		$(state.dom.contactForm).on('submit', e => submitForm(e));
+		$(state.dom.contactForm).on('submit', submitForm);
 	};
 	
 	// control automatic header > nav > ul > li 'selected' states updates while scrolling
@@ -157,7 +157,7 @@
 		$(w).scroll(winScroll);
 		$(state.dom.logo).on(s.interaction(), () => navigate('home'));
 		$(state.dom.splashDownArrow).on(s.interaction(), () => navigate('about'));
-		state.dom.$navigators.on(s.interaction(), e => handleNavClick(e));
+		state.dom.$navigators.on(s.interaction(), handleNavClick);
 	};
 	
 	// 'Privacy Policy' and 'Terms & Conditions' alerts
