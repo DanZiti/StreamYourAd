@@ -8,6 +8,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// @TODO: WILL WE NEED THIS?
 app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'pug');
 
@@ -48,6 +49,8 @@ app.use((req, res) => {
     res.sendFile(path.join(__dirname, '/public/404.html'));
 });
 
-app.listen(3000, () => {
-    console.log('StreamYourAd booted up on port 3000');
+const port = process.env.port || 3000;
+
+app.listen(port, () => {
+    console.log(`StreamYourAd booted up on port ${port}`);
 });
