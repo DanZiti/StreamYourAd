@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const port = process.env.port || 3000;
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.json());
@@ -48,8 +49,6 @@ app.use((req, res) => {
     res.status(404);
     res.sendFile(path.join(__dirname, '/public/404.html'));
 });
-
-const port = process.env.port || 3000;
 
 app.listen(port, () => {
     console.log(`StreamYourAd booted up on port ${port}`);
