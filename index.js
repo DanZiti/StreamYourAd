@@ -1,13 +1,14 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+
+const app = express();
 const port = process.env.port || 3000;
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // @TODO: WILL WE NEED THIS?
 app.set('views', path.join(__dirname, '/src/views'));
