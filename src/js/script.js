@@ -126,7 +126,7 @@
 				});
 			};
 			// @TODO: ACTUAL SUCCESS AND ERROR HANDLING HERE
-			if (!hasErrors) return makeAsyncCall().then(resp => console.log(resp)).catch(err => console.log(err));
+			if (!hasErrors) return makeAsyncCall().then(resp => console.log('hi')).catch(err => console.log(err));
 		};
 		$(state.dom.contactForm).on('submit', submitForm);
 	};

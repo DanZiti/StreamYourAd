@@ -10,16 +10,12 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// @TODO: WILL WE NEED THIS?
-app.set('views', path.join(__dirname, '/src/views'));
-app.set('view engine', 'pug');
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 app.post('/api/contact', (req, res) => {
-    const { name, email, subject, comments } = req.body;
+    const { comments, email, name, subject } = req.body;
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -27,11 +23,11 @@ app.post('/api/contact', (req, res) => {
         auth: {
             type: 'OAuth2',
             user: 'dan.zervoudakes@gmail.com',
-            clientId: '286048389250-86g4pd8jcdes2j6sqtuqbq4s4d3vug7v.apps.googleusercontent.com'//,
-            // clientSecret: 'XxxxxXXxX0xxxxxxxx0XXxX0',
-            // refreshToken: '1/XXxXxsss-xxxXXXXXxXxx0XXXxxXXx0x00xxx',
-            // accessToken: 'ya29.Xx_XX0xxxxx-xX0X0XxXXxXxXXXxX0x',
-            // expires: 1484314697598
+            clientId: '286048389250-86g4pd8jcdes2j6sqtuqbq4s4d3vug7v.apps.googleusercontent.com',
+            clientSecret: 'A29tNNT8dvOZK0ezVpOldI-0',
+            refreshToken: '1/k0EwXre8wYPA9U5Bre62S7vtmKeOlYpShV5CJY0Cx8s',
+            accessToken: 'ya29.Glt7BfLL4p_Zsrth73gv0aY-6K4NwbBSBgAU6YXAvuJlq5iNWsD4OC9QzsIx1qmnH3-pwgVDHf3Ua5-7OIRwoeG9OiS3ckLVPoTL1JiRk-nCbjz90iPjECPxel_8',
+            expires: 1484314697598
         }
     });
     const opts = {
@@ -41,8 +37,9 @@ app.post('/api/contact', (req, res) => {
         html: `<p style="font-weight: bold;">${name}'s comments are below:</p><p>${comments}<p>`
     };
     transporter.sendMail(opts, (error, info) => {
-        if (error) return console.log(error);
-        return console.log('StreamYourAd email sent.');
+        console.log(error);
+        console.log(info);
+        res.send(error ? error : info);
     });
 });
 
