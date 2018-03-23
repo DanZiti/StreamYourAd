@@ -1,33 +1,33 @@
 {
-  "name": "streamyourad",
-  "description": "Compile the final output of the StreamYourAd site.",
-  "author": "Dan Zervoudakes",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dzervoudakes/streamyourad"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-strict-mode": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "nodemailer": "^4.4.0",
-    "path": "^0.12.7"
-  },
-  "engine": "node >= 0.10",
-  "license": "MIT",
-  "scripts": {
-    "start": "nodemon ./bin/www --ignore 'public/**/*'"
-  }
+	"name": "streamyourad",
+	"description": "Compile the final output of the StreamYourAd site.",
+	"author": "Dan Zervoudakes",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dzervoudakes/streamyourad"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-plugin-transform-strict-mode": "^6.24.1",
+		"babel-preset-env": "^1.6.1",
+		"gulp": "^3.9.1",
+		"gulp-babel": "^7.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-load-plugins": "^1.5.0",
+		"gulp-pug": "^3.3.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^3.1.0",
+		"gulp-uglify": "^3.0.0"
+	},
+	"dependencies": {
+		"body-parser": "^1.18.2",
+		"express": "^4.16.2",
+		"nodemailer": "^4.4.0",
+		"path": "^0.12.7"
+	},
+	"engine": "node >= 0.10",
+	"license": "MIT",
+	"scripts": {
+		"start": "nodemon ./bin/www --ignore 'public/**/*'"
+	}
 }
