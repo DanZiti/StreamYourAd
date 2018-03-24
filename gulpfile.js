@@ -9,11 +9,11 @@ gulp.task('pug', () => {
 
 gulp.task('bundlejs', () => {
 	return gulp.src([
-			'./src/js/jquery-3.2.1.min.js',
-			'./src/js/jquery-mouseable.min.js',
-			'./src/js/services.js',
-			'./src/js/script.js'
-		])
+		'./src/js/jquery-3.2.1.min.js',
+		'./src/js/jquery-mouseable.min.js',
+		'./src/js/services.js',
+		'./src/js/script.js'
+	])
 		.pipe($.concat('bundle.min.js'))
 		.pipe($.babel())
 		.pipe($.uglify())
@@ -27,7 +27,7 @@ gulp.task('sass', () => {
 		.pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', ['build'], () => {
 	gulp.watch('./src/**/*', () => {
 		gulp.run('build');
 	});
