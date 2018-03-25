@@ -3,6 +3,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
+// @TODO: MOVE NODEMAILER JANK INTO ITS OWN 'routes/api' DIRECTORY
+
 const app = express();
 const port = process.env.port || 8080;
 
@@ -36,10 +38,10 @@ app.post('/api/contact', (req, res) => {
 		subject: `New 'StreamYourAd' inquiry submitted: ${subject}`,
 		html: `<p style="font-weight: bold;">${name}'s comments are below:</p><p>${comments}<p>`
 	};
-	transporter.sendMail(opts, (error, info) => {
-		console.log(error);
-		console.log(info);
-		res.send(error ? error : info);
+	transporter.sendMail(opts, (err, info) => {
+		if (err) console.log(err);
+		if (info) console.log(info);
+		res.send(err ? err : info);
 	});
 });
 
