@@ -27,8 +27,8 @@ app.post('/api/contact', (req, res) => {
 			user: 'dan.zervoudakes@gmail.com',
 			clientId: '286048389250-86g4pd8jcdes2j6sqtuqbq4s4d3vug7v.apps.googleusercontent.com',
 			clientSecret: 'A29tNNT8dvOZK0ezVpOldI-0',
-			refreshToken: '1/k0EwXre8wYPA9U5Bre62S7vtmKeOlYpShV5CJY0Cx8s',
-			accessToken: 'ya29.Glt7BfLL4p_Zsrth73gv0aY-6K4NwbBSBgAU6YXAvuJlq5iNWsD4OC9QzsIx1qmnH3-pwgVDHf3Ua5-7OIRwoeG9OiS3ckLVPoTL1JiRk-nCbjz90iPjECPxel_8',
+			refreshToken: '1/2sQWV81orFTA7uIsv4WnCnT-SL1TkUq_vGBnJMrBFpo',
+			accessToken: 'ya29.GluJBWH2KU-3Mvjc4yYG3Md1wRqMxuquRWwz1hiGRlKdULyr0o-e3yLuOL6KZNaT58EAfkkZi8zhs_lOOPTfMgpy7-xGIF9o1A2YlWoAit2GqG4xJ7sQlVpJ2y7W',
 			expires: 1484314697598
 		}
 	});
@@ -36,11 +36,13 @@ app.post('/api/contact', (req, res) => {
 		from: `${name} <${email}>`,
 		to: 'dan.zervoudakes@gmail.com',
 		subject: `New 'StreamYourAd' inquiry submitted: ${subject}`,
-		html: `<p style="font-weight: bold;">${name}'s comments are below:</p><p>${comments}<p>`
+		html: `
+			<p><span style="font-weight: bold;">Name:</span> ${name}</p>
+			<p><span style="font-weight: bold;">Email:</span> ${email}</p>
+			<p><span style="font-weight: bold;">Comments:</span> ${comments}</p>
+		`
 	};
 	transporter.sendMail(opts, (err, info) => {
-		if (err) console.log(err);
-		if (info) console.log(info);
 		res.send(err ? err : info);
 	});
 });
