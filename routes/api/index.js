@@ -34,6 +34,7 @@ router.post('/contact', (req, res) => {
 		`
 	};
 	transporter.sendMail(opts, (err, info) => {
+		res.status(err ? 500 : 200);
 		res.send(err ? err : info);
 	});
 });
