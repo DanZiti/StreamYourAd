@@ -1,4 +1,4 @@
-const services = (function(w, d, $, pub) {
+let utils = (function(w, d, $, pub) {
 	
 	pub.interaction = () => ('ontouchend' in d) ? 'touchend' : 'click';
 

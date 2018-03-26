@@ -11,7 +11,7 @@ gulp.task('bundlejs', () => {
 	return gulp.src([
 		'./src/js/jquery-3.2.1.min.js',
 		'./src/js/jquery-mouseable.min.js',
-		'./src/js/services.js',
+		'./src/js/utils.js',
 		'./src/js/script.js'
 	])
 		.pipe($.concat('bundle.min.js'))

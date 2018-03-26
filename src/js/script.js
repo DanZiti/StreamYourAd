@@ -1,4 +1,4 @@
-(function(w, d, s, $) {
+(function(w, d, $) {
 	
 	const state = {};
 	state.dom = {};
@@ -27,25 +27,25 @@
 		const $responsiveNav = $('.header .navigation').clone();
 		const docInteract = e => {
 			const section = $(e.target).attr('data-navigate');
-			if (section === 'home') return s.navigate(0);
+			if (section === 'home') return utils.navigate(0);
 			const scrollTo = $(`#${section}Content`).offset().top;
 			// -80 here accounts for adjustments in CSS for the sticky header
-			s.navigate(scrollTo - 80);
+			utils.navigate(scrollTo - 80);
 		};
-		$(d).on(s.interaction(), '[data-navigate]', docInteract);
+		$(d).on(utils.interaction(), '[data-navigate]', docInteract);
 		// create and control the responsive nav menu
 		$responsiveNav.insertAfter('header').attr('id', 'responsiveMenu').attr('class', 'responsive-menu');
-		$(state.dom.responsiveNavButton).on(s.interaction(), () => s.show('#responsiveMenu', true));
-		$('#responsiveMenu li, header .logo').on(s.interaction(), () => s.hide('#responsiveMenu'));
-		const winResize = () => { if ($(w).width() > 740 && $('#responsiveMenu').hasClass('show')) s.hide('#responsiveMenu'); };
+		$(state.dom.responsiveNavButton).on(utils.interaction(), () => utils.show('#responsiveMenu', true));
+		$('#responsiveMenu li, header .logo').on(utils.interaction(), () => utils.hide('#responsiveMenu'));
+		const winResize = () => { if ($(w).width() > 740 && $('#responsiveMenu').hasClass('show')) utils.hide('#responsiveMenu'); };
 		$(w).resize(winResize);
 	};
 	
 	// control parallax banner
 	const controlParallax = () => {
-		const winScroll = () => $(w).width() > 1000 ? s.parallax() : state.dom.$parallaxImages.css('top', '0px');
+		const winScroll = () => $(w).width() > 1000 ? utils.parallax() : state.dom.$parallaxImages.css('top', '0px');
 		const winResize = () => { if ($(w).width() > 1000) state.dom.$parallaxImages.css('top', '0px'); };
-		if (!s.isMobile()) $(w).scroll(winScroll).resize(winResize);
+		if (!utils.isMobile()) $(w).scroll(winScroll).resize(winResize);
 	};
 	
 	// control slider animations
@@ -83,7 +83,7 @@
 			const bullets = d.querySelectorAll('#sliderBullets li');
 			state.sliderIndex++;
 			if (state.sliderIndex === slides.length) state.sliderIndex = 0;
-			s.hide('#slider .slide').show(slides[state.sliderIndex]).deselect('#sliderBullets li').select(bullets[state.sliderIndex]);
+			utils.hide('#slider .slide').show(slides[state.sliderIndex]).deselect('#sliderBullets li').select(bullets[state.sliderIndex]);
 			setTimeout(rotate, 8000);
 		};
 		setTimeout(rotate, 8000);
@@ -106,7 +106,7 @@
 			hasErrors = false;
 			validateForm(name, email, subject, comments);
 			const method = hasErrors ? 'show' : 'hide';
-			s[method](state.dom.contactFormErrorMessage);
+			utils[method](state.dom.contactFormErrorMessage);
 			const makeAsyncCall = () => {
 				const data = {
 					name: name.value,
@@ -125,8 +125,14 @@
 					return xmlhttp;
 				});
 			};
+			const success = () => {
+				console.log('hi');
+			};
+			const failure = () => {
+				console.log('poop');
+			};
 			// @TODO: ACTUAL SUCCESS AND ERROR HANDLING HERE
-			if (!hasErrors) return makeAsyncCall().then(resp => console.log('hi')).catch(err => console.log(err));
+			if (!hasErrors) return makeAsyncCall().then(() => success()).catch(() => failure());
 		};
 		$(state.dom.contactForm).on('submit', submitForm);
 	};
@@ -140,14 +146,14 @@
 				const aboutOffset = $('#aboutContent').offset().top;
 				const servicesOffset = $('#servicesContent').offset().top;
 				const contactOffset = $('#contactContent').offset().top;
-				if (aboutOffset - scrolled < threshold) s.deselect('[data-navigate]').select('[data-navigate="about"]');
-				if (servicesOffset - scrolled < threshold) s.deselect('[data-navigate]').select('[data-navigate="services"]');
-				if (contactOffset - scrolled < threshold) s.deselect('[data-navigate]').select('[data-navigate="contact"]');
-				if (!(aboutOffset - scrolled < threshold))	s.deselect('[data-navigate]').select('[data-navigate="home"]');
+				if (aboutOffset - scrolled < threshold) utils.deselect('[data-navigate]').select('[data-navigate="about"]');
+				if (servicesOffset - scrolled < threshold) utils.deselect('[data-navigate]').select('[data-navigate="services"]');
+				if (contactOffset - scrolled < threshold) utils.deselect('[data-navigate]').select('[data-navigate="contact"]');
+				if (!(aboutOffset - scrolled < threshold))	utils.deselect('[data-navigate]').select('[data-navigate="home"]');
 			}
 		};
 		const navigate = section => {
-			s.deselect('[data-navigate]').select(`[data-navigate="${section}"]`);
+			utils.deselect('[data-navigate]').select(`[data-navigate="${section}"]`);
 			state.resetScroll();
 		};
 		const handleNavClick = e => {
@@ -155,9 +161,9 @@
 			navigate(section);
 		};
 		$(w).scroll(winScroll);
-		$(state.dom.logo).on(s.interaction(), () => navigate('home'));
-		$(state.dom.splashDownArrow).on(s.interaction(), () => navigate('about'));
-		state.dom.$navigators.on(s.interaction(), handleNavClick);
+		$(state.dom.logo).on(utils.interaction(), () => navigate('home'));
+		$(state.dom.splashDownArrow).on(utils.interaction(), () => navigate('about'));
+		state.dom.$navigators.on(utils.interaction(), handleNavClick);
 	};
 	
 	// 'Privacy Policy' and 'Terms & Conditions' alerts
@@ -167,7 +173,7 @@
 			const sendAlert = () => alert('"StreamYourAd" the company no longer exists as a legal entity, thus I am prohibited from sharing any legal bric-a-brac on the site. This site now serves as a dummy practice environment for my portfolio :)');
 			setTimeout(sendAlert, delay);
 		};
-		state.dom.$footerLinks.on(s.interaction(), runAlert);
+		state.dom.$footerLinks.on(utils.interaction(), runAlert);
 	};
 	
 	// create hover/active states
@@ -195,4 +201,4 @@
 	
 	$(d).ready(init);
 	
-})(window, document, services, jQuery);
+})(window, document, jQuery);
