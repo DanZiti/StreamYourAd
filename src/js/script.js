@@ -17,6 +17,8 @@
 		state.dom.logo = d.getElementById('logo');
 		state.dom.contactForm = d.forms['contactForm'];
 		state.dom.contactFormErrorMessage = d.getElementById('contactFormErrorMessage');
+		state.dom.contactFormSuccessMessage = d.getElementById('contactFormSuccessMessage');
+		state.dom.contactFormFailureMessage = d.getElementById('contactFormFailureMessage');
 		state.dom.$navigators = $('[data-navigate]');
 		state.dom.$parallaxImages = $('.parallax .plx-image');
 		state.dom.$footerLinks = $('.footer-items li:not(:last-child)');
@@ -105,6 +107,8 @@
 			e.preventDefault();
 			hasErrors = false;
 			validateForm(name, email, subject, comments);
+			utils.hide(state.dom.contactFormSuccessMessage);
+			utils.hide(state.dom.contactFormErrorMessage);
 			const method = hasErrors ? 'show' : 'hide';
 			utils[method](state.dom.contactFormErrorMessage);
 			const makeAsyncCall = () => {
@@ -126,12 +130,13 @@
 				});
 			};
 			const success = () => {
-				console.log('hi');
+				name.value = '';
+				email.value = '';
+				subject.value = '';
+				comments.value = '';
+				utils.show(state.dom.contactFormSuccessMessage);
 			};
-			const failure = () => {
-				console.log('poop');
-			};
-			// @TODO: ACTUAL SUCCESS AND ERROR HANDLING HERE
+			const failure = () => utils.show(state.dom.contactFormFailureMessage);
 			if (!hasErrors) return makeAsyncCall().then(() => success()).catch(() => failure());
 		};
 		$(state.dom.contactForm).on('submit', submitForm);

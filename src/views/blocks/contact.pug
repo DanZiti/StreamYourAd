@@ -19,6 +19,8 @@ block contact
                         +social('twitter', 'https://twitter.com/')
                 form#contactForm.contact-form(name="contactForm")
                     p#contactFormErrorMessage.contact-form-error-message Please fix the highlighted errors below.
+                    p#contactFormSuccessMessage.contact-form-success-message Success! Someone will get in touch with you soon.
+                    p#contactFormFailureMessage.contact-form-error-message Something went wrong on the server, please try again.
                     input(type="text" name="name" placeholder="Name (Required)")
                     input(type="text" name="email" placeholder="Email (Required)")
                     input(type="text" name="subject" placeholder="Subject (Required)")
