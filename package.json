@@ -1,5 +1,6 @@
 {
 	"name": "streamyourad",
+	"version": "1.0.0",
 	"description": "Compile the final output of the StreamYourAd site.",
 	"author": "dzervoudakes",
 	"repository": {
@@ -28,6 +29,7 @@
 	"engine": "node >= 0.10",
 	"license": "MIT",
 	"scripts": {
-		"start": "nodemon ./bin/www --ignore 'public/**/*'"
+		"build": "gulp build",
+		"start": "gulp watch & nodemon ./bin/www --ignore 'public/**/*'"
 	}
 }
