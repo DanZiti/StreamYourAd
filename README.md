@@ -12,6 +12,6 @@ Source code behind the original StreamYourAd.com site.
 ### Some Technologies Used
 * Pug
 * ES6 + Babel
-* SASS
+* Sass
 * Gulp
 * Node + Express
